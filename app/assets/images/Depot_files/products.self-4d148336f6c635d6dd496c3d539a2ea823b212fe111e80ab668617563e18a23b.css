@@ -1,0 +1,46 @@
+/* line 6, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products table {
+  border-collapse: collapse;
+}
+/* line 10, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products table tr td {
+  padding: 5px;
+  vertical-align: top;
+}
+/* line 15, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_image {
+  width: 100px;
+  height: 100px;
+}
+/* line 20, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_description {
+  width: 90%;
+}
+/* line 23, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_description dl {
+  margin: 0;
+}
+/* line 27, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_description dt {
+  color: #244f88;
+  font-weight: bold;
+  font-size: larger;
+}
+/* line 33, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_description dd {
+  margin: 0;
+}
+/* line 38, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_actions {
+  font-size: x-small;
+  text-align: right;
+  padding-left: 1em;
+}
+/* line 44, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_line_even {
+  background: rgba(28, 230, 220, 0.8);
+}
+/* line 48, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/products.scss */
+.products .list_line_odd {
+  background: rgba(230, 175, 175, 0.1);
+}
