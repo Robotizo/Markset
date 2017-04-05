@@ -1,0 +1,234 @@
+/* Place all the styles related to the Store controller here.
+/* They will automatically be included in application.css.
+/* You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+#images{
+	padding: 3em;
+	width: 100px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	position: static;
+	padding-left: 32em;
+}
+
+.showcaseImg{
+  width: 100%;
+  height: 400px;
+}
+
+
+h1{
+	margin: 0;
+	padding-bottom: 0em;
+	font: 150% sans-serif;
+	color:#226;
+	text-align: center;
+	padding-top: 1em;
+}
+
+h4{
+	margin: 0;
+	padding-bottom: 0em;
+	font: 150% sans-serif;
+	color:#226;
+	text-align: center;
+}
+
+#h1d{
+	padding: 2em;
+}
+
+.entry{
+	overflow: auto;
+	margin-top: 1em;
+	border-bottom: 1px dotted #77d;
+	min-height: 100px;
+}	
+
+h3{
+	font-size: 120%;
+	font-family: sans-serif;
+	margin-left: 100px;
+	margin-top: 0;
+	margin-bottom: 2px;
+	color: #227;
+}
+	
+p, div.price_line{
+	margin-left: 100px;
+	margin-top: 0.5em;
+	margin-bottom: 0.8em;
+
+	form, div{
+		display: inline;
+	}
+}
+
+.price{
+	color: #44a;
+	font-weight: bold;
+	margin-right: 3em;
+}
+
+#spacing{
+	padding-left: 10em;
+}
+
+/*Start of slideshow*/
+
+#trial{
+  position: relative;
+}
+.theSlides{
+  display:none;
+}
+
+.slideshow-container {
+  position: static;
+  margin: auto;
+  z-index: -1;
+}
+ .prev, .next {
+  text-decoration: none !important;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30%;
+  padding: 50px;
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: transparent;
+  color: white;
+}
+
+
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: .5s;
+  animation-name: fade;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Scrolling pictures*/
+#sidescroll {
+    width: 100%;
+    overflow: visible;
+    white-space:nowrap;
+}
+
+#sidescroll .slide {
+    display: inline-block;
+}
+
+#sectionHScroll {
+  width: 100%;
+  height: 356px;
+  white-space: nowrap; 
+  overflow: scroll;
+  margin: 0;
+  overflow-y: hidden; 
+}
+#sectionStore{
+  width: 1000px;
+  height: 800px;
+  white-space:nowrap; 
+  overflow: scroll;
+  overflow-x: hidden; 
+}
+/* Buttons */
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonG {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.buttonG:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonR {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+
+.buttonR:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Fix the */
+
+#textInImage .text{
+	position: relative;
+  padding : 0;
+  margin : 0;
+  line-height : 20px;
+  bottom: 100px;
+	visibility: hidden;
+  font-size: 20px;
+  margin: 0;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#textInImage:hover .text {
+	bottom: 100px;
+  visibility: visible;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-align: center;
+	color: black;
+	opacity: 0.8;
+  position: relative;
+}
+
+
+.linkOP:hover{
+  opacity: 0.4;
+  background-color: transparent;
+}

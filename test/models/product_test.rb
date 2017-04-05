@@ -4,7 +4,7 @@ class ProductTest < ActiveSupport::TestCase
 	fixtures :products
 
 test "product is not valid without a unique title" do
-	product = Product.new(title: product(:ruby).title,
+	product = Product.new(title: products(:ruby).title,
 						  description: "yyy",
 						  price: 1,
 						  image_url: "goka.png")
@@ -13,9 +13,9 @@ test "product is not valid without a unique title" do
 	end
 	
 test "product price must be positive" do 
-	product=Product.new(title: "Product",
-						description: "sample",
-						image_url: "any.jpg")
+	product = Product.new(title: "Product",
+						  description: "sample",
+						  image_url: "any.jpg")
 	product.price = -1
 	assert product.invalid?
 	assert_equal ["must be greater than or equal to 0.01"],
@@ -53,7 +53,7 @@ end
 
 
 test "product attributes mut not be empty" do
-	product=Product.new
+	product = Product.new
 	assert product.invalid?
 	assert product.errors[:title].any?
 	assert product.errors[:description].any?

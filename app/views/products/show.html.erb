@@ -1,24 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<body id="showProd">
+  <div id="showProd">
+    <div id = "sidev">
+      <div id ="cart">
+        <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    
+  <%= image_tag(@product.image_url, class: "imageShowProduct")%>
+  <div id="titlePos">
+    <strong><%= @product.title %></strong>
+  </div>
+  <div id="introInfo">
+  <div id="withinPprice">
+    <div id="withinP">
+      <div class="price_line">
+        <span class="priceShow"><%= number_to_currency(@product.price) %></span>
+        <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, remote: true, class: "button buttonG" %>
+        <%= button_to 'Add to purchase list', remove_line_item_path(@product), method: :get, remote: true, class: "button buttonR" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <div id="introInfo">
+    <div id="withinP">
+      <strong id="fontTitleD">Description</strong>
+        <p id="fontSub">
+          <%= @product.description %>
+        </p>
+        <p>
+          <strong>Page:</strong>
+            <%= @product.page.try :title %>
+        </p>
+        <p>
+          <strong>Category:</strong>
+            <%= @product.category.try :name  %>
+        </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Edit', edit_product_path(@product) %> 
 <%= link_to 'Back', products_path %>
+</div>
+</body>

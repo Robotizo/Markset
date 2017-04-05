@@ -1,23 +1,24 @@
 require 'test_helper'
 
-class ProductsControllerTest < ActionDispatch::IntegrationTest
+class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-    @update ={
-      title: 'Kakacarrotcake'
-      description: 'This is a inside joke between my sister and I'
-      image_url: 'goka.png'
-      price: 17.38
+    @update = {
+      title: 'Kakacarrotcake',
+      description: 'This is my homie kakacarrotcake.',
+      image_url: 'goka.png',
+      price: 400000.00
     }
   end
 
   test "should get index" do
-    get products_url
+    get :index
     assert_response :success
+    assert_not_nil assigns(:products)
   end
 
   test "should get new" do
-    get new_product_url
+    get :new
     assert_response :success
   end
 
@@ -26,7 +27,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       post :create, product: @update
     end
 
-    assert_redirected_to product_url(Product.last)
+    assert_redirected_to product_path(assigns(:product))
   end
 
   test "should show product" do
@@ -41,14 +42,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update product" do
     patch :update, id: @product, product: @update
-    assert_redirected_to product_url(@product)
+    assert_redirected_to product_path(assigns(:product))
   end
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do
-      delete product_url(@product)
+      delete product_path(@product)
     end
 
-    assert_redirected_to products_url
+    assert_redirected_to products_path
   end
 end

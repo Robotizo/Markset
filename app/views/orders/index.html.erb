@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h1>Orders</h1>
+<br>
+<div id="space">
+<table id="paginateOrg">
+  <thead id="paginateOrg">
+    <tr>
+      <th id="paginateOrg">Name</th>
+      <th id="paginateOrg">Address</th>
+      <th id="paginateOrg">Email</th>
+      <th id="paginateOrg">Pay type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody id="paginateOrg">
+    <% @orders.each do |order| %>
+      <tr>
+        <td id="paginateOrg"><%= order.name %></td>
+        <td id="paginateOrg"><%= order.address %></td>
+        <td id="paginateOrg"><%= order.email %></td>
+        <td id="paginateOrg"><%= order.pay_type %></td>
+        <td id="paginateOrg"><%= link_to 'Show', order %></td>
+        <td id="paginateOrg"><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td id="paginateOrg"><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ </div>
+
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
+<br>
+<%= will_paginate @orders %>

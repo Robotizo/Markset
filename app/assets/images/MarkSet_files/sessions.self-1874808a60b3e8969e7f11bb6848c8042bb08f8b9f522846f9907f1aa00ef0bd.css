@@ -1,0 +1,25 @@
+/*// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+/* line 6, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/sessions.scss */
+#heda {
+  text-align: center;
+  font-size: 40px;
+  padding: 2em;
+}
+
+/* line 11, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/sessions.scss */
+#inp {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+}
+
+/* line 17, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/sessions.scss */
+#logg {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 5px;
+}

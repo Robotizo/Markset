@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html>
+<div>
   <head>
-    <title>Depot</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <title>MarkSet</title>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+      <%= javascript_include_tag "application" %>
   </head>
-  <body class='<%= controller.controller_name %>'>
-    <%= yield %>
+<body class='<%= controller.controller_name %>'>
+<div id="font">
+<!--LoggedOUT Start-->
+  <% if !session[:user_id] %>
+  <ul class="topnav">
+    <%= link_to 'MarkSet', store_path, class: "logo"%>
+    <% if !session[:user_id] %>
+      <li><%= link_to 'Login', login_path, method: :get, class: "userLog"%></li>
+      <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], class: "searchDim", placeholder: "Search products" %>
+      <%= image_submit_tag("magGlass.png", class: "magSub") %>
+      <% end %>
+      <% end %>
+    </ul>
+      <!--Start-->
+      <div id="paddingLoggedOut"></div>
+      <ul class="bottomnavOut" id="bottomnavjs">
+        <li><%= link_to 'Home', store_path %></li>
+        <li><%= link_to 'Pages', pages_path %></li>
+        <li><%= link_to 'Products', products_path %></li>
+        <li><%= link_to 'Posts', posts_path %></li>
+        <li class="icon">
+          <a href="javascript:void(0);" style="font-size:15px;" onclick="bottomNavFuncOut()">☰</a>
+        </li>
+      </ul>
+      <!--End-->
+  <% end %>
+<!--LoggedOUT End-->
+<!--LoggedIN Start-->
+  <% if session[:user_id] %>
+    <ul class="topnav">
+      <%= link_to 'MarkSet', store_path, class: "logo" %>
+      <li onclick="dropDown()" class="dropbtn">Settings</li>
+      <!--Search for page and products -->
+      <%= form_tag(products_path, :method => "get") do %>
+      <%= text_field_tag :search, params[:search], class: "searchDim", placeholder: "Search products" %>
+      <%= image_submit_tag("magGlass.png", class: "magSub") %>
+      <% end %>
+    </ul>
+    <div class="dropdown">
+      <div id="mainDropdown" class="dropdown-content">
+        <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'}%>
+        <%= link_to 'Your Summary', admin_path %>
+        <%= link_to 'User Settings', users_path%>
+      </div>
+    </div>
+  <!--Start-->
+  <ul class="bottomnavIn" id="bottomnavjs">
+    <li><%= link_to 'Home', store_path %></li>
+    <li><%= link_to 'Pages', pages_path %></li>
+    <li><%= link_to 'Categories', categories_path %></li>
+    <li><%= link_to 'Products', products_path %></li>
+    <li><%= link_to 'Posts', posts_path %></li>
+    <li><%= link_to 'Orders', orders_path %></li>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="bottomNavFuncIn()">☰</a>
+    </li>
+  </ul>
+  <!--End-->
+  <% end %>
+  <!--LoggedIN End-->
+  	<div class="wrapper">
+      <div id="font">
+  		<%= yield %>
+      </div>
+  	</div>
+      <footer class="footerMain">
+        <p id="footerFont"> &copy; Brandon Caiza 2017</p>
+        <br>
+        <br>
+        <br>
+      </footer>
+</div>
   </body>
 </html>

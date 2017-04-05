@@ -1,7 +1,11 @@
 <%= stylesheet_link_tag "products.scss" %>
-
 <h1>Listing Products</h1>
 <div id="padleft">
+<div id="home">
+<%= link_to 'Home', store_index_path %>
+</div>
+
+
 <table>
   <% @products.each do |product| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even')%>">
@@ -10,10 +14,16 @@
       </td>
 
       <td class="list_description">
+        
         <dl>
-          <dt><%= product.title %></dt>
-          <dd><%= truncate(strip_tags(product.description), length: 250) %></dd>
+          <div id="font">
+            <dt><%= product.title %></dt>
+            <dd><%= truncate(strip_tags(product.description), length: 250) %></dd>
+            <dd>Page: <%= product.page.try :title %></dd>
+            <dd>Category: <%= product.category.try :name %></dd>
+          </div>
         </dl>
+        
       </td>
 
       <td class="list_actions">
@@ -24,6 +34,9 @@
     </tr>
   <% end %>
 </table>
+ <% if !@products.present? %>
+    <p>There are no products for <%= params[:search] %>.</p>
+  <% end %>
 <br>
 <%= link_to 'New Product', new_product_path %>
 </div>

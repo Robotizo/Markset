@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>User Profile</h1>
+<br>
+<br>
+<div id="userPosts">
+	<p>
+	  <strong>Name:</strong>
+	  <%= user_chosen_name %>
+	</p>
+
+	<br>
+	<% @user_pages.each do |page| %>
+		<%= link_to page.title, page_path(page) %><br>
+	<% end %>
+
+
+	<br>
+	<%= link_to 'New Page', new_page_path %> |
+	<%= link_to 'New Post', new_post_path %> |
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</div>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<h1>Categories</h1>
+
+
+<div id="allCategoryPadding">
+  <table>
+    <% @categories.each_slice(4) do |categories| %>
+    <tr>
+      <% categories.each do |category| %>
+      <td>
+        <div id="singleCategoryPadding">
+          <%= link_to image_tag(category.image_url, class: "listImageCategory"), category %><br>
+          <div id="centerize">
+            <dt><%= category.name %></dt>
+          </div>
+        </div>
+        <% end %>
+      </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+
+<%= link_to 'New Category', new_category_path %>
+

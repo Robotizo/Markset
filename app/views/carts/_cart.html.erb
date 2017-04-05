@@ -1,0 +1,17 @@
+<div id="paddingCart">
+	<div class="cart_title"><p id="inCartFont">Your Cart</p></div>
+	<table>
+		<%= render(cart.line_items) %>
+		
+		<tr class="total_line">
+			<td colspan="2">Total</td>
+			<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<div id="cartfont">
+		<%= button_to "Checkout", new_order_path, method: :get, class: "checkout" %>
+		<%= button_to "Empty cart", cart, method: :delete, confirm: "Are you sure?", class: "emptyCart" %>
+	</div>    
+</div>

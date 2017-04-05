@@ -1,0 +1,76 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<body onload="currentSlide(2)">
+<div id="trial">
+	<div class="slideshow-container">
+		<div class="theSlides fade">
+			<%= image_tag("http://t.wallpaperweb.org/wallpaper/nature/3840x1024/9XMedia1280TripleHorizontalMountainsclouds.jpg", class: "showcaseImg")%>
+		</div>
+		<div class="theSlides fade">
+			<%= image_tag("http://w.ndtvimg.com/glaadventure/2016/02/16082815/skyline-glaadventure.jpg", class: "showcaseImg")%>
+		</div>
+		<div class="theSlides fade">
+			<%= image_tag("https://photos.smugmug.com/Fall-2016/i-LggLjcL/0/X2/_28A0043-Pano-Edit-X2.jpg",  class: "showcaseImg")%>
+		</div>
+
+	</div>
+	<a class="prev unselectable" onclick="addSlides(-1)">&lt;</a>
+	<a class="next unselectable" onclick="addSlides(1)">&gt;</a>
+</div>
+
+<br>
+
+<% cache ['store', Product.latest] do %>
+	<section id="sectionHScroll">
+		<div id="sidescroll">
+			<% @products.each do |product| %>
+			<div class="slide">
+				<div id="textInImage">
+						<%=link_to image_tag(product.image_url, size: "380x340"), product, class: "linkOP" %>
+					<div id="font">
+						<div class="text"><%= product.title %></div>
+					</div>
+						<div class="text"><%= number_to_currency(product.price) %></div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</section>
+
+<br>
+<!--
+	<div id = "columnsv">
+      <div id = "sidev">
+        <div id ="cart">
+          <% if @cart %>
+            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %>
+          <% end %>
+        <% end %>
+        </div>
+     </div>
+    </div>
+
+  <br>
+    <section id="sectionStore">
+		<% @products.each do |product| %>
+			<div id="images">
+				<%= image_tag(product.image_url, size: "350x300" )%>
+			</div>
+			<h3><%= product.title %></h3>
+			<div id="spacing">
+				<%= sanitize(product.description) %>
+			</div>
+			
+			<div class="price_line">
+				<span class="price"><%= number_to_currency(product.price) %></span>
+
+			<%= button_to 'Add to Cart', add_line_item_path(product), method: :get, remote: true, class: "button buttonG" %>
+			<%= button_to 'Remove from Cart', remove_line_item_path(product), method: :get, remote: true, class: "button buttonR" %>
+			</div>
+			<% end %>
+		<% end %>
+	</section>-->
+</body>
+

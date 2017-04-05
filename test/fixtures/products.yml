@@ -13,7 +13,7 @@ two:
   price: 9.99
 
 ruby:
-	title: PS4 
-	description: This is a new product that will be avalible when the app is up
-	image_url: sonyview.png
-	price: 399.99
+  title: Kakacarrotcake
+  description: This is my homie kakacarrotcake.
+  image_url: goka.png
+  price: 400000.00

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+<div id="allPagePadding">
+  <table>
+    <% @pages.each_slice(4) do |pages| %>
+      <tr>
+        <% pages.each do |page| %>
+          <td>
+            <div id="singlePagePadding">
+              <%= link_to image_tag(page.image_url, class: "listImagePage"), page, class: "pageShowcase" %>
+              <div id="centerize">
+                <dt><%= page.title %></dt>
+                <dt><%= page.genre %></dt>
+                <strong>by</strong>
+                <dt><%= page.user.try :name %></dt>
+              </div>
+            </div>
+            <% end %>
+          </td> 
+        </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+
+<%= link_to 'New Page', new_page_path %>
+<br>

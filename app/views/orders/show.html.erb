@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Not done yet -->
+<div id="paginatePad">
+<table >
+	<%= render @order.line_items %>
+</table>
+	<%= number_to_currency(@order.total_price) %>
+</div>
+<br>
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Pay type:</strong>
+  <%= @order.pay_type %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> 
+<%= link_to 'Back', orders_path %>

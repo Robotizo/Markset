@@ -1,10 +1,26 @@
-// Place all the styles related to the Products controller here.
+/*// Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
+body{
+	background-color: rgba(255, 255, 255, 1);
+}
+
+/* Still modifiable */
+
+#font{
+  font-family: Verdana, Geneva, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+}
 .products{
-	background: #EDFFED;
 	color: black;
+
+	#home{
+		font-size: 24px;
+		color: purple;
+	}
 
 	table{
 		border-collapse: collapse;
@@ -53,3 +69,80 @@
 		background: #D9FFD9;
 	}
 }
+
+.imageShowProduct{
+	display: block;
+	margin: auto;
+	position: relative;
+	width: auto;
+	height: 350px;
+	top: 15px;
+	z-index: -1;
+}
+
+/* Showpage Start */
+
+#introInfo{
+	text-align: left;
+	padding-top: 3em;
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-bottom: 5em;
+
+}
+
+#titlePos{
+	position: relative;
+	top: 2em;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 100;
+}
+
+#introInfo #fontTitleD{
+	font-size: 30px;
+	font-weight: 100;
+	top: 4em;
+}
+
+#introInfo #fontSub{
+	padding-left: 2em;
+	font-size: 20px;
+	padding-top: 1em;
+}
+
+#introInfo #withinP{
+	display: inline-block;
+	position: relative;
+
+}
+ #withinPprice{
+ 	display: inline-block;
+	position: relative;
+	font-weight: lighter;
+	top: 40px;
+	margin-left: 18%;
+
+}
+
+#withinP .priceShow{
+	font-size: 30px;
+	position: relative;
+	top: 8px;
+	right: 20px;
+}
+
+/* Fixed Back */
+.fixedback{
+	min-height: 370px;
+	position: relative;
+	
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 1em;
+}
+
+
+
+

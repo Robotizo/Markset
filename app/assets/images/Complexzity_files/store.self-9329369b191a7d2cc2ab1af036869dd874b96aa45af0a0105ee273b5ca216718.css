@@ -1,0 +1,157 @@
+/* line 5, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+#images {
+  padding: 3em;
+  width: 100px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  position: static;
+  padding-left: 32em;
+  display: block;
+  float: left;
+  padding: 0 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 19, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+h1 {
+  margin: 0;
+  padding-bottom: 0em;
+  font: 150% sans-serif;
+  color: #226;
+  text-align: center;
+  padding-top: 1em;
+}
+
+/* line 28, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+h4 {
+  margin: 0;
+  padding-bottom: 0em;
+  font: 150% sans-serif;
+  color: #226;
+  text-align: center;
+}
+
+/* line 36, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+#h1d {
+  padding: 2em;
+}
+
+/* line 40, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+  min-height: 100px;
+}
+
+/* line 47, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+h3 {
+  font-size: 120%;
+  font-family: sans-serif;
+  margin-left: 100px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  color: #227;
+}
+
+/* line 56, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+p, div.price_line {
+  margin-left: 100px;
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+}
+/* line 61, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+p form, p div, div.price_line form, div.price_line div {
+  display: inline;
+}
+
+/* line 66, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 3em;
+}
+
+/* line 72, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+#spacing {
+  padding-left: 10em;
+}
+
+/*Start of slideshow*/
+/* line 77, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 79, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.theSlides {
+  display: none;
+}
+
+/* line 82, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.slideshow-container {
+  padding-top: 1em;
+  position: static;
+  margin: auto;
+}
+
+/* line 88, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.prev, .next {
+  text-decoration: none !important;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  bottom: 37.1%;
+  width: auto;
+  padding: 50px;
+  padding-top: 10em;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* line 105, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* line 111, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 115, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.active {
+  background-color: #717171;
+}
+
+/* line 119, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/store.scss */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: .5s;
+  animation-name: fade;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}

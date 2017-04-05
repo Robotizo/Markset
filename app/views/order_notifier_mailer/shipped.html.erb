@@ -1,0 +1,11 @@
+<h1>Complexzity Item Shipped</h1>
+
+<p>
+  <%= @greeting %>, this message is to confirm that you have bought thr following items <%= @order.line_items %> and they have been 
+  shipped. 
+</p>
+
+<table>
+	<tr><th colspan="2">Qty</th><th>Description</th></tr>
+	<%= render @order.line_items %>
+</table>

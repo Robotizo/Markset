@@ -1,0 +1,19 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table>
+	<%= render(@cartShow.line_items) %>
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(@cartShow.total_price) %></td>
+	</tr>
+</table>
+
+<br>
+<br>
+<div id="cartfont">
+<%= button_to "Checkout", new_order_path, method: :get %>
+<%= button_to "Empty cart", @cartShow, method: :delete, confirm: "Are you sure?" %>
+</div>    
+

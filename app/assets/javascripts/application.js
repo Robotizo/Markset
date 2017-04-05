@@ -11,6 +11,49 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function reload() {
+    location.reload();
+}
+
+
+function bottomNavFuncIn() {
+    var trigger = document.getElementById("bottomnavjs");
+    if (trigger.className === "bottomnavIn") {
+        trigger.className += " respond";
+    } 
+    else {
+        trigger.className = "bottomnavIn";
+    }
+}
+
+function bottomNavFuncOut() {
+    var trigger = document.getElementById("bottomnavjs");
+    if (trigger.className === "bottomnavOut") {
+        trigger.className += " respond";
+    } 
+    else {
+        trigger.className = "bottomnavOut";
+    }
+}
+
+function dropDown() {
+    document.getElementById("mainDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

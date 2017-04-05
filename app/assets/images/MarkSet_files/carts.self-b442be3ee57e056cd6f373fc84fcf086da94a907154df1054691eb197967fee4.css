@@ -1,0 +1,27 @@
+/* Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+/* line 7, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/carts.scss */
+.cart .cart_title, #sidev #cart .cart_title {
+  font: 120% bold;
+}
+/* line 11, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/carts.scss */
+.cart .item_price .total_line, #sidev #cart .item_price .total_line {
+  text-align: right;
+}
+/* line 15, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/carts.scss */
+.cart .total_line .total_cell, #sidev #cart .total_line .total_cell {
+  font-weight: bold;
+  border-top: 1px solid #595;
+}
+
+/* line 20, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/carts.scss */
+#totalfont {
+  font-size: 20px;
+}
+
+/* line 24, /Users/macbookpro/Desktop/depot/app/assets/stylesheets/carts.scss */
+#cartfont {
+  font-family: Arial;
+  color: black;
+}

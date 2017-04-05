@@ -1,0 +1,23 @@
+<div class="depot_form">
+	<% if flash[:alert] %>
+		<p id="notice"><%= flash[:alert] %></p>
+	<% end %>
+
+<%= form_tag do %>
+	<fieldset>
+		<div id="heda"><head>Login</head></div>
+		<div id="inp">
+			<%= text_field_tag :name, params[:name], placeholder: "Username" %>
+		</div>
+		<div id="inp">
+			<%= password_field_tag :password, params[:password],placeholder: "Password" %>
+		</div>
+		<div id="logg">
+			<%= submit_tag "Login" %>
+		</div>
+		<div id="logg">
+			<%= link_to 'Create a new User', new_user_path %>
+		</div>
+	</fieldset>
+	<% end %>
+</div>

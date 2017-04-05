@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag(@page.image_url, class: "imageShowPage")%>
+<br>
+<p>
+  <strong>Title:</strong>
+  <%= @page.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @page.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @page.image_url %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @page.genre %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @page.user.try :name %>
+</p>
+
+<% @page_posts.each do |posts| %>
+  <%= posts.content %><br><br>
+<% end %>
+
+<%= button_to "Create Post", new_post_path, method: :get %>
+
+
+<table>
+  <% @page_products.each_slice(4) do |page_products| %>
+    <tr>
+      <% page_products.each do |product| %>
+        <td>
+          <div id="singleCategoryPadding">
+            <%=link_to image_tag(product.image_url, size: "280x240"), product, class: "linkPagesP" %>
+            <div id="centerize">
+              <dt><%= product.title %></dt>
+              <dt><%= number_to_currency(product.price) %></dt>
+            </div>
+          </div>
+        <% end %>
+        </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+
+
+<%= link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
+
+

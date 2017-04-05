@@ -1,0 +1,50 @@
+/* Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.cart, #sidev #cart{
+	.cart_title{
+		font-family: Verdana, Geneva, sans-serif;
+		text-align: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	.item_price .total_line{
+		text-align: right;
+	}
+	.total_line .total_cell{
+		font-weight: bold;
+		border-top: 1px solid #595;
+	}
+}
+#totalfont{
+	font-size: 20px;
+}
+
+#cartfont{
+	font-family: Arial;
+	color: black;
+	left: 20px;
+	bottom: 2em;
+}
+
+#inCartFont{
+	font-size: 25px;
+}
+
+#paddingCart{
+	padding: 3em;
+}
+.emptyCart{
+	position: absolute;
+	float: right;
+	bottom: 12px;
+	right: 20px;
+}
+.checkout{
+	position: absolute;
+	float: left;
+	bottom: 12px;
+	left: 20px;
+}
+

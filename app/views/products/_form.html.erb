@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -30,6 +30,14 @@
   <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select(:page_id, @pages, :id, :title, options = {prompt: "Choose a Page"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select(:category_id, @categories, :id, :name, options = {prompt: "Choose a Category"}) %>
   </div>
 
   <div class="actions">

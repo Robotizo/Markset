@@ -1,10 +1,20 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, :except => [:index, :show]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :search]
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    @cart = current_cart
+
+    givensearchProduct = params[:search]
+
+    if givensearchProduct
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order("created_at DESC")
+    end
   end
 
   # GET /products/1
@@ -12,19 +22,34 @@ class ProductsController < ApplicationController
   def show
   end
 
+  # GET /products/1
+  # GET /products/1.json
+  def who_bought
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.atom
+    end
+  end
+
   # GET /products/new
   def new
     @product = Product.new
+    @pages = Page.all
+    @categories = Category.all
   end
 
   # GET /products/1/edit
   def edit
+    @pages = Page.all
+    @categories = Category.all
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @pages = Page.all
+    @categories = Category.all
 
     respond_to do |format|
       if @product.save
@@ -69,6 +94,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image_url, :price, :page_id, :category_id)
     end
 end
