@@ -104,17 +104,7 @@
   <% else %>
     <div class="postPageTitleUser"><%= link_to @page.title, @page, method: :get %></div>
   <% end %>
-      <div class="contentSection">
-      <dt class="postTitle"><%= post.title %></dt>
 
-        
-          <% if post.content.length > 200 %>
-            <div class="postContent"><%= truncate post.content, length: 200 %></div>
-            <%= link_to 'read more', post, method: :get %>
-          <% else %>
-            <div class="postContent"><%= post.content %></div>
-            <% end %>
-        </div>
       <div class="postSection">
         <div class="pictureSection">
           <% if post.post_attachments.length < 2 %>
@@ -136,7 +126,17 @@
           <% end %>
         <% end %>
       </div>
+              <div class="contentSection">
+      <dt class="postTitle"><%= post.title %></dt>
+
         
+          <% if post.content.length > 200 %>
+            <div class="postContent"><%= truncate post.content, length: 200 %></div>
+            <%= link_to 'read more', post, method: :get %>
+          <% else %>
+            <div class="postContent"><%= post.content %></div>
+            <% end %>
+        </div>
       </div>
       <div class="lowerAttri">
         <% if post.comments.present? %>
