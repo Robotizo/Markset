@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.signup_confirmation(@user).deliver
-        format.html { redirect_to login, notice: "User #{@user.name} was successfully created." }
+        format.html { redirect_to login_url, notice: "User #{@user.name} was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
