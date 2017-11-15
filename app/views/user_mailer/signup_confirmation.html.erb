@@ -1,0 +1,80 @@
+ <html>
+ <head>
+
+  <style type="text/css">
+
+  body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+    
+  }
+
+  li {
+    font-weight: 300;
+    font-size: 25px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  .content{
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+
+
+        </style>
+    </head>
+ <body>
+  <ul>
+    <li>Markset</li>
+  </ul>
+  
+    <div class="content">
+      Welcome to <%= link_to 'Markset.com', store_url %>, <%= @user.name %>. It is great to have you with us. Markset was created solely thinking about you, the user. I hope you find this app to be useful to your life as much as we think it should be. Check out the avalible stores by clicking <%= link_to 'here', store_url %>.
+      <br>
+      <br>
+      Here is important information:
+      <br>
+      Username: <%= @user.username %>
+      <br>
+      Email: <%= @user.email %>
+      <br>
+      <br>
+      Regards, <br>
+      Brandon Caiza from Markset
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

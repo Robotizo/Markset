@@ -2,34 +2,102 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
-.cart, #sidev #cart{
-	.cart_title{
-		font-family: Verdana, Geneva, sans-serif;
-		text-align: center;
-		padding-top: 1em;
-		padding-bottom: 1em;
-	}
+
+.mainTitle{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cartTable{
+ margin-left: auto;
+ margin-right: auto;
+ width: 100%;
+}
+.cartTable{
+    td, th {
+        padding: 5px;
+        color: white;
+    }
+}
+.button {
+    top: -50px;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonG {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 20px 70px;
+}
+
+.buttonG:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonR {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+
+}
+
+.buttonR:hover {
+    background-color: #f44336;
+    color: white;
+}
+#sidev #cart{
+    font-weight: 300;
 	.item_price .total_line{
 		text-align: right;
+        color: white;
 	}
 	.total_line .total_cell{
-		font-weight: bold;
-		border-top: 1px solid #595;
+        font-weight: 300;
+		border-top: 1px solid #fff;
 	}
 }
 #totalfont{
 	font-size: 20px;
 }
 
-#cartfont{
-	font-family: Arial;
-	color: black;
-	left: 20px;
-	bottom: 2em;
+.pNoCart{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.newCart{
+    margin-top: 1em;
+    font-size: 30px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 2px solid #000;
+}
+
+.newCart:hover{
+    background-color: #4CAF50;
+    color: white;
 }
 
 #inCartFont{
 	font-size: 25px;
+    color: white;
 }
 
 #paddingCart{
@@ -47,4 +115,82 @@
 	bottom: 12px;
 	left: 20px;
 }
+
+.buttonCheck {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonCheckIn {
+    background-color: black; 
+    color: white; 
+    border: 2px solid #4CAF50;
+    padding: 5px 34px;
+    margin-top: 4px;
+}
+
+.buttonCheckIn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonEmp {
+    background-color: #FF1919; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.buttonEmpIn {
+    background-color: black; 
+    color: white; 
+    border: 2px solid #FF1919;
+    padding: 5px 30px;
+}
+
+.buttonEmpIn:hover {
+    background-color: #FF1919;
+    color: white;
+}
+
+@media screen and (max-width: 767px){
+    .buttonG {
+        padding: 15px 91px;
+    }
+    .buttonR{
+        padding: 15px 52px;
+    }
+    .pageImage{
+        display: none;
+    }
+
+    #paddingCart {
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 340px){
+    .pageName{
+        display: none;
+    }
+    .second{
+        display: none;
+    }
+}
+
 

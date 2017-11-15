@@ -6,22 +6,22 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
-
-    givensearchPage = params[:search]
-
-    if givensearchPage
-      @pages = Page.search(params[:search]).order("created_at DESC")
-    else
-      @pages = Page.all.order("created_at DESC")
-    end
+    @pages = Page.all.order("created_at DESC")
+    @cart = current_cart
+    followingIds = current_user.following.map(&:id)
+    @pagesFollow = Page.find(params = followingIds)
   end
+
 
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page_products = @page.products
-    @page_posts = @page.posts
+    @user = current_user
+    @cart = current_cart
+    @page_products = @page.products.order("created_at DESC")
+    @page_categories = @page.categories.order("created_at DESC")
+    @page_posts = @page.posts.order("created_at DESC")
+    @page = Page.find(params[:id])
   end
 
   # GET /pages/new
@@ -31,6 +31,11 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
+    unless session[:user_id] == @page.user.id
+      flash[:notice] = "You don't have access to edit that page!"
+      redirect_to pages_path(session[:user_id])
+      return
+    end
   end
 
   # POST /pages
@@ -81,6 +86,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :description, :image_url, :genre)
+      params.require(:page).permit(:title, :description, :image, :genre, :opening_day, :closing_day, :opening_time, :closing_time, :page_notes)
     end
 end

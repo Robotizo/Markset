@@ -11,10 +11,30 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( function() {
+    $( "#tags" ).autocomplete({
+      source: productNames,
+        select: function(event, ui) {
+            $(event.target).val(ui.item.value);
+            $('.magSub').click();
+        }
+        
+    });
+    productNames.sort();
+});
+
+
+$(document).ready(function(){
+    $(".btn7").click(function(){
+        $('search').submit();
+    });
+});
 
 function reload() {
     location.reload();

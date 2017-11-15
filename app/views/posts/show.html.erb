@@ -1,28 +1,54 @@
+<%= stylesheet_link_tag "posts", :media => "all" %>
 <p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="text-center">
+		<div class="row">
+			<div class="postBox">
+				<%= link_to (image_tag @post.page.image_url(:thumb), class: "listImagePagePost"), @post.page, method: :get %> 
+			<% if @post.user.id == @user.id %>
+				<%= button_to "Edit", edit_post_path(@post), method: :get, class: "editPosts" %>
+			<% else %>
+ 			<% end %>
+ 			<% if @post.user.id != @user.id %>
+				<div class="postPageTitleNot"><%= link_to @post.page.try(:title), @post.page, method: :get %></div>
+			<% else %>
+				<div class="postPageTitleUser"><%= link_to @post.page.try(:title), @post.page, method: :get %></div>
+			<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
+				<div class="postSection">
+					<div class="pictureSection">
+						 <% if @post.post_attachments.length < 2 %>
+				          <% @post.post_attachments.each do |p| %>
+				            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
+				          <% end %>
+				          <% elsif @post.post_attachments.length < 3 %>
+				           <% @post.post_attachments.each do |p| %>
+				            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
+				          <% end %>
+				          <% else %>
+				          <% @post.post_attachments.each do |p| %>
+				            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+				          <% end %>
+				        <% end %>
+					</div>
+				</div>
+				<div class="contentSection">
+					<dt class="postTitle"><%= @post.title %></dt>
+					<dt class="postContent"><%= @post.content %></dt>
+				</div>
+				<div class="lowerAttri">
+					<% if @post.comments.present? %>
+						<% @post.comments.limit(1).each do |comment| %>
+							<span class="comment"><%= link_to "Comments", comment, method: :get %></span>
+						<% end %>
+					<% else %>
+						<span class="comment"><%= link_to "Add Comment", new_comment_path(post_id: @post.id), method: :get %></span>
+					<% end %>
+	                	<span class="dateNtime"><%= @post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>Page name:</strong>
-  <%= @post.page.try :title %>
-</p>
-
-<p>
-  <strong>Time of creation:</strong>
-  <%= @post.created_at %>
-</p>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

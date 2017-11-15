@@ -1,5 +1,6 @@
-<div class="depot_form">
+<%= stylesheet_link_tag "users", :media => "all" %>
 <%= form_for @user do |f| %>
+<div class="container">
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,33 +12,138 @@
     </div>
   <% end %>
 
-  <fieldset>
-  <legend>Enter your details</legend>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, size: 40 %>
+  <div class="row">
+    <div class="text-center">
+    <% if params[:action] == 'new' || params[:action] == 'create' %> 
+      <legend>Enter your details</legend>
+      <% end %>
+        <%= image_tag @user.image_url(:thumb) if @user.image? %>
+      <hr>
+       <div class="field">
+          <%= f.label "Profile Image", class: "titlePostForm" %><br>
+          <%= f.file_field :image %>
+        </div>
+    </div>
   </div>
 
-<% if params[:action] == 'edit' || params[:action] == 'update' %> 
+<div class="col-md-3 col-md-offset-1 col-xs-10">
+  <hr>
   <div class="field">
-    <%= f.label :current_password, 'Current Password' %><br>
-    <%= f.password_field :current_password, size: 40 %>
+    <%= f.label :name, class: "titlePostForm" %><br>
+    <%= f.text_field :name, class: "formFieldLine" %>
   </div>
+<hr>
+<% if params[:action] == 'edit' || params[:action] == 'update' || params[:action] == 'show' %> 
+  <%= f.label "Your Username is" , class: "titlePostForm" %>
+    <div class= "username"><%= @user.username %></div>
+<% end %>
+<% if params[:action] == 'new' || params[:action] == 'create' %> 
+ <div class="field">
+    <%= f.label :username, class: "titlePostForm" %><br>
+    <%= f.text_field :username, class: "formFieldLine" %>
+  </div>
+<% end %>
+  <hr>
+<div class="field">
+    <%= f.label :email, class: "titlePostForm" %><br>
+    <%= f.email_field :email, class: "formFieldLine" %>
+  </div>
+  <hr>
+</div>
+
+  <% if params[:action] == 'new' || params[:action] == 'create' %> 
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+    <div class="col-md-6 passFields">
+      <div class="field">
+        <%= f.label :password, 'New Password',  class: "titlePostForm" %><br>
+        <%= f.password_field :password, class: "formFieldLine" %>
+      </div>
+    <hr>
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirm Password',  class: "titlePostForm" %><br>
+        <%= f.password_field :password_confirmation, class: "formFieldLine" %>
+      </div>
+    </div>
+    <div class="col-md-6 passwordNoticePos col-xs-30">
+      <div class="passwordNotice">
+        - Must contain 8 or more characters<br>
+        - Must contain a digit<br>
+        - Must contain a lower case character<br>
+        - Must contain an upper case character<br>
+        - Must contain a symbol
+      </div>
+    </div>
+    </div>
+    <div class="passwordNoticePosMob col-xs-12">
+      <div class="passwordNotice">
+        - Must contain 8 or more characters<br>
+        - Must contain a digit<br>
+        - Must contain a lower case character<br>
+        - Must contain an upper case character<br>
+        - Must contain a symbol
+      </div>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password, 'Password' %><br>
-    <%= f.password_field :password, size: 40 %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, 'Confirm' %><br>
-    <%= f.password_field :password_confirmation, size: 40 %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+
+<div class="col-md-10 col-md-push-1 col-xs-12">
+  <% if params[:action] == 'edit' || params[:action] == 'update' || params[:action] == 'show'%> 
+  <%= submit_tag "Password Change", method: :get, class: "btn btn4 btn-primary", :type => 'button' %>
+
+
+
+
+  <div id="passChange">
+    <hr>
+    <div class="col-md-6 passFields">
+      <div class="field">
+        <%= f.label :password, 'New Password',  class: "titlePostForm" %><br>
+        <%= f.password_field :password, class: "formFieldLine" %>
+      </div>
+    <hr>
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirm Password',  class: "titlePostForm" %><br>
+        <%= f.password_field :password_confirmation, class: "formFieldLine" %>
+      </div>
+    </div>
+    <div class="col-md-6 passwordNoticePos">
+      <div class="passwordNotice">
+        - Must contain 8 or more characters<br>
+        - Must contain a digit<br>
+        - Must contain a lower case character<br>
+        - Must contain an upper case character<br>
+        - Must contain a symbol
+      </div>
+    </div>
   </div>
-</fieldset>
+</div>
+
+<div class="passwordNoticePosMob col-xs-12">
+  <div class="passwordNotice">
+    - Must contain 8 or more characters<br>
+    - Must contain a digit<br>
+    - Must contain a lower case character<br>
+    - Must contain an upper case character<br>
+    - Must contain a symbol
+  </div>
+</div>
+
+
+<div class="col-md-3 col-md-offset-1 col-xs-12">
+  <hr>
+    <div class="field">
+      <%= f.label :current_password, 'To confirm changes enter Current Password',  class: "titlePostForm" %><br>
+      <%= f.password_field :current_password, class: "formFieldLine" %>
+    </div>
+<% end %>
+  <hr>
+    <div class="actions">
+      <%= f.submit({class: "button buttonG"}) %>
+    </div>
 <% end %>
 </div>
+</div>
+

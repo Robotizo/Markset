@@ -1,27 +1,19 @@
-class OrderNotifierMailer < ActionMailer::Base
-  default from: 'Brandon Caiza <complexzity@example.com'
+class OrderNotifierMailer < ApplicationMailer
+  default from: "brandoncaiza@markset.com"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.order_notifier_mailer.received.subject
-  #
-  def received(order)
-    @greeting = "Hi"
-    @order = order
+  def confirmed(order, user)
+  	@order = order
+    @user = user
 
-    mail to: order.email, subject: 'Item bought confirmation'
+    mail(to: @order.user.email, subject: 'Your Order')
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.order_notifier_mailer.shipped.subject
-  #
-  def shipped(order)
-    @greeting = "Hi"
-    @order = order
+  def producerConfirmed(order, page, user)
+  	@order = order
+    @page = page
+    @user = user
 
-    mail to: order.email, subject: 'Item delivered confirmation'
+    mail(to: @page.user.email, subject: 'New Order')
   end
+
 end

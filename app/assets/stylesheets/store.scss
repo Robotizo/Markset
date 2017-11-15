@@ -2,6 +2,14 @@
 /* They will automatically be included in application.css.
 /* You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+a{
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
+
 #images{
 	padding: 3em;
 	width: 100px;
@@ -11,9 +19,20 @@
 	padding-left: 32em;
 }
 
+.noPostTitle{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 25px;
+  font-weight: 200;
+}
+
 .showcaseImg{
   width: 100%;
   height: 400px;
+}
+
+.firstSection{
+  border-bottom: 1px solid black;
 }
 
 
@@ -55,7 +74,6 @@ h3{
 }
 	
 p, div.price_line{
-	margin-left: 100px;
 	margin-top: 0.5em;
 	margin-bottom: 0.8em;
 
@@ -164,42 +182,6 @@ p, div.price_line{
   overflow: scroll;
   overflow-x: hidden; 
 }
-/* Buttons */
-.button {
-    background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 20px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.buttonG {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-}
-
-.buttonG:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.buttonR {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #f44336;
-}
-
-.buttonR:hover {
-    background-color: #f44336;
-    color: white;
-}
 
 /* Fix the */
 
@@ -232,3 +214,361 @@ p, div.price_line{
   opacity: 0.4;
   background-color: transparent;
 }
+
+
+/* New Age */
+
+.postBox {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid black;
+  margin: 1.5em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.listImagePagePost {
+    width: 50px;
+    height: 50px;
+    right: -44%;
+    top: 5px;
+    position: relative;
+}
+
+.editPosts {
+    position: relative;
+    right: 46%;
+    bottom: 79px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+.postTitle {
+    margin-top: 20px;
+    right: -3%;
+    padding-bottom: 1em;
+    width: 93%;
+    position: relative;
+    font-weight: 500;
+    font-size: 19px;
+    text-align: left;
+}
+
+.postSection{
+    padding: 0em;
+    border-bottom: 1px solid;
+}
+
+.lowerAttri {
+    padding-top: 10px;
+    padding-bottom: 32px;
+}
+
+.dateNtime{
+    float: right;
+    margin-right: 10px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.comment{
+    float: left;
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.postPageTitle {
+    margin-top: -40px;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+ .postPictures{
+  width: 24%;
+  padding: .2em;
+}  
+
+ .post1Pictures{
+  width: 100%;
+} 
+ .post2Pictures{
+  width: 40%;
+  padding: .2em;
+} 
+.showImagePosts{
+    position: relative;
+    bottom: 10px;
+    padding: 5px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.showImagePosts:hover{
+    background-color: black;
+    color: white;
+}
+
+.pictureSection{
+    margin-top: 12px;
+}
+
+.contentSection{
+
+    padding-bottom: 10px;
+}
+
+.postContent {
+  font-size: 16px;
+  text-align: -webkit-auto;
+  position: relative;
+  right: -3%;
+  width: 93%;
+}
+
+
+.commentBox{
+  text-align: left;
+  border-top: 1px black solid;
+  padding: 8px;
+}
+
+.commentAdmin{
+  color: #307710;
+}
+
+.welcome{
+  font-size: 50px;
+  font-weight: 300;
+  padding-top: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-left: 30px;
+}
+
+.exSection{
+  font-size: 30px;
+  font-weight: 300;
+  margin-left: 120px;
+  width: 80%;
+  padding-bottom: .7em;
+}
+
+.btn {
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.loginBtn{
+  margin-left: 50%;
+  margin-bottom: 30px;
+}
+
+.signBtn{
+  margin-bottom: 30px;
+}
+
+.listImagePage{
+  width: 200px;
+  height: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 2px #000;
+}
+
+.listImagePage:hover{
+    box-shadow: 2px 2px 20px #000000;
+}
+
+.pageShowcase:hover {
+  background-color: transparent;
+}
+
+
+dt{
+  font-size: 18px;
+  font-weight: 300; 
+}
+
+.dt1{
+    margin-top: 15px;
+}
+
+.pagePos{
+  float: left;
+  margin-left: 2em;
+}
+
+.pageDesign{
+  border-bottom: 1px solid black;
+}
+
+.secondaryTitle{
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pageTitle{
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10em;
+  text-align: -webkit-auto;
+}
+
+.pageDesc{
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 250px;
+  text-align: -webkit-auto;
+}
+
+@media screen and (max-width: 567px){
+    .postBox{
+      margin-top: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 568px) and (max-width: 767px){
+    .postBox{
+      margin-top: 10px;
+      margin-bottom: 15px;
+      width: 80%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 767px){
+  .listImagePagePost {
+    width: 50px;
+    height: 50px;
+    right: -40%;
+    top: 4px;
+    position: relative;
+  }
+  .editPosts{
+      right: 42%;
+      bottom: 60px;
+  }
+  .postPageTitle {
+    margin-top: -42px;
+    font-size: 28px;
+    font-weight: 300;
+    margin-right: 65px;
+    margin-left: 65px;
+  }
+
+  .postPictures{
+    width: 49%;
+    padding: .2em;
+  }  
+  .post1Pictures{
+    width: 100%;
+  } 
+  .post2Pictures{
+    width: 49%;
+  } 
+
+  .pagePos{
+    float: none;
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+  .pageDesign{
+    border-bottom: 0px solid black;
+    border-top: 1px solid black;
+  }
+
+  .pageTitle{
+    font-size: 25px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0em;
+    text-align: center;
+  }
+
+  .pageDesc{
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    text-align: -webkit-auto;
+  }
+  .welcome{
+    font-size: 33px;
+    font-weight: 300;
+    padding-top: .7em;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-left: 0px;
+  }
+  .exSection{
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 22px;
+    width: 90%;
+    padding-bottom: .7em;
+  }
+  .loginBtn {
+    margin-left: 21%;
+    margin-bottom: 30px;
+  }
+  .noPostTitle{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px){s
+    .listImagePagePost{
+        right: -43%;
+    }
+}
+
+

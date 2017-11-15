@@ -1,9 +1,10 @@
-<h1>Welcome <%= @username.titleize %></h1>
+<div class="container">
+<h1>Welcome <%= $username.titleize %></h1>
 
 
 It's <%= Time.now %>
 We have <%= pluralize(@total_orders, "order") %>
 
-
+</div>
 
 <!-- Algorithms -->

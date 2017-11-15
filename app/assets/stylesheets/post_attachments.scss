@@ -1,0 +1,40 @@
+/*// Place all the styles related to the post_attachments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+.mainTitle{
+	font-size: 36px;
+	font-weight: 200;
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.postAttDisp{
+	padding: 1em;
+	width: 500px;
+}
+
+.postAttDispView{
+	padding: 1em;
+	width: 70%;
+}
+
+
+@media screen and (max-width: 767px){
+	.postAttDisp{
+		width: 100%;
+	}
+	.postAttDispView{
+		padding: 0em;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 340px){
+	.postAttDisp{
+		width: 290px;
+	}
+	.postAttDispView{
+		width: 290px;
+	}
+}

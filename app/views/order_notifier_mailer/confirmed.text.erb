@@ -1,0 +1,4 @@
+Thank you very much, <%= @user.name %> for using Markset for your purchase. You paid with <%= @order.pay_type %>. 
+Here is your purchase receipt. 
+<%= render @order.line_items %> 
+Total: <%= number_to_currency(@order.total_price) %>

@@ -1,84 +1,106 @@
+<%= javascript_tag do %>
+  var productNames = <%= Product.all.map(&:title).to_json.html_safe %>;
+<% end %>
 <!DOCTYPE html>
+<meta content='width=device-width, initial-scale=1, user-scalable=0' name='viewport'/>
 <html>
-<div>
   <head>
-    <title>MarkSet</title>
-    <%= csrf_meta_tag %>
-    <%= stylesheet_link_tag "application" %>
+    <title>Markset</title>
+      <%= csrf_meta_tag %>
+      <%= stylesheet_link_tag "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
   </head>
-<body class='<%= controller.controller_name %>'>
-<div id="font">
+<body class="<%= controller.controller_name %> container-fluid">
+<div class="row">
 <!--LoggedOUT Start-->
   <% if !session[:user_id] %>
-  <ul class="topnav">
-    <%= link_to 'MarkSet', store_path, class: "logo"%>
-    <% if !session[:user_id] %>
-      <li><%= link_to 'Login', login_path, method: :get, class: "userLog"%></li>
-      <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], class: "searchDim", placeholder: "Search products" %>
-      <%= image_submit_tag("magGlass.png", class: "magSub") %>
+  <nav class="navbar navbar-inverse topnav navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="title">
+        <%= link_to 'Markset', store_path, method: :get, class: "navbar-brand" %>
+      </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse topnavOut" id="bs-example-navbar-collapse-1">
+      <% if !session[:user_id] %>
+        <%= form_tag(products_path, method: :get, class: "navbar-form navbar-left") do %>
+        <%= text_field_tag :search, params[:search], class: "searchBoxDim", id: "tags", placeholder: "Search products" %>
+        <%= image_submit_tag("magGlass.png", class: "magSub") %>
+        <% end %>
       <% end %>
-      <% end %>
-    </ul>
-      <!--Start-->
-      <div id="paddingLoggedOut"></div>
-      <ul class="bottomnavOut" id="bottomnavjs">
-        <li><%= link_to 'Home', store_path %></li>
-        <li><%= link_to 'Pages', pages_path %></li>
-        <li><%= link_to 'Products', products_path %></li>
-        <li><%= link_to 'Posts', posts_path %></li>
-        <li class="icon">
-          <a href="javascript:void(0);" style="font-size:15px;" onclick="bottomNavFuncOut()">☰</a>
-        </li>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Pages', pages_path, method: :get, class: "navLinks" %></li>
+        <li><%= link_to 'Categories', categories_path, method: :get, class: "navLinks" %></li>
+        <li><%= link_to 'Products', products_path, method: :get, class: "navLinks" %></li>
+        <li><%= link_to 'Login', login_path, method: :get, class: "navLinks" %></li>
       </ul>
-      <!--End-->
+    </div>
+  </div>
+</nav>
   <% end %>
 <!--LoggedOUT End-->
 <!--LoggedIN Start-->
-  <% if session[:user_id] %>
-    <ul class="topnav">
-      <%= link_to 'MarkSet', store_path, class: "logo" %>
-      <li onclick="dropDown()" class="dropbtn">Settings</li>
-      <!--Search for page and products -->
-      <%= form_tag(products_path, :method => "get") do %>
-      <%= text_field_tag :search, params[:search], class: "searchDim", placeholder: "Search products" %>
-      <%= image_submit_tag("magGlass.png", class: "magSub") %>
-      <% end %>
-    </ul>
-    <div class="dropdown">
-      <div id="mainDropdown" class="dropdown-content">
-        <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'}%>
-        <%= link_to 'Your Summary', admin_path %>
-        <%= link_to 'User Settings', users_path%>
+<% if session[:user_id] %>
+<nav class="navbar navbar-inverse topnav navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="title">
+        <%= link_to 'Markset', store_path, method: :get, class: "navbar-brand" %>
       </div>
     </div>
-  <!--Start-->
-  <ul class="bottomnavIn" id="bottomnavjs">
-    <li><%= link_to 'Home', store_path %></li>
-    <li><%= link_to 'Pages', pages_path %></li>
-    <li><%= link_to 'Categories', categories_path %></li>
-    <li><%= link_to 'Products', products_path %></li>
-    <li><%= link_to 'Posts', posts_path %></li>
-    <li><%= link_to 'Orders', orders_path %></li>
-    <li class="icon">
-      <a href="javascript:void(0);" style="font-size:15px;" onclick="bottomNavFuncIn()">☰</a>
-    </li>
-  </ul>
-  <!--End-->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse topnav" id="bs-example-navbar-collapse-1">
+        <%= form_tag(products_path, method: :get, class: "navbar-form navbar-left") do %>
+          <%= text_field_tag :search, params[:search], class: "searchBoxDim", id: "tags", placeholder: "Search products" %>
+          <%= image_submit_tag("magGlass.png", class: "magSub") %>
+        <% end %>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Pages', pages_path, method: :get, class: "navLinks" %></li>
+        <li><%= link_to 'Categories', categories_path, method: :get, class: "navLinks" %></li>
+        <li><%= link_to 'Products', products_path, method: :get, class: "navLinks" %></li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= truncate(current_user.name, length: 20) unless current_user.name.blank? %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Purchase List", @cart, method: :get, class: "navDrop" %></li>
+            <li ><%= link_to 'Orders', orders_path, method: :get, class: "navDrop" %></li>
+            <li><%= link_to 'User Settings', users_path, method: :get, class: "navDrop" %></li>
+            <li><%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}, class: "navDrop" %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
   <% end %>
   <!--LoggedIN End-->
-  	<div class="wrapper">
-      <div id="font">
-  		<%= yield %>
+    <%= yield %>
+    <footer>
+      <div class="container">
+        <p id="footerFont"> &copy; Markset 2017 &nbsp; &nbsp; &nbsp; Created by Brandon Caiza</p>
       </div>
-  	</div>
-      <footer class="footerMain">
-        <p id="footerFont"> &copy; Brandon Caiza 2017</p>
-        <br>
-        <br>
-        <br>
-      </footer>
-</div>
-  </body>
+    </footer>
+  		 
+      
 </html>

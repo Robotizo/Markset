@@ -7,16 +7,17 @@ class CartsController < ApplicationController
   # GET /carts.json
   def index
     @carts = Cart.all
+    redirect_to store_url, notice: 'Cannot access this page'
   end
 
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @cartShow = current_cart
+    @cart = current_cart
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to acess invalid cart #{params[:id]}"
+      logger.error "Attempt to acess invalid purchase list #{params[:id]}"
       redirect_to store_url, notice: 'Invalid cart'
     else
       respond_to do |format|
@@ -42,7 +43,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart, notice: 'Purchase list was successfully created.' }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -56,7 +57,7 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Purchase list was successfully updated.' }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit }
@@ -73,7 +74,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     
     respond_to do |format|
-      format.html { redirect_to store_url}
+      format.html { redirect_to store_url, notice: 'Purchase list was successfully deleted.'}
       format.json { head :no_content }
     end
   end
@@ -81,7 +82,7 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      @cart = current_cart
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,34 +1,79 @@
+<%= stylesheet_link_tag "orders", :media => "all" %>
 <p id="notice"><%= notice %></p>
-
-<!-- Not done yet -->
-<div id="paginatePad">
-<table >
-	<%= render @order.line_items %>
-</table>
-	<%= number_to_currency(@order.total_price) %>
+<div class="container">
+  <div class="text-center">
+    <div class="mainTitle">Order Information</div>
+  </div>
+  <hr>
+  <div class="text-center">
+  <h2>Order details</h2>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name of buyer</th>
+        <th class="ordMail">Email</th>
+        <th>Pay type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><%= @order.user.name %></th>
+        <th class="ordMail"><%= @order.user.email %></th>
+        <th><%= @order.pay_type %></th>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <div class="text-center">
+  <h2>Items bought</h2>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Product name</th>
+        <th class="pageName">Page name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  	   <%= render @order.line_items %>
+       <th></th>
+       <th class="second"></th>
+       <th>Total</th>
+       <th><%= number_to_currency(@order.total_price) %></th>
+     </tr>
+    </tbody>
+  </table>
+  <hr>
+  <div class="text-center">
+    <h2>Special Directions</h2>
+  </div>
+  <% if @order.instructions.present? %>
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3 orderId">
+    <div class="Special"><%= @order.instructions %></div>
+  </div>
 </div>
-<br>
-<br>
+<% else %>
+<div class="row">
+  <div class="text-center orderId">
+  <p class="noSpecial">There are no special directions.</p>
+  </div>
+</div>
+<% end %>
+<hr>
+<div class="text-center orderId">
+  The order ID is <%= @order.id %>.
+</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
 
-<p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
-</p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> 
-<%= link_to 'Back', orders_path %>
+
+
+

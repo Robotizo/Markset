@@ -2,7 +2,225 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-#userPosts{
-	padding: 1em;
-	text-align: center;
+.mainTitle{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
+
+.userDropdown{
+	font-size: 16px;
+	color: black;
+	background-color: transparent !important;
+	text-decoration: none !important;
+}
+
+.userDropdown:hover{
+	background-color: transparent !important;
+}
+
+
+.btn {
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn1{
+    padding: 15px 170px;
+}
+.btn2{
+    padding: 15px 150px;
+}
+.btn-group{
+    padding-top: 1em;
+    display: inline-flex;
+}
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.btn-primary:focus{
+    color: #fff !important;
+    background-color: #333333 !important;
+    outline: none !important;
+}
+
+.titlePostForm{
+	font-size: 25px;
+	font-weight: 200;
+	color: black;
+}
+
+.username{
+    font-size: 25px;
+    font-weight: 400;
+    color: black;
+    margin-left: 20px;
+}
+
+.usernameShow{
+    font-size: 25px;
+    font-weight: 400;
+    color: black;
+}
+
+.formFieldLine{
+    width: 350px;
+}
+
+@media screen and (max-width: 800px){
+    .dropdown{
+        display: none;
+    }
+}
+
+/*Button Form*/
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonG {
+	top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 10px 60px;
+}
+
+.buttonG:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.listImageUser{
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+}
+
+.listFollowing{
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+}
+
+.followFont{
+    font-weight: 300;
+}
+
+.passwordNoticePos{
+    position: relative;
+    top: 40px;
+    left: 3em;
+}
+.passwordNotice{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.passFields{
+    margin-left: -15px;
+}
+
+.passwordNoticePosMob{
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+     .formFieldLine{
+        width: 250px;
+    }
+    .pageRef{
+        display: none;
+    }
+
+    .listImageUser{
+        width: 80px;
+        height: 80px;
+    }  
+    .listFollowing{
+        width: 80px;
+        height: 80px;
+    }  
+    .btn {
+        font-size: 20px;
+        font-weight: 300;
+        border-radius: 0px;
+    }
+    .btn1{
+        padding: 10px 40px;
+    }
+    .btn2{
+        padding: 10px 30px;
+    } 
+     h1{
+        font-size: 30px;
+    }
+    th{
+        font-size: 17px;
+        font-weight: 400;
+    }
+    td{
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    strong{
+        font-size: 30px;
+    }
+    .passwordNoticePosMob{
+        display: block;
+        margin-top: 20px;
+    }
+
+    .passwordNoticePos{
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 1000px){
+    .btn1{
+        padding: 10px 100px;
+    }
+    .btn2{
+        padding: 10px 90px;
+    }
+    .postPageTitle{
+        margin-top: -135px;
+    }
+}
+@media screen and (max-width: 320px){
+    .listImageUser{
+        display: none;
+    }
+    .btn1{
+        padding: 10px 20px;
+    }
+    .btn2{
+        padding: 10px 15px;
+    }
+}
+  

@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
     @products = Product.all
     @cart = current_cart
 
-    givensearchProduct = params[:search]
-
-    if givensearchProduct
-      @products = Product.search(params[:search]).order("created_at DESC")
+    if params[:search]
+      @products = Product.search(params[:search]).order(:title)
+    elsif params[:search] == nil
+      @products = Product.all.order("created_at DESC")
     else
       @products = Product.all.order("created_at DESC")
     end
@@ -20,6 +20,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @cart = current_cart
+    @product_attachments = @product.product_attachments.all
+    @product = Product.find(params[:id])
+    @product_comments = @product.product_comments.order("created_at DESC")
   end
 
   # GET /products/1
@@ -33,29 +37,43 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
     @pages = Page.all
     @categories = Category.all
+    @product = current_user.products.build
+    @user = current_user
+    $user_pages = @user.pages.order("created_at DESC")
+    $user_categories = @user.categories.order("created_at DESC")
+    @product_attachments = @product.product_attachments.build
   end
 
   # GET /products/1/edit
   def edit
     @pages = Page.all
     @categories = Category.all
+    @user = current_user
+    $user_pages = @user.pages.order("created_at DESC")
+    $user_categories = @user.categories.order("created_at DESC")
+    unless session[:user_id] == @product.user.id
+      flash[:notice] = "You don't have access to edit that product!"
+      redirect_to products_path(session[:user_id])
+      return
+    end
   end
 
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.build(product_params)
     @pages = Page.all
     @categories = Category.all
+    @user = current_user
 
     respond_to do |format|
       if @product.save
+        save_attachments if params[:product_attachments]
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
       else
+        1.times{ @product.product_attachments.build }
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -66,6 +84,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
+      1.times{ @product.product_attachments.build }
+      update_attachments if params[:product_attachments]
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
@@ -87,6 +107,18 @@ class ProductsController < ApplicationController
   end
 
   private
+    def save_attachments
+      params[:product_attachments]['image'].each do |img|
+        @product_attachment = @product.product_attachments.create!(image: img)
+      end
+    end
+
+    def update_attachments
+      @product.product_attachments.each(&:destroy) if @product.product_attachments.present?
+        params[:product_attachments]['image'].each do |img|
+          @product_attachment = @product.product_attachments.create!(image: img)
+        end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
@@ -94,6 +126,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price, :page_id, :category_id)
+      params.require(:product).permit(:title, :description, :price, :page_id, :category_id, :status, product_attachments_attributes: [:id, :product_id, :image])
     end
 end

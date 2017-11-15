@@ -1,0 +1,326 @@
+/* Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+a{
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
+
+
+.mainTitle{
+  font-size: 36px;
+  font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.mainTitleNew{
+  font-size: 36px;
+  font-weight: 200;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+
+.commentBox{
+  text-align: left;
+  border-top: 1px black solid;
+  padding: 10px;
+}
+
+.commentAdmin{
+  color: #307710;
+}
+
+.userName{
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.commContent{
+	font-size: 20px;
+}
+
+.commentBox:last-child{
+  border-bottom: 1px black solid;
+}
+
+/* Post */
+.postBox {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid black;
+  margin: 1.5em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.listImagePagePost {
+    width: 50px;
+    height: 50px;
+    right: -44%;
+    top: 5px;
+    position: relative;
+}
+
+
+.postTitle {
+    margin-top: 20px;
+    right: -3%;
+    padding-bottom: 1em;
+    width: 93%;
+    position: relative;
+    font-weight: 500;
+    font-size: 19px;
+    text-align: left;
+}
+
+.postSection{
+    padding: 0em;
+}
+
+.lowerAttri {
+    padding-top: 10px;
+    padding-bottom: 32px;
+}
+
+.dateNtime{
+    float: right;
+    margin-right: 10px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.postPageTitle {
+    margin-top: -39px;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+ .postPictures{
+  width: 24%;
+  padding: .2em;
+}  
+
+ .post1Pictures{
+  width: 100%;
+} 
+ .post2Pictures{
+  width: 40%;
+  padding: .2em;
+} 
+.showImagePosts{
+    position: relative;
+    bottom: 10px;
+    padding: 5px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.showImagePosts:hover{
+    background-color: black;
+    color: white;
+}
+
+.pictureSection{
+    margin-top: 11px;
+}
+
+.contentSection{
+    border-top: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.postContent {
+  font-size: 16px;
+  text-align: -webkit-auto;
+  position: relative;
+  right: -3%;
+  width: 93%;
+}
+
+.editComment{
+	float: right;
+	margin-right: 10px;
+  margin-top: -30px;
+}
+
+.deleteComment{
+  float: right;
+  margin-right: 10px;
+  margin-top: -3px;
+}
+
+
+.btn {
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 200;
+  border-radius: 0px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+textarea {
+   resize: none;
+}
+
+
+.formFieldText{
+  width: 500px;
+  height: 90px;
+  font-size: 20px;
+  font-weight: 300;
+  border: 1px black solid;
+}
+
+.submitBtn{
+  position: relative;
+  bottom: 41px;
+  right: 4px;
+  height: 90px;
+}
+
+.comment{
+    float: left;
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.editBtn{
+  padding-right: 28px;
+}
+
+
+/* Dropdown */
+.commentSettings {
+  float: right;
+}
+
+.commentArea .dropdown{
+   float: right;
+}
+
+.dropdown-content {
+    display: none;
+    margin-left: -55px;
+    position: absolute;
+    margin-top: 35px;
+    background-color: #f9f9f9;
+    min-width: 132px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content form {
+    margin-bottom: 0em;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .postBox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .listImagePagePost {
+      width: 50px;
+      height: 50px;
+      right: -40%;
+      top: 7px;
+      position: relative;
+  }
+  .editPosts {
+      right: 42%;
+      bottom: 30px;
+  }
+  .postPageTitleUser{
+      margin-top: -80px;
+      font-size: 28px;
+      font-weight: 300;
+      margin-right: 65px;
+      margin-left: 65px;
+  }
+  .postPageTitleNot{
+      margin-right: 65px;
+      margin-left: 65px;
+  }
+  .postPictures{
+      width: 49%;
+      padding: .2em;
+  }  
+  .post1Pictures{
+      width: 100%;
+  } 
+  .post2Pictures{
+      width: 49%;
+  }
+
+  .formFieldText{
+    width: 98%;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .submitBtn{
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+    height: 50px;
+    width: 98%;
+  }
+
+  .dropdown-content {
+    margin-left: -65px;
+  }
+
+  .editBtn{
+    padding-right: 31px;
+    font-size: 18px;
+  }
+
+  .commentBtn{
+    font-size: 18px;
+  }
+}
+
+
+
+

@@ -1,60 +1,211 @@
-<p id="notice"><%= notice %></p>
-<%= image_tag(@page.image_url, class: "imageShowPage")%>
-<br>
-<p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @page.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @page.image_url %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @page.genre %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @page.user.try :name %>
-</p>
-
-<% @page_posts.each do |posts| %>
-  <%= posts.content %><br><br>
+<%= stylesheet_link_tag "pages", :media => "all" %>
+<%= javascript_include_tag "pages" %>
+<%= javascript_tag do %>
+  var id = <%= @page.id.to_json %>;
 <% end %>
 
-<%= button_to "Create Post", new_post_path, method: :get %>
-
-
-<table>
-  <% @page_products.each_slice(4) do |page_products| %>
-    <tr>
-      <% page_products.each do |product| %>
-        <td>
-          <div id="singleCategoryPadding">
-            <%=link_to image_tag(product.image_url, size: "280x240"), product, class: "linkPagesP" %>
-            <div id="centerize">
-              <dt><%= product.title %></dt>
-              <dt><%= number_to_currency(product.price) %></dt>
-            </div>
-          </div>
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="text-center">
+<div class="row ">
+  <div class="col-md-6 col-md-offset-1">
+    <%= image_tag(@page.image_url(:thumb), class: "imageShowPage") if @page.image? %>
+  </div>
+  <div class="col-md-5 col-md-pull-2">
+    <span class="titleShow"><%= @page.title %></span>
+    <div class="description">
+      <strong id="fontTitleD">Description</strong>
+        <p id="pAttributes">
+          <%= @page.description %>
+        </p>
+      </div>
+      <hr>
+      <% if current_user.following?(@page) %>
+        <%= form_for(current_user.active_relationships.find_by(followed_id: @page.id), html: { method: :delete }) do |f| %>
+          <%= f.submit "Unfollow", class: "btn btn-primary unfollowButton" %>
         <% end %>
-        </td>
-    </tr>
-  <% end %>
-</table>
+      <% else %>
+        <%= form_for(@page.passive_relationships.build, method: :post) do |f| %>
+        <%= hidden_field_tag :followed_id, @page.id %>
+        <%= f.submit "Follow", class: "btn btn-primary followButton" %>
+        <% end %>
+      <% end %>
+  </div>
+</div>
 <br>
+  <br>
+  <div class="text-center">
+  <div class="btn-group">
+    <%= submit_tag "Catalog", method: :get, class: "btn btn1 btn-primary"  %>
+    <%= submit_tag "Page Posts", method: :get, class: "btn btn2 btn-primary"  %>
+  </div>
+<hr>
 
 
-<%= link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<div id="products">
+  <div class="row">
+  <strong id="fontTitleD">Categories</strong>
+  <hr>
+    <% if @page_categories.present? %>
+        <% @page_categories.each do |category| %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+      <%= (link_to image_tag(category.image_url(:thumb), class: "listImagePageShow"), category, method: :get) if category.image? %>
+        <dt class="dt1"><%= link_to truncate(category.name, length: 20), category, method: :get %></dt>
+      </div>
+    <% end %>
+    <% else %>
+      <p class="pNoCat">There are no categories in this page. Click button to add.</p>
+      <%= button_to "Add", new_category_path(@category), method: :get, class: "newCat" %>
+    <% end %>
+  </div>
+<hr>
+  <div class="row">
+  <strong id="fontTitleD">Products</strong>
+  <hr>
+    <% if @page_products.present? %>
+        <% @page_products.each do |product| %>
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <% product.product_attachments.first(1).each do |p| %>
+                    <%= (link_to image_tag(p.image_url(:thumb), class: "listImagePageShow"), product, method: :get )if p.image?%>
+                  <% end %>
+        <dt class="dt1"><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
+        <dt><%= number_to_currency(product.price) %></dt><br>
+      </div>
+    <% end %>
+    <% else %>
+      <p class="pNoCat">There are no products in this page. Click button to add.</p>
+      <%= button_to "Add", new_product_path(@product), method: :get, class: "newCat" %>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
 
+<div id="posts">
+  <div class="row">
+  <strong id="fontTitleD">Posts</strong>
+  <% if @page.user.id == @user.id %>
+    <%= button_to "New Post", new_post_path, method: :get, class: "newPost" %>
+  <% else %>
+  <% end %>
+  <hr>
+  <% if @page_posts.present? %>
+    <% @page_posts.each do |post| %>
+    <div class="postBox">
+      <%= link_to image_tag(@page.image_url(:thumb), class: "listImagePagePost"), @page, method: :get %>
 
+  <% if @page.user.id == @user.id %>
+      <%= button_to "Edit", edit_post_path(post), method: :get, class: "editPosts" %>
+  <% else %>
+  <% end %>
+
+  <% if @page.user.id != @user.id %>
+    <div class="postPageTitleNot"><%= link_to @page.title, @page, method: :get %></div>
+  <% else %>
+    <div class="postPageTitleUser"><%= link_to @page.title, @page, method: :get %></div>
+  <% end %>
+      <div class="contentSection">
+      <dt class="postTitle"><%= post.title %></dt>
+
+        
+          <% if post.content.length > 200 %>
+            <div class="postContent"><%= truncate post.content, length: 200 %></div>
+            <%= link_to 'read more', post, method: :get %>
+          <% else %>
+            <div class="postContent"><%= post.content %></div>
+            <% end %>
+        </div>
+      <div class="postSection">
+        <div class="pictureSection">
+          <% if post.post_attachments.length < 2 %>
+          <% post.post_attachments.each do |p| %>
+            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
+          <% end %>
+          <% elsif post.post_attachments.length < 3 %>
+           <% post.post_attachments.each do |p| %>
+            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
+          <% end %>
+          <% elsif post.post_attachments.length > 4 %>
+          <% post.post_attachments.limit(4).each do |p| %>
+            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+          <% end %><hr>
+          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
+          <% else %>
+          <% post.post_attachments.limit(4).each do |p| %>
+            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+          <% end %>
+        <% end %>
+      </div>
+        
+      </div>
+      <div class="lowerAttri">
+        <% if post.comments.present? %>
+          <% post.comments.limit(1).each do |comment| %>
+            <span class="comment"><%= link_to "Comments", comment, method: :get %></span>
+          <% end %>
+        <% else %>
+          <span class="comment"><%= link_to "Add Comment", new_comment_path(post_id: post.id), method: :get %></span>
+        <% end %>
+        <span class="dateNtime"><%= post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
+      </div>
+    </div>
+      <% end %>
+    <% else %>
+      <% if @page.user.id == session[:user_id] %>
+        <p class="pNoCat">Add a post to announce any news within your page.</p>        
+      <% else %>
+        <p class="pNoCat">Currently there are no comments.</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<hr>
+<div class="text-center">
+<div class="col-md-12 introInfo">
+    <div class="col-xs-4 col-sm-4">
+      <strong id="fontTitleD">Genre</strong>
+        <p id="pAttributes">
+           <%= @page.genre %>
+        </p>
+    </div>
+    <div class="col-xs-4 col-sm-4">
+      <strong id="fontTitleD">Created</strong>
+        <p id="pAttributes">
+          <%= @page.created_at.to_time.strftime('%B %e at %l:%M %p') %>
+        </p>
+    </div>
+        <div class="col-xs-4 col-sm-4">
+      <strong id="fontTitleD">Created by</strong>
+        <p id="pAttributes">
+          <%= @page.user.name %>
+        </p>
+    </div>
+  </div>
+</div>
+
+  <% if @page.opening_day.present? && @page.closing_day.present? && @page.opening_time.present? && @page.closing_time.present? %>
+    <div class="text-center">
+      <div class="col-md-12 col-sm-12 col-xs-12 introInfo">
+        <hr>
+      <strong id="fontTitleD">Store Times</strong>
+        <p id="pAttributes">
+          <%= @page.opening_day %> - <%= @page.closing_day %><br>
+          <%= @page.opening_time.to_time.strftime('%l:%M %p') %> - <%= @page.closing_time.to_time.strftime('%l:%M %p') %> 
+        </p>
+  <% else %>
+  <% end %>
+      </div>
+    </div>
+
+  <% if @page.page_notes.present? %>
+    <div class="text-center">
+      <div class="col-md-12 col-sm-12 col-xs-12 introInfo">
+        <hr>
+      <strong id="fontTitleD">Page Notes</strong>
+        <p id="pAttributes">
+          <%= @page.page_notes %>
+        </p>
+  <% else %>
+  <% end %>
+      </div>
+    </div>

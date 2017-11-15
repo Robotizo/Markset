@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "sessions", :media => "all" %>
 <div class="depot_form">
 	<% if flash[:alert] %>
 		<p id="notice"><%= flash[:alert] %></p>
@@ -5,19 +6,20 @@
 
 <%= form_tag do %>
 	<fieldset>
-		<div id="heda"><head>Login</head></div>
+		<div id="heda"><head>Login to Markset</head></div>
 		<div id="inp">
-			<%= text_field_tag :name, params[:name], placeholder: "Username" %>
+			<%= email_field :email, params[:email], placeholder: "Email", class: "fieldEmail" %>
 		</div>
 		<div id="inp">
-			<%= password_field_tag :password, params[:password],placeholder: "Password" %>
+			<%= password_field_tag :password, params[:password],placeholder: "Password", class: "fieldPass" %>
 		</div>
 		<div id="logg">
-			<%= submit_tag "Login" %>
-		</div>
-		<div id="logg">
-			<%= link_to 'Create a new User', new_user_path %>
+			<%= submit_tag "Login", method: :get, class: "btn btn-primary login" %>
 		</div>
 	</fieldset>
-	<% end %>
+<% end %>
+	<div id="logg">
+		<%= button_to 'Create a new User', new_user_path, method: :get, class: "btn btn-primary createNew" %>
+	</div>
 </div>
+

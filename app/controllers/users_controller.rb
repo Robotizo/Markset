@@ -5,20 +5,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name)
+    @cart = current_cart
     @user = current_user
-
-    respond_to do |format|
-      format.html
-      format.json{render json: @users}
-    end
+    redirect_to @user
   end
+
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @cart = current_cart
     @user = User.find(params[:id])
-    @user_pages = @user.pages
+    unless session[:user_id] == @user.id
+      flash[:notice] = "You don't have access to that user!"
+      redirect_to users_path(session[:user_id])
+      return
+    end
+    @user_pages = @user.pages.order("created_at DESC")
+    @user_products = @user.products.order("created_at DESC")
+    @user_categories = @user.categories.order("created_at DESC")
   end
 
   # GET /users/new
@@ -28,6 +33,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
+    unless session[:user_id] == @user.id
+      flash[:notice] = "You don't have access to that user!"
+      redirect_to users_path(session[:user_id])
+      return
+    end
   end
 
   # POST /users
@@ -37,6 +48,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        UserMailer.signup_confirmation(@user).deliver
         format.html { redirect_to users_url, notice: "User #{@user.name} was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
@@ -57,7 +69,7 @@ class UsersController < ApplicationController
         format.html { redirect_to users_url, notice: "User #{@user.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
-        @user.errors.add(:current_password, "for #{@user.name} is incorrect") unless @user.authenticate(:current_password)
+        @user.errors.add(:current_password, "or new password for #{@user.name} is incorrect") unless @user.authenticate(:current_password)
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -89,6 +101,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :current_password, :password_confirmation)
+      params.require(:user).permit(:name, :password, :current_password, :password_confirmation, :image, :email, :username)
     end
 end

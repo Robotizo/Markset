@@ -2,22 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 
+.mainTitle{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mainTitleNew{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.secondaryTitle{
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.tertiaryTitle{
+    font-size: 20px;
+    font-weight: 200;
+}
+
 .imageShowPage{
 	display: block;
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	width: auto;
-	height: 350px;
+    width: 290px;
+	height: 290px;
 	top: 15px;
 	z-index: -1;
 }
-
 .listImagePage{
-	width: 250px;
-	height: 250px;
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px #000000;
 }
 
+
+.listImagePage:hover{
+    box-shadow: 2px 2px 20px #000000;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
 
 .pageShowcase:hover {
 	background-color: transparent;
@@ -27,9 +64,6 @@
 	padding: 2em;
 }
 
-#allPagePadding{
-	padding-left: 2em;
-}
 
 #centerize{
 	text-align: center;
@@ -63,11 +97,616 @@
 	visibility:visible;
 }
 
-.linkPagesP{
-	margin-left: 1em;
-}
 
 .linkPagesP:hover{
   opacity: 0.4;
   background-color: transparent;
 }
+
+dt{
+	font-size: 18px;
+	font-weight: 300; 
+}
+
+.dt1{
+    margin-top: 15px;
+}
+
+.listImagePageShow{
+	width: 250px;
+	height: 250px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px #000000;
+}
+
+.listImagePageShow:hover{
+    box-shadow: 2px 2px 20px #000000;
+}
+
+
+.titleShow{
+	font-size: 40px;
+    top: 1em;
+	position: relative;
+	font-weight: lighter;
+    margin-left: .7em;
+}
+
+
+#fontTitleD{
+	font-size: 30px;
+	font-weight: 100;
+    top: 4em;
+}
+
+.introInfo{
+	top: 3em;
+	display: block;
+}
+
+
+.titlePageForm{
+	font-size: 30px;
+	font-weight: 200;
+	color: black;
+}
+
+textarea {
+   resize: none;
+}
+
+.selectPost{
+	width: 200px;
+	height: 50px;
+
+}
+
+
+.fontIs{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.formFieldLine{
+    width: 350px;
+}
+
+.formFieldText{
+    width: 460px;
+    height: 150px;
+}
+
+/*Button Form*/
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonG {
+	top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 10px 60px;
+}
+
+.buttonG:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonIn {
+    background-color: #6F6FFF; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonDel {
+    top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #FF0000;
+    padding: 10px 64px;
+}
+.buttonDel:hover {
+    background-color: #FF0000;
+    color: white;
+}
+.buttonGIn {
+    top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #6F6FFF;
+    padding: 10px 40px;
+}
+
+.buttonGIn:hover {
+    background-color: #6F6FFF;
+    color: white;
+}
+
+.postSec{
+	width: 85%;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.userDropdown{
+    font-size: 16px;
+    color: black;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.userDropdown:hover{
+    background-color: transparent !important;
+}
+
+.edits{
+    top: 50px;
+}
+
+.btn {
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn1{
+    padding: 15px 170px;
+}
+.btn2{
+    padding: 15px 150px;
+}
+.btn-group{
+    padding-top: 1em;
+    display: inline-flex;
+}
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.btn-primary:focus{
+    color: #fff !important;
+    background-color: #333333 !important;
+    outline: none !important;
+}
+.postBox {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid black;
+  margin: 1.5em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.description{
+    position: relative;
+    margin-top: 4em;
+    margin-left: 2em;
+}
+
+.listImagePagePost {
+    width: 50px;
+    height: 50px;
+    right: -44%;
+    top: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.editPosts {
+    position: relative;
+    right: 45%;
+    bottom: 30px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+
+.editPosts:hover{
+    background-color: black;
+    color: white;
+}
+
+
+.postPageTitleUser{
+    margin-top: -77px;
+    font-size: 28px;
+    font-weight: 300;
+    position: relative;
+}
+
+.postPageTitleNot{
+    margin-top: -35px;
+    font-size: 28px;
+    font-weight: 300;
+    position: relative;
+}
+
+.postTitle {
+    margin-top: 20px;
+    right: -3%;
+    padding-bottom: 1em;
+    width: 93%;
+    position: relative;
+    font-weight: 500;
+    font-size: 19px;
+    text-align: left;
+}
+
+.postSection{
+    padding: 0em;
+}
+
+.lowerAttri {
+    padding-top: 10px;
+    padding-bottom: 32px;
+}
+
+.newPost{
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.newPost:hover{
+    background-color: black;
+    color: white;
+}
+
+
+.dateNtime{
+    float: right;
+    margin-right: 10px;
+    font-weight: 300;
+    font-size: 15px;
+}
+.nom{
+    text-align: left;
+    margin-right: 20px;
+}
+
+.pNoCat{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.newCat{
+    margin-top: 1em;
+    font-size: 30px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 2px solid #4CAF50;
+}
+
+.newCat:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+ .postPictures{
+    width: 24%;
+    padding: .2em;
+}  
+
+ .post1Pictures{
+    width: 100%;
+} 
+ .post2Pictures{
+    width: 40%;
+    padding: .2em;
+} 
+.showImagePosts{
+    position: relative;
+    bottom: 7px;
+    padding: 5px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.showImagePosts:hover{
+    background-color: black;
+    color: white;
+}
+
+.pictureSection{
+    margin-top: 13px;
+}
+
+.contentSection{
+    border-top: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.postContent {
+  font-size: 16px;
+  text-align: -webkit-auto;
+  position: relative;
+  right: -3%;
+  width: 93%;
+}
+
+.selectDay{
+    width: 200px;
+    height: 50px;
+}
+
+.timePageInf{
+    font-size: 20px;
+    font-weight: 200;
+    color: black;
+}
+
+.btnStore{
+    padding: 15px 25px;
+}
+
+.formPage{
+    padding: 1em;
+    padding-bottom: 1.5em;
+}
+
+.followButton{
+    margin-left: 20px;
+}
+
+.unfollowButton{
+    margin-left: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.comment{
+    float: left;
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 18px;
+}
+/* At Media */
+
+@media screen and (max-width: 767px) {
+	 h1{
+        font-size: 30px;
+    }
+    dt{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .dt1{
+        margin-top: 10px;
+    }
+    .listImagePage{
+        width: 140px;   
+        height: 140px;
+    }
+    .buttonIn{
+    	font-size: 25px;
+    }
+    .titleShow{
+        font-size: 30px;
+    }
+    .imageShowPage{
+        height: 250px;
+        width: 250px;
+    }
+    .btn {
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 0px;
+    }
+    .btn1{
+        padding: 10px 50px;
+    }
+    .btn2{
+        padding: 10px 40px;
+    }
+    .buttonIn{
+        font-size: 35px;
+    }
+    .fontIs{
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .postSec{
+        width: 85%;
+        height: 800px;
+        overflow-y: scroll;
+    }
+    #fontTitleD{
+        font-size: 20px;
+        font-weight: 100;
+        top: 4em;
+    }
+    #pAttributes{
+        font-size: 15px;
+    }
+    .listImagePageShow{
+        width: 10em;
+        height: 10em;
+    }
+    .formFieldLine{
+        width: 250px;
+    }
+    .formFieldText{
+        width: 250px;
+        height: 120px;
+    }
+
+    .titleShow{
+        font-size: 40px;
+        top: 1em;
+        position: relative;
+        font-weight: lighter;
+        margin-left: 0em;
+    }
+
+    .description{
+        position: relative;
+        margin-top: 4em;
+        margin-left: 0em;
+    }
+
+
+    .listImagePagePost {
+        width: 50px;
+        height: 50px;
+        right: -40%;
+        top: 8px;
+        position: relative;
+    }
+    .editPosts {
+        right: 42%;
+        bottom: 30px;
+    }
+    .postPageTitleUser{
+        margin-top: -77px;
+        font-size: 28px;
+        font-weight: 300;
+        margin-right: 65px;
+        margin-left: 65px;
+    }
+    .postPageTitleNot{
+        margin-right: 65px;
+        margin-left: 65px;
+    }
+    .postPictures{
+        width: 49%;
+        padding: .2em;
+    }  
+    .post1Pictures{
+        width: 100%;
+    } 
+    .post2Pictures{
+        width: 49%;
+    }
+
+    .followButton{
+        margin-left: 0px;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 5px 30px
+    }
+
+    .unfollowButton{
+        margin-left: 0px;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 5px 30px
+    }
+
+    .btn-group {
+        padding-top: 0em;
+        display: inline-flex;
+    }
+}
+
+@media screen and (max-width: 567px){
+    .postBox{
+      margin-top: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 568px) and (max-width: 767px){
+    .postBox{
+      margin-top: 10px;
+      margin-bottom: 15px;
+      width: 80%;
+    }
+
+}
+
+
+@media screen and (max-width: 340px) and (max-height: 640px){
+    .listImagePage{
+        width: 115px;
+        height: 115px;
+    }
+     dt{
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .listImagePageShow{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    .btn1{
+        padding: 10px 100px;
+    }
+    .btn2{
+        padding: 10px 90px;
+    }
+    .editPosts{
+        right: 43%;
+    }
+    .listImagePagePost{
+        right: -42%;
+    }
+}
+
+
+
+@media (min-width: 992px){
+    .col-md-pull-2 {
+        right: 12.66666667%;
+    }
+}
+

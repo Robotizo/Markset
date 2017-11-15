@@ -1,8 +1,8 @@
+<%= stylesheet_link_tag "pages", :media => "all" %>
 <%= form_for(page) do |f| %>
   <% if page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
-
       <ul>
       <% page.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,29 +10,89 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<% if params[:action] == 'edit' || params[:action] == 'update' %> 
+  <div class="formPage">
+  <div class="container">
+    <div class="text-center">
+      <div class="row ">
+    <div class="col-md-6 col-md-offset-1">
+    <%= image_tag(@page.image_url(:thumb), class: "imageShowPage") if @page.image? %>
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, rows: 6 %>
+  <div class="col-md-5 col-md-pull-2">
+    <span class="titleShow"><%= @page.title %></span>
+    <div class="description">
+      <strong id="fontTitleD">Description</strong>
+        <p id="pAttributes">
+          <%= @page.description %>
+        </p>
+      </div>
   </div>
-
-  <div class="field">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :genre %>
-    <%= f.text_field :genre %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 <% end %>
+<div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-1">
+    <div class="field">
+      <%= f.label :title, class: "titlePageForm" %><br>
+      <%= f.text_field :title, placeholder: "Title of your page", class: "formFieldLine" %>
+    </div>
+<hr>
+    <div class="field">
+      <%= f.label :image, class: "titlePageForm" %><br>
+      <%= f.file_field :image %>
+    </div>
+<hr>
+  <div class="field">
+    <%= f.label :description, class: "titlePageForm" %><br>
+    <%= f.text_area :description, placeholder: "Give your page a description", class: "formFieldText" %>
+  </div>
+<hr>
+<%= submit_tag "Store Times and Important Information", method: :get, class: "btn btnStore btn-primary", :type => 'button' %>
+<div id="pageTimes">
+  <hr>
+    <div class="field">
+      <div class="timePageInf">List the day your store opens.</div>
+      <br>
+        <%= f.select(:opening_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select a day of the week'}, {class: "selectDay"}) %>
+    </div>
+  <hr>
+    <div class="field">
+      <div class="timePageInf">List the time your store opens.</div>
+      <br>
+        <%= f.select(:closing_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select an opening time'}, {class: "selectDay"}) %>
+    </div>
+  <hr>
+    <div class="field">
+      <div class="timePageInf">List the time your store opens.</div>
+      <br>
+        <%= f.time_select(:opening_time, {ampm: true}) %>
+    </div>
+  <hr>
+    <div class="field">
+      <div class="timePageInf">List the time your store closes.</div>
+      <br>
+        <%= f.time_select(:closing_time, {ampm: true}) %>
+    </div>
+  <hr>
+    <div class="field">
+      <div class="timePageInf">Write any other important announcements.</div>
+      <br>
+        <%= f.text_area :page_notes, placeholder: "Important announcements regarding your page.", class: "formFieldText" %>
+      </div>
+</div>
+<hr>
+ <div class="field">
+      <%= f.label :genre, class: "titlePageForm" %><br>
+      <%= f.text_field(:genre, placeholder: "What do you sell?", class: "formFieldLine") %>
+    </div>
+  <hr>
+  <div class="actions">
+    <%= f.submit({class: "button buttonG"}) %>
+  </div>
+  <% end %>
+  <% if params[:action] == 'edit' || params[:action] == 'update' %> 
+  <%= button_to 'Delete Page', @page, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
+  <% end %>
+</div>

@@ -1,0 +1,96 @@
+/*// Place all the styles related to the charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+
+.mainTitle {
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mainTitleNew{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+#sidev{
+    top: 16px;
+    left: 0px;
+    padding-top: 3em;
+    background: #000000;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+.infoCon{
+    margin-top: 50px;
+}
+
+.cart, #sidev #cart{
+    color: white;
+    .item_price .total_line{
+        text-align: right;
+    }
+    .total_line .total_cell{
+        font-weight: bold;
+        border-top: 1px solid #fff;
+    }
+}
+
+.btnTog{
+    font-weight: 300;
+    margin: 2px 2px;
+    background-color: black; 
+    color: white; 
+    border: 2px solid #fff;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.btnTog2{
+    font-weight: 300;
+    margin: 2px 2px;
+    background-color: black; 
+    color: white; 
+    border: 2px solid #fff;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: 300px;
+}
+
+.buttonForm {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonGForm {
+	top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 10px 60px;
+}
+
+.buttonGForm:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.orderNotice{
+    font-weight: 300;
+    font-size: 25px;
+}

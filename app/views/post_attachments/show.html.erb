@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "post_attachments", :media => "all" %>
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+	<div class="text-center">
+		  <div class="mainTitle"><%= @post_attachment.post.try :title %></div>
+		  	<hr>
+		<% if @post.post_attachments.length < 2 %>
+			<% @post_attachments.each do |post_attachment| %>
+				<%= image_tag(post_attachment.image, class: "postAttDispView") if post_attachment.image? %>
+			<% end %>
+		<% else %>
+			<% @post_attachments.each do |post_attachment| %>
+				<%= image_tag(post_attachment.image, class: "postAttDisp") if post_attachment.image? %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+

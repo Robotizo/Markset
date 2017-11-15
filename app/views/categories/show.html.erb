@@ -1,20 +1,29 @@
+<%= stylesheet_link_tag "categories", :media => "all" %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<%= image_tag(@category.image_url, size: "280x240") %>
-<br>
-<br>
-
+<div class="container">
+<div class="row">
+<div class="text-center">
+<div class="catTitleMain"><%= @category.name %></div>
+<hr>
+<% if @category_products.present? %>
 <% @category_products.each do |product| %>
-	<%=link_to image_tag(product.image_url, size: "180x140"), product %>
-	<%= product.title %>
-	<%= number_to_currency(product.price) %><br>
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+	<% product.product_attachments.first(1).each do |p| %>
+        <%= (link_to image_tag(p.image_url(:thumb), class: "list_image"), product, method: :get )if p.image?%>
+     <% end %>
+	<dt><%= product.title %></dt>
+	<dt><%= number_to_currency(product.price) %></dt>
+	<dt id="fontTitle2">From <%= link_to (product.page.try :title), product.page, method: :get %></dt><hr>
+</div>
 <% end %>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %> | 
-<%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+	<% if @category.user.id == @user.id %>
+		<p class="pNoProd">There are no products in this category. Click button to add.</p>
+		<%= button_to "Add", new_product_path(@product), method: :get, class: "newProdCat" %>
+	<% else %>
+		<p class="pNoProd">There are curently no products in this category.</p>
+	<% end %>
+<% end %>
+</div>
+</div>
+</div>

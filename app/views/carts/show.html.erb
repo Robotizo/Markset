@@ -1,19 +1,41 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
-<table>
-	<%= render(@cartShow.line_items) %>
-	
-	<tr class="total_line">
-		<td colspan="2">Total</td>
-		<td class="total_cell"><%= number_to_currency(@cartShow.total_price) %></td>
-	</tr>
-</table>
+<%= stylesheet_link_tag "carts", :media => "all" %>
+<div class="container">
+	<div class="text-center">
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+		<div class="mainTitle">Purchase List</div>
+      	<hr>
 
-<br>
-<br>
-<div id="cartfont">
-<%= button_to "Checkout", new_order_path, method: :get %>
-<%= button_to "Empty cart", @cartShow, method: :delete, confirm: "Are you sure?" %>
-</div>    
+      	<% if @cart.line_items.present? %>
+		<table class="table table-bordered">
+			<thead>
+      			<tr>
+        			<th>Quantity</th>
+			        <th>Product name</th>
+			        <th class="pageName">Page name</th>
+			        <th>Price</th>
+      			</tr>
+   		 	</thead>
+   		 	<tbody>
+			<%= render(@cart.line_items) %>
+			<th></th>
+         	<th class="second"></th>
+				<td >Total</td>
+				<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+			</tbody>
+		</table>
+
+		<div class="col-md-3 col-md-offset-3">
+			<%= button_to "Checkout", new_order_path, method: :get, class: "button buttonG center-block btn-responsive" %>
+		</div>
+		<div class="col-md-3">
+			<%= button_to "Empty Purchase List", @cart, method: :delete, confirm: "Are you sure?", class: "button buttonR center-block btn-responsive" %>
+		</div>
+		<% else %>
+			<p class="pNoCart">There are no items in your purchase list. Click on the button to look at the products to add to your purchase list.</p>
+			<%= button_to "To Products", products_path, method: :get, class: "newCart" %>
+		<% end %>
+	</div>
+</div>
 

@@ -1,46 +1,33 @@
-<%= stylesheet_link_tag "products.scss" %>
-<h1>Listing Products</h1>
-<div id="padleft">
-<div id="home">
-<%= link_to 'Home', store_index_path %>
-</div>
+<%= stylesheet_link_tag "products", :media => "all" %>
+<p id="notice"><%= notice %></p>
+<div class="container">
 
+<div class="text-center">
+  <div class="mainTitle">Products</div>
+<hr>
 
-<table>
+<div class="row">
   <% @products.each do |product| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even')%>">
-      <td>
-        <%= image_tag(product.image_url, class: 'list_image') %>
-      </td>
-
-      <td class="list_description">
-        
-        <dl>
-          <div id="font">
-            <dt><%= product.title %></dt>
-            <dd><%= truncate(strip_tags(product.description), length: 250) %></dd>
-            <dd>Page: <%= product.page.try :title %></dd>
-            <dd>Category: <%= product.category.try :name %></dd>
-          </div>
-        </dl>
-        
-      </td>
-
-      <td class="list_actions">
-        <%= link_to 'Show', product %> <br>
-        <%= link_to 'Edit', edit_product_path(product) %><br>
-        <%= link_to 'Delete', product, method: :delete, data: {confirm: 'Are you sure?'} %>
-      </td>
-    </tr>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+      <% product.product_attachments.first(1).each do |p| %>
+                    <%= (link_to image_tag(p.image_url(:thumb), class: 'list_image'), product, method: :get )if p.image?%>
+                  <% end %>
+            <dt id="fontTitle1"><%= link_to truncate(product.title, length: 22), product, method: :get, class: "productLinks" %></dt>
+            <dt id="fontPrice"><%= number_to_currency(product.price) %></dt>
+            <dt id="fontTitle2">From <%= link_to (product.page.try :title), product.page, method: :get %></dt>
+            <dd id="fontCat">Category <%= link_to (product.category.try :name), product.category, method: :get %></dd><hr>
+    </div>
   <% end %>
-</table>
- <% if !@products.present? %>
-    <p>There are no products for <%= params[:search] %>.</p>
-  <% end %>
-<br>
-<%= link_to 'New Product', new_product_path %>
+
 </div>
+ <% if !@products.present? %>
+    <div class="noProduct">There are no products for <%= params[:search] %>.</div>
+  <% elsif params[:search] == "Hello" %>
+    <div class="noProduct">There is nothing to search.</div>
+  <% end %>
 
+</div>
+</div>
 <!--Locstion Buyer including events revolving around you such as concerts-->
 <!--How to innovate in the online market -->
 <!-- How to internet of things -->

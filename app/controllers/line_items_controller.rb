@@ -29,15 +29,37 @@ class LineItemsController < ApplicationController
   def add
     @cart = current_cart
     @line_item = @cart.add(params[:id])
-
-    respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to store_url}
-        format.js { @current_item = @line_item }
-        format.json { render :show, status: :created, location: @line_item }
-      else
-        format.html { render :new }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+    if params[:buyNow]
+      respond_to do |format|
+        if @line_item.save
+            $pageIds = []
+          @cart.line_items.each do |item|
+            $pageIds.push(item.product.page.id)
+          end
+          @pages = Page.where(id: [$pageIds])
+          format.html { redirect_to new_order_path }
+          format.js { @current_item = @line_item }
+          format.json { render :show, status: :created, location: @line_item }
+        else
+          format.html { render :new }
+          format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        if @line_item.save
+          $pageIds = []
+          @cart.line_items.each do |item|
+            $pageIds.push(item.product.page.id)
+          end
+          @pages = Page.where(id: [$pageIds])
+          format.html { redirect_to product_url }
+          format.js { @current_item = @line_item }
+          format.json { render :show, status: :created, location: @line_item }
+        else
+          format.html { render :new }
+          format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "product_attachments", :media => "all" %>
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+	<div class="text-center">
+		  <div class="mainTitle"><%= @product_attachment.product.try :title %></div>
+		  	<hr>
+
+		<% @product_attachments.reverse_each do |product_attachment| %>
+			<%= image_tag(product_attachment.image.thumb, class: "productAttDisp") if product_attachment.image? %>
+		<% end %>
+	</div>
+</div>

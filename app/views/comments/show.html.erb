@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag "comments", :media => "all" %>
+<%= javascript_include_tag "comments" %>
+<p id="notice"><%= notice %></p>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<div class="mainTitle">Comments</div>
+      		<hr>		
+			<%= render 'form', comment: @comment.post_id %>
+      		<div class="col-md-push-2 col-md-8 commentArea">
+			<% @comments.each do |comment| %>
+				<div class="commentBox">
+				<% if comment.user.id == @post.user.id %>
+					<span class="commentAdmin userName"><%= comment.user.name %></span>
+				<% else %>
+					<span class="userName"><%= comment.user.name %></span>
+				<% end %>
+				<% if comment.user.id == current_user.id %>
+				<div class="dropdown">
+				<%= submit_tag "Settings", method: :get, class: "btn btn-primary commentSettings", :type => 'button' %>
+  				<div class="dropdown-content">
+					<%= button_to "Edit Comment", edit_comment_path(comment), method: :get, class: "btn editBtn btn-primary" %>
+					<%= button_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn commentBtn btn-primary" %>
+				</div>
+				</div>
+				<% elsif current_user.id == @post.page.user.id %>
+				<div class="dropdown">
+  				<%= submit_tag "Settings", method: :get, class: "btn btn-primary commentSettings", :type => 'button' %>
+  				<div class="dropdown-content">
+					<%= button_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn commentBtn btn-primary" %>
+				</div>
+				</div>
+				<% end %>
+					<div class="commContent"><%= comment.content %></div>
+				</div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+</body>

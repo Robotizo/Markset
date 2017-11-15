@@ -1,28 +1,38 @@
+<%= stylesheet_link_tag "pages", :media => "all" %>
 <p id="notice"><%= notice %></p>
-
-<h1>Pages</h1>
-<div id="allPagePadding">
-  <table>
-    <% @pages.each_slice(4) do |pages| %>
-      <tr>
-        <% pages.each do |page| %>
-          <td>
-            <div id="singlePagePadding">
-              <%= link_to image_tag(page.image_url, class: "listImagePage"), page, class: "pageShowcase" %>
-              <div id="centerize">
-                <dt><%= page.title %></dt>
-                <dt><%= page.genre %></dt>
-                <strong>by</strong>
-                <dt><%= page.user.try :name %></dt>
-              </div>
-            </div>
-            <% end %>
-          </td> 
-        </tr>
+<div class="container">
+  <div class="text-center">
+      <div class="mainTitle">Pages</div>
+      <hr>
+    <% if session[:user_id] %>
+    <div class="secondaryTitle">Pages Following</div>
+    <hr>
+    <% if current_user.following.present? %>
+    <div class="row">
+    <% @pagesFollow.each do |page| %>
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+          <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage"), page, method: :get, class: "pageShowcase" %>
+            <dt class="dt1"><%= link_to truncate(page.title, length: 20), page, method: :get %></dt>
+            <dt><%= page.genre %></dt><hr>
+        </div>
+      <% end %>
+      </div>
+    <% else %>
+      <div class="tertiaryTitle">You are currently not following any page.</div>
+      <hr>
     <% end %>
-  </table>
+    <% end %>
+    <div class="secondaryTitle">All Pages</div>
+    <hr>
+      <div class="row">
+    <% @pages.each do |page| %>
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage"), page, method: :get, class: "pageShowcase" %>
+          <dt class="dt1"><%= link_to truncate(page.title, length: 20), page, method: :get %></dt>
+          <dt><%= page.genre %></dt><hr>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </div>
-<br>
 
-<%= link_to 'New Page', new_page_path %>
-<br>

@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag "products", :media => "all" %>
+<%= javascript_include_tag "products" %>
 <p id="notice"><%= notice %></p>
+<br>
 
-<body id="showProd">
-  <div id="showProd">
     <div id = "sidev">
       <div id ="cart">
         <% if @cart %>
@@ -10,43 +11,83 @@
         <% end %>
         <% end %>
       </div>
+      <% if @cart.line_items.present? %>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <%= submit_tag "Show", method: :get, class: "btnTog2", :type => 'button' %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <%= submit_tag "Hide", method: :get, class: "btnTog", :type => 'button' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-    
-  <%= image_tag(@product.image_url, class: "imageShowProduct")%>
+
+<div class="text-center productMainInfo">
+  <% @product.product_attachments.first(1).each do |p| %>
+    <%= (link_to image_tag(p.image_url(:thumb), class: "listImageProduct"), p, method: :get )if p.image?%>
+  <% end %>
   <div id="titlePos">
+    <dt id="fontTitle2">Press on image to see more.</dt>
+    <dt id="fontTitle3">Scroll down for information.</dt>
+    <hr>
     <strong><%= @product.title %></strong>
+    <dt id="fontTitle2">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
   </div>
-  <div id="introInfo">
-  <div id="withinPprice">
-    <div id="withinP">
-      <div class="price_line">
-        <span class="priceShow"><%= number_to_currency(@product.price) %></span>
-        <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, remote: true, class: "button buttonG" %>
-        <%= button_to 'Add to purchase list', remove_line_item_path(@product), method: :get, remote: true, class: "button buttonR" %>
+
+    <span class="priceShow"><%= number_to_currency(@product.price) %></span>
+</div>
+ <% if @product.status == "Available" %>
+  <div class="text-center">
+    <div class="col-md-3 col-md-offset-3">
+      <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, name: "buyNow", class: "buttonBuy" %>
+    </div>
+    <div class="container">
+      <div class="row extraMargin">
+        <div class="col-md-1 col-xs-6">
+          <%= button_to '+', add_line_item_path(@product), method: :get, remote: true, class: "buttonAdd" %>
+        </div>
+        <div class="col-md-1 col-xs-6">
+          <%= button_to '-', remove_line_item_path(@product), method: :get, remote: true, class: "buttonRemove" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-  <div id="introInfo">
-    <div id="withinP">
-      <strong id="fontTitleD">Description</strong>
-        <p id="fontSub">
-          <%= @product.description %>
-        </p>
-        <p>
-          <strong>Page:</strong>
-            <%= @product.page.try :title %>
-        </p>
-        <p>
-          <strong>Category:</strong>
-            <%= @product.category.try :name  %>
-        </p>
+  <% elsif @product.status == "Not Available" %>
+    <div class="text-center">
+      <div class="availabilityShow">This product is currently unavailable for purchase.</div>
     </div>
+  <% end %>
+<hr>
+<div class="text-center">
+  <div class="secondaryTitle">Product Comments</div>
+  <br>
+  <%= submit_tag "Show Comments", method: :get, class: "btn productCommentsBtnShow btn-primary", :type => 'button' %>
+  <%= submit_tag "Hide Comments", method: :get, class: "btn productCommentsBtnHide btn-primary", :type => 'button' %>
+  <div id ="productComments">
+    <%= link_to "Add Comment", new_product_comment_path(product_id: @product.id), method: :get, class: "productComment btn btn-primary" %>
+    <%= render template: 'product_comments/show' %>
   </div>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> 
-<%= link_to 'Back', products_path %>
 </div>
-</body>
+<hr>
+<div class="col-md-12 introInfo">
+  <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+    <strong id="fontTitleD">Description</strong>
+      <p id="pAttributes">
+        <%= @product.description %>
+      </p>
+  </div>
+  <div class="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-1">
+    <strong id="fontTitleD">Page</strong>
+      <p id="pAttributes">
+          <%= @product.page.try :title %>
+      </p>
+    <strong id="fontTitleD">Category</strong>
+      <p id="pAttributes">
+        <%= @product.category.try :name  %>
+      </p>
+  </div>
+</div>
+

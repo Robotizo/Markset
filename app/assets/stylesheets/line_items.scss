@@ -2,3 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
+
+.inCartImage{
+	height: 100px;
+	width:  100px;
+}
+
+
+@media screen and (max-width: 767px){
+    .inCartImage{
+    	display: none;
+	}
+	.pageImage{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 340px){
+    .pageName{
+        display: none;
+    }
+}
+

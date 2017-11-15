@@ -1,7 +1,6 @@
-<div id="padleft">
-<h1>New Product</h1>
-
-<%= render 'form', product: @product %>
-
-<%= link_to 'Back', products_path %>
+<%= stylesheet_link_tag "products", :media => "all" %>
+<div class="text-center">
+<div class="mainTitleNew">New Product</div>
 </div>
+<hr>
+<%= render 'form', product: @product %>

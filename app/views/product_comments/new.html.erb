@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "product_comments", :media => "all" %>
+
+<div class="container">
+<div class="row">
+<div class="text-center">
+<div class="mainTitleNew">New Product Comment</div>
+<hr>
+
+<div class="text-center productMainInfo">
+<div class="prodPic">
+  <% @product.product_attachments.first(1).each do |p| %>
+    <%= (link_to image_tag(p.image_url(:thumb), class: "listImageProduct"), p, method: :get )if p.image?%>
+  <% end %>
+  <dt class ="fontTitle2Comment givenNote">Press on image to see more.</dt>
+</div>
+  <div id="titlePosComment">
+    <strong><%= link_to @product.title, @product, method: :get %></strong>
+    <dt id="fontTitle2Comment">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
+  </div>
+
+    <span class="priceShowComment"><%= number_to_currency(@product.price) %></span>
+</div>
+
+<%= render 'form', product_comment: @product_comment %>
+
+</div>
+</div>
+</div>

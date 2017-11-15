@@ -1,0 +1,149 @@
+/*// Place all the styles related to the product_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
+
+.mainTitle{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mainTitleNew{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.noComments{
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.fontTitle2{
+	font-size:20px;
+	font-weight: 300;
+}
+
+.givenNote{
+	margin-top: 10px;
+}
+
+.prodPic{
+	float: left;
+	margin-left: 15%;
+}
+textarea {
+   resize: none;
+}
+
+.formFieldText{
+  width: 500px;
+  height: 100px;
+  font-size: 20px;
+  font-weight: 300;
+  border: 1px black solid;
+}
+
+.btn {
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 200;
+  border-radius: 0px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.submitBtnProd{
+	height: 50px;
+    width: 500px;
+}
+
+.priceShowComment{
+  font-size: 40px;
+  position: relative;
+  font-weight: lighter;
+  top: -15px;
+}
+
+
+#fontTitle2Comment{
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#titlePosComment{
+  position: relative;
+  top: .3em;
+  font-size: 30px;
+  font-weight: 100;
+  padding-bottom: 1em;
+}
+
+
+@media screen and (max-width: 767px){
+	.prodPic{
+		float: none;
+		margin-left: 0%;
+	}
+	.listImageProduct{
+        width: 65%;
+    }
+
+    .formFieldText{
+    	width: 98%;
+    	height: 100px;
+    	font-size: 20px;
+    	font-weight: 500;
+  	}
+
+  	.submitBtnProd{
+	    position: relative;
+	    bottom: 0px;
+	    right: 0px;
+	    height: 50px;
+	    width: 98%;
+  	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

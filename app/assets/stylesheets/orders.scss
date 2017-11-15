@@ -2,16 +2,315 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+    color: green;
+}
+
+.mainTitle {
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mainTitleNew{
+    font-size: 36px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#sidev{
+    top: 16px;
+    left: 0px;
+    padding-top: 3em;
+    background: #000000;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+.infoCon{
+    margin-top: 50px;
+}
+
+.cart, #sidev #cart{
+    color: white;
+    .item_price .total_line{
+        text-align: right;
+    }
+    .total_line .total_cell{
+        font-weight: bold;
+        border-top: 1px solid #fff;
+    }
+}
+
+.btnTog{
+    font-weight: 300;
+    margin: 2px 2px;
+    background-color: black; 
+    color: white; 
+    border: 2px solid #fff;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.btnTog2{
+    font-weight: 300;
+    margin: 2px 2px;
+    background-color: black; 
+    color: white; 
+    border: 2px solid #fff;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: 250px;
+}
+
+
 #space{
 	padding-left: 2em;
 }
-#paginateOrg {
-    border: 1px solid black;
-    padding: 10px;
-    width: 5em;
-    height: 5em;
+
+
+.titlePageForm{
+	font-size: 30px;
+	font-weight: 200;
+	color: black;
 }
 
-#paginatePad{
-	padding: 4em;
+textarea {
+   resize: none;
 }
+
+.selectPayType{
+	width: 200px;
+	height: 50px;
+}
+
+.buttonForm {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.buttonGForm {
+	top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 10px 60px;
+}
+
+.buttonGForm:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonDel {
+    top: 40px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #FF0000;
+    padding: 10px 64px;
+}
+.buttonDel:hover {
+    background-color: #FF0000;
+    color: white;
+}
+.formFieldLine{
+    width: 350px;
+}
+.formFieldText{
+    width: 460px;
+    height: 150px;
+}
+
+.orderId{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.noOrder{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.noSpecial{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.Special{
+    font-size: 25px;
+    font-weight: 300;
+}
+.newUse{
+    padding: 15px 50px;
+    margin-top: 1em;
+    font-size: 30px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: white;
+    border: 2px solid #000;
+    color: black;
+}
+
+.newUse:hover{
+    background-color: #000;
+    color: white;
+}
+
+
+
+.btn {
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.btn-primary:focus{
+    color: #fff !important;
+    background-color: #333333 !important;
+    outline: none !important;
+}
+
+.stripe-button-el span{
+    display: none;
+}
+
+.cardPayFont{
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.cardPayFont2{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
+/* At Media */
+@media screen and (max-width: 767px) {
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+        padding: 7px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .ordMailIn{
+        display: none;
+    }
+
+    .paginateOrder{
+        font-size: 35px;
+        font-weight: 400;
+    }
+    .formFieldLine{
+        width: 250px;
+    }
+    .formFieldText{
+        width: 250px;
+        height: 120px;
+    }
+    .infoCon {
+        margin-top: 60px;
+    }
+
+    .btnTog{
+        font-weight: 300;
+        margin: 2px 2px;
+        background-color: black; 
+        color: white; 
+        border: 2px solid #fff;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btnTog2{
+        font-weight: 300;
+        margin: 2px 2px;
+        background-color: black; 
+        color: white; 
+        border: 2px solid #fff;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 776px) and (max-width: 991px){
+    .btnTog2{
+        margin-left: 154px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    #sidev{
+        padding-top: 7em;
+    }
+    .infoCon {
+        margin-top: 60px;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+    .ordMailIn{
+        display: none;
+    }
+    .ordMail{
+        display: none;
+    }
+
+    .paginateOrder{
+        font-size: 35px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .pageName{
+        display: none;
+    }
+    .second{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+

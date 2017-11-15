@@ -1,76 +1,128 @@
+<%= stylesheet_link_tag "store", :media => "all" %>
+<%= javascript_include_tag "store" %>
 <% if notice %>
 	<p id="notice"><%= notice %></p>
 <% end %>
-<body onload="currentSlide(2)">
-<div id="trial">
-	<div class="slideshow-container">
-		<div class="theSlides fade">
-			<%= image_tag("http://t.wallpaperweb.org/wallpaper/nature/3840x1024/9XMedia1280TripleHorizontalMountainsclouds.jpg", class: "showcaseImg")%>
-		</div>
-		<div class="theSlides fade">
-			<%= image_tag("http://w.ndtvimg.com/glaadventure/2016/02/16082815/skyline-glaadventure.jpg", class: "showcaseImg")%>
-		</div>
-		<div class="theSlides fade">
-			<%= image_tag("https://photos.smugmug.com/Fall-2016/i-LggLjcL/0/X2/_28A0043-Pano-Edit-X2.jpg",  class: "showcaseImg")%>
-		</div>
-
-	</div>
-	<a class="prev unselectable" onclick="addSlides(-1)">&lt;</a>
-	<a class="next unselectable" onclick="addSlides(1)">&gt;</a>
-</div>
-
-<br>
-
-<% cache ['store', Product.latest] do %>
-	<section id="sectionHScroll">
-		<div id="sidescroll">
-			<% @products.each do |product| %>
-			<div class="slide">
-				<div id="textInImage">
-						<%=link_to image_tag(product.image_url, size: "380x340"), product, class: "linkOP" %>
-					<div id="font">
-						<div class="text"><%= product.title %></div>
-					</div>
-						<div class="text"><%= number_to_currency(product.price) %></div>
+<body>
+<% if current_user.following.present? && session[:user_id] %>
+<div class="container">
+	<div class="text-center">
+		<div class="row">
+		<% if @posts.exists? %>
+		<% @posts.each do |post| %>
+		
+			<div class="postBox">
+				<%= link_to (image_tag post.page.image_url(:thumb), class: "listImagePagePost"), post.page, method: :get %> 
+				<div class="postPageTitle"><%= link_to post.page.try(:title), post.page, method: :get %></div>
+                <div class="postSection">
+                	<div class="pictureSection">
+                   <% if post.post_attachments.length < 2 %>
+			          <% post.post_attachments.each do |p| %>
+			            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
+			          <% end %>
+			          <% elsif post.post_attachments.length < 3 %>
+			           <% post.post_attachments.each do |p| %>
+			            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
+			          <% end %>
+			          <% elsif post.post_attachments.length > 4 %>
+			          <% post.post_attachments.limit(4).each do |p| %>
+			            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+			          <% end %><hr>
+			          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
+			          <% else %>
+			          <% post.post_attachments.limit(4).each do |p| %>
+			            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+			          <% end %>
+			        <% end %>
+              	</div>
 				</div>
+				<div class="contentSection">
+				<dt class="postTitle"><%= post.title %></dt>
+					<% if post.content.length > 200 %>
+                    	<div class="postContent"><%= truncate post.content, length: 200 %></div>
+                    <%= link_to 'read more', post, method: :get %>
+                  <% else %>
+                    <div class="postContent"><%= post.content %></div>
+                  <% end %>
+                </div>
+				<div class="lowerAttri">
+				<% if post.comments.present? %>
+					<% post.comments.limit(1).each do |comment| %>
+						<span class="comment"><%= link_to "Comments", comment, method: :get %></span>
+					<% end %>
+				<% else %>
+					<span class="comment"><%= link_to "Add Comment", new_comment_path(post_id: post.id), method: :get %></span>
+				<% end %>
+                	<span class="dateNtime"><%= post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
+                </div>
 			</div>
-			<% end %>
-		</div>
-	</section>
-
-<br>
-<!--
-	<div id = "columnsv">
-      <div id = "sidev">
-        <div id ="cart">
-          <% if @cart %>
-            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-            <%= render @cart %>
-          <% end %>
-        <% end %>
-        </div>
-     </div>
-    </div>
-
-  <br>
-    <section id="sectionStore">
-		<% @products.each do |product| %>
-			<div id="images">
-				<%= image_tag(product.image_url, size: "350x300" )%>
-			</div>
-			<h3><%= product.title %></h3>
-			<div id="spacing">
-				<%= sanitize(product.description) %>
-			</div>
-			
-			<div class="price_line">
-				<span class="price"><%= number_to_currency(product.price) %></span>
-
-			<%= button_to 'Add to Cart', add_line_item_path(product), method: :get, remote: true, class: "button buttonG" %>
-			<%= button_to 'Remove from Cart', remove_line_item_path(product), method: :get, remote: true, class: "button buttonR" %>
-			</div>
-			<% end %>
 		<% end %>
-	</section>-->
+		<% else %>
+		<div class="text-center">
+		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other pages.</div>
+	    <% @pages.each do |page| %>
+	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      	<div class="pageDesign">
+	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+	        </div>
+	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+	        <div class="pageTitle"><%= page.genre %></div>
+	        <div class="pageDesc"><%= page.description %></div>
+	      </div>
+	    <% end %>
+	</div>
+		<% end %>
+		</div>
+	</div>
+</div>
+<% elsif  current_user.following.blank? && session[:user_id] %>
+	<div class="text-center">
+		<div class="secondaryTitle">Pages to follow</div>
+	    <% @pages.each do |page| %>
+	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      	<div class="pageDesign">
+	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+	        </div>
+	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+	        <div class="pageTitle"><%= page.genre %></div>
+	        <div class="pageDesc"><%= page.description %></div>
+	      </div>
+	    <% end %>
+	</div>
+<% end %>
+<% if !session[:user_id] %>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="firstSection">
+	  			<div class="welcome">Welcome to Markset</div>
+	  			<div class="exSection">Markset is a place where you can buy from your favorite brands and keep in touch with their activity. Commerce is taken to a new level by making this process more efficient through Markset.</div>
+	  			<%= link_to 'Login', login_path, method: :get, class: "btn btn-primary loginBtn" %>
+	  			<%= link_to 'Sign Up', new_user_path, method: :get, class: "btn btn-primary signBtn" %>
+	  		</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<div class="secondaryTitle">Pages to follow</div>
+	    <% @pages.each do |page| %>
+	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      	<div class="pageDesign">
+	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+	        </div>
+	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+	        <div class="pageTitle"><%= page.genre %></div>
+	        <div class="pageDesc"><%= page.description %></div>
+	      </div>
+	    <% end %>
+	</div>
+<% end %>
 </body>
+
+
+
+
+
+
+
+
+
 

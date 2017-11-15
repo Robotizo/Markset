@@ -1,26 +1,27 @@
 class OrdersController < ApplicationController
-  before_action :authorize, except: [:index, :show]
+  before_action :authorize
   
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
   def index
-
-    @orders = Order.paginate(page: params[:page], per_page: 10).order("created_at DESC")
-
-    respond_to do |format|
-      format.html
-      format.json {render json: @order}
-    end
-
+    @cart = current_cart
+    @user = current_user
+    @orders = @user.orders.paginate(page: params[:page], per_page: 10).order("created_at DESC")
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @products = Product.all
     @cart = current_cart
+    @user = current_user
+
+    unless session[:user_id] == @order.user.id
+      flash[:notice] = "You don't have access to that users orders!"
+      redirect_to orders_path(session[:user_id])
+      return
+    end
   end
 
   # GET /orders/new
@@ -30,6 +31,8 @@ class OrdersController < ApplicationController
       redirect_to store_url, notice: "Your cart is empty"
       return
     end
+
+    @stale_form_check_timestamp = Time.now.to_i
 
     @order = Order.new
 
@@ -41,20 +44,21 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @comments = Comment.all
+    redirect_to 'show'
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @cart = current_cart
+    @order = current_user.orders.build(order_params)
     @order.add_line_items_from_cart(current_cart)
+    @user = current_user
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        OrderNotifierMailer.received(@order).deliver
-        format.html { redirect_to store_url, notice: 'Thank you for buying from Markset.' }
+        format.html { redirect_to new_charge_path }
         format.json { render :show, status: :created, location: @order }
       else
         @cart = current_cart
@@ -96,6 +100,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:pay_type, :user_id, :instructions)
     end
 end

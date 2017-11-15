@@ -1,0 +1,141 @@
+<html>
+<head>
+	<style type="text/css">
+
+  body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+    
+  }
+
+  .text-center{
+  	 text-align: center;
+  }
+
+  table.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+
+  li {
+    font-weight: 300;
+    font-size: 25px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  h1{
+  	font-weight: 300;
+  }
+
+
+  h2{
+    font-weight: 300;
+  }
+
+  .content{
+  	text-align: center;
+  	font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .state{
+  	 width:90%; 
+    margin-left:5%; 
+    margin-right:5%;
+  }
+
+
+@media screen and (max-width: 767px){
+	.content{
+		font-size: 15px;
+	}
+
+	table.center{
+  		width: 100%;
+  		margin-left: 0%;
+  		margin-right: 0%;
+	}
+}
+
+
+
+@media screen and (max-width: 340px){
+	table.center {
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 4%;
+	}
+  .pageName{
+    display: none;
+  }
+  .second{
+    display: none;
+  }
+}
+
+
+</style>
+
+
+
+
+</head>
+	<body>
+		<ul>
+			<li>Markset</li>
+		</ul>
+
+  <div class="text-center">
+    <h1>New Order Information</h1>
+  </div>
+
+<div class="content">
+<div class="state">
+	Hello, <%= @page.user.name %>. This is a new order from <strong><%= @user.name %></strong> in your <%= @page.title %> page. They paid with <%= @order.pay_type %>.
+	<br>
+	Here is the order.
+</div>
+<hr>
+<table class="center">
+	<thead>
+		<tr>
+		    <th>Quantity</th>
+    		<th>Product name</th>
+    		<th class="pageName">Page name</th>
+    		<th>Price</th>
+  		</tr>
+  	</thead>
+	<tbody>
+		<tr>
+			<%= render @order.line_items %>
+   			<th></th>
+   			<th class="second"></th>
+   			<th>Total</th>
+   			<th><%= number_to_currency(@order.total_price) %></th>
+ 		</tr>
+	</tbody>
+</table>
+<hr>
+  <div class="text-center">
+    <h2>Special Directions</h2>
+  </div>
+  <%= @order.instructions %>
+<hr>
+The order ID is <%= @order.id %>.
+		  </div>
+	  </body>
+  </html>
+
+
+
+
