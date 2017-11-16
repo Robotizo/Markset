@@ -66,11 +66,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false  
   config.action_mailer.default :charset => "utf-8" 
   config.action_mailer.smtp_settings = {
-    address:              'smtp.mail.com',
+    address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'markset.herokuapp.com',
-    user_name:            'geniusrobotizo@gmail.com',
-    password:             '@Brandoncaizamanu7@!',
+    user_name:            'app81039750@heroku.com',
+    password:             'drsgrvid7172',
     authentication:       'plain',
     enable_starttls_auto: true  
   }
