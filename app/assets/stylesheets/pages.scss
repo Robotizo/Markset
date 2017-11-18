@@ -9,6 +9,20 @@
     margin-bottom: 10px;
 }
 
+    div.followRela span.following {
+        display:inline;
+    }
+    div.followRela:hover span.following {
+        display:none;
+    }
+    div.followRela span.unfollow {
+        display:none;
+    }
+    div.followRela:hover span.unfollow {
+        display:inline;
+    }
+
+
 .mainTitleNew{
     font-size: 36px;
     font-weight: 200;
@@ -502,9 +516,21 @@ textarea {
     margin-left: 20px;
 }
 
+.followingButton{
+    margin-left: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
 .unfollowButton{
     margin-left: 20px;
-    background-color: #000;
+    background-color: #f44336;
+    color: #fff;
+}
+
+.unfollowButton:hover{
+    margin-left: 20px;
+    background-color: #f44336;
     color: #fff;
 }
 

@@ -22,7 +22,10 @@
       <hr>
       <% if current_user.following?(@page) %>
         <%= form_for(current_user.active_relationships.find_by(followed_id: @page.id), html: { method: :delete }) do |f| %>
-          <%= f.submit "Unfollow", class: "btn btn-primary unfollowButton" %>
+          <div class="followRela">
+            <span class="following"><%= f.submit "Following", class: "btn btn-primary followingButton" %></span>
+            <span class="unfollow"><%= f.submit "Unfollow", class: "btn unfollowButton" %></span>
+          </div> 
         <% end %>
       <% else %>
         <%= form_for(@page.passive_relationships.build, method: :post) do |f| %>

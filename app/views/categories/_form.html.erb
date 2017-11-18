@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+
+<div class="container">
 <div class="col-md-3 col-md-offset-1 col-xs-3 col-xs-offset-1">
   <div class="field">
     <%= f.label "Name the category", class: "titlePageForm" %><br>
@@ -32,4 +34,5 @@
 <% if params[:action] == 'edit' || params[:action] == 'update' %> 
   <%= button_to 'Delete Category', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
 <% end %>
+</div>
 </div>

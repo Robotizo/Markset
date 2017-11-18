@@ -68,6 +68,10 @@
 <div class="text-center orderId">
   The order ID is <%= @order.id %>.
 </div>
+<hr>
+<div class="text-center orderId">
+  Date of creation: <%= @order.created_at.to_time.strftime('%B %e at %l:%M %p') %>.
+</div>
 </div>
 
 
