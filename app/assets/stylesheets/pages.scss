@@ -513,23 +513,22 @@ textarea {
 }
 
 .followButton{
-    margin-left: 20px;
+    margin-left: 28px;
 }
 
 .followingButton{
-    margin-left: 20px;
+    margin-left: 28px;
     background-color: #4CAF50;
     color: #fff;
 }
 
 .unfollowButton{
-    margin-left: 20px;
+    margin-left: 28px;
     background-color: #f44336;
     color: #fff;
 }
 
 .unfollowButton:hover{
-    margin-left: 20px;
     background-color: #f44336;
     color: #fff;
 }
@@ -659,6 +658,14 @@ textarea {
     }
 
     .followButton{
+        margin-left: 0px;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 5px 30px
+    }
+
+
+    .followingButton{
         margin-left: 0px;
         font-size: 20px;
         font-weight: 300;
