@@ -512,24 +512,25 @@ textarea {
     padding-bottom: 1.5em;
 }
 
-.followButton{
-    margin-left: 25px;
+.followinButton{
+    margin-left: 20px;
 }
 
 .followingButton{
-    margin-left: 25px;
+    margin-left: 20px;
     background-color: #4CAF50;
     color: #fff;
 }
 
 .unfollowButton{
-    margin-left: 25px;
-    background-color: #000;
+    margin-left: 20px;
+    background-color: #f44336;
     color: #fff;
 }
 
 .unfollowButton:hover{
-    background-color: #000;
+    margin-left: 20px;
+    background-color: #f44336;
     color: #fff;
 }
 
@@ -658,14 +659,6 @@ textarea {
     }
 
     .followButton{
-        margin-left: 0px;
-        font-size: 20px;
-        font-weight: 300;
-        padding: 5px 30px
-    }
-
-
-    .followingButton{
         margin-left: 0px;
         font-size: 20px;
         font-weight: 300;
