@@ -10,7 +10,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'friendly_id', '~> 5.1.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '3.4.0'
 gem "figaro"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
