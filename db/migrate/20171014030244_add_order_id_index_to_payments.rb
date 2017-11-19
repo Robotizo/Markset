@@ -1,5 +1,5 @@
 class AddOrderIdIndexToPayments < ActiveRecord::Migration[5.0]
-  def changer
+  def change
   	add_index  :payments, :order_id
   end
 end
