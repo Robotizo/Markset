@@ -69,8 +69,8 @@ Rails.application.configure do
     address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'markset.herokuapp.com',
-    user_name:            'app81039750@heroku.com',
-    password:             'drsgrvid7172',
+    user_name:            'app81296580@heroku.com',
+    password:             'rc92m5rf5364',
     authentication:       'plain',
     enable_starttls_auto: true  
   }
