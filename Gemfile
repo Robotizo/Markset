@@ -6,6 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'rails-controller-testing'
 gem 'stripe'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'fog-aws'
 # Use sqlite3 as the database for Active Record
 
 gem 'friendly_id', '~> 5.1.0'
