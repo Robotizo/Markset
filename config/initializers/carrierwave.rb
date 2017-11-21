@@ -7,6 +7,14 @@ if Rails.env.production?
       :aws_secret_access_key => ENV['S3_SECRET_KEY']
     }
 
+    if Rails.env.test? || Rails.env.cucumber?
+      config.storage = :file
+      config.enable_processing = false
+      config.root = "#{Rails.root}/tmp"
+    else
+      config.storage = :fog
+    end
+
 
     config.fog_directory = ENV['S3_BUCKET']
   end
