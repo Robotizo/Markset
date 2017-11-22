@@ -71,7 +71,7 @@
         <% product.product_attachments.first(1).each do |p| %>
                     <%= (link_to image_tag(p.image_url(:thumb), class: "listImagePageShow"), product, method: :get )if p.image?%>
                   <% end %>
-        <dt><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
+        <dt class="dt1"><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
         <dt><%= number_to_currency(product.price) %></dt><br>
       </div>
     <% end %>
