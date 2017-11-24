@@ -11,6 +11,9 @@ a:hover{
     color: green;
 }
 
+
+
+
 .mainTitle{
     font-size: 36px;
     font-weight: 200;
@@ -619,6 +622,17 @@ textarea {
     }
 }
 
+@media screen and (min-width: 1200px){
+    .col-lg-offset-5{
+        margin-left: 40%
+    }
+
+    .col-lg-1{
+        width: 11%;
+    }
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px){
     #sidev{
         padding-top: 7em;
@@ -698,5 +712,7 @@ textarea {
     }
 
 }
+
+
 
 
