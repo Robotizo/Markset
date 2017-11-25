@@ -41,7 +41,7 @@
 </div>
  <% if @product.status == "Available" %>
   <div class="text-center">
-    <div class="col-lg-3 col-lg-offset-3 col-xl-1 col-xl-offset-5">
+    <div class="col-md-3 col-md-offset-3 col-lg-1 col-lg-offset-5">
       <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, name: "buyNow", class: "buttonBuy" %>
     </div>
     <div class="container">
