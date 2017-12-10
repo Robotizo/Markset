@@ -143,7 +143,7 @@ dt{
     top: 1em;
 	position: relative;
 	font-weight: lighter;
-    margin-left: .7em;
+    margin-left: 40px;
 }
 
 
@@ -513,19 +513,22 @@ textarea {
 }
 
 .followButton{
-    margin-left: 25px;
+    margin-left: 42px;
+    margin-top: 56px;
 }
 
 .followingButton{
-    margin-left: 25px;
+    margin-left: 42px;
     background-color: #4CAF50;
     color: #fff;
+    margin-top: 56px;
 }
 
 .unfollowButton{
-    margin-left: 25px;
+    margin-left: 42px;
     background-color: #000;
     color: #fff;
+    margin-top: 56px;
 }
 
 .unfollowButton:hover{
@@ -539,9 +542,35 @@ textarea {
     font-weight: 300;
     font-size: 18px;
 }
+.btnDescription{
+    display: none;
+}
+
+.descriptionDesk{
+    margin-left: 27px;
+    width: 98%;
+}
+
+.majorButtons{
+    margin-top: -30px;
+}
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    .descriptionDesk{
+        display: none;
+    }
+    .descriptionMob{
+        display: block;
+        margin-top: -10px;
+    }
+    .btnDescription{
+        display: inline;
+        width: 100%;
+        height: 40px;
+    }
+
+
 	 h1{
         font-size: 30px;
     }
@@ -659,24 +688,30 @@ textarea {
 
     .followButton{
         margin-left: 0px;
+        margin-right: 0px;
         font-size: 20px;
         font-weight: 300;
-        padding: 5px 30px
+        padding: 5px 30px;
+        margin-top: 3em;
     }
 
 
     .followingButton{
         margin-left: 0px;
+        margin-right: 0px;
         font-size: 20px;
         font-weight: 300;
-        padding: 5px 30px
+        padding: 5px 30px;
+        margin-top: 3em;
     }
 
     .unfollowButton{
         margin-left: 0px;
+        margin-right: 0px;
         font-size: 20px;
         font-weight: 300;
-        padding: 5px 30px
+        padding: 5px 30px;
+        margin-top: 3em;
     }
 
     .btn-group {

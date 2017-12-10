@@ -24,3 +24,18 @@ $(document).ready(function(){
    $('#pageTimes').slideToggle();
    });
  });
+
+
+
+ $(document).ready(function() {
+    $('.descriptionMob').hide(); 
+  $('.btnDescription').click(function() {
+    if(!$('.descriptionMob').hasClass('opened')){
+      $('.descriptionMob').slideUp(function(){$(this).addClass('opened')});
+    }
+    else{
+      $('.descriptionMob').slideDown(function(){$(this).removeClass('opened')});
+    }
+   
+   });
+ });

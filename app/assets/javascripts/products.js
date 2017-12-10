@@ -20,6 +20,9 @@ $(function(){
 
 
 
+
+
+
  $(document).ready(function() {
     $('#productComments').hide(); 
   $('.productCommentsBtnShow').click(function() {

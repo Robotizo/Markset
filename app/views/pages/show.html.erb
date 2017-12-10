@@ -13,13 +13,6 @@
   </div>
   <div class="col-md-5 col-md-pull-2">
     <span class="titleShow"><%= @page.title %></span>
-    <div class="description">
-      <strong id="fontTitleD">Description</strong>
-        <p id="pAttributes">
-          <%= @page.description %>
-        </p>
-      </div>
-      <hr>
       <% if current_user.following?(@page) %>
         <%= form_for(current_user.active_relationships.find_by(followed_id: @page.id), html: { method: :delete }) do |f| %>
           <div class="followRela">
@@ -33,12 +26,27 @@
         <%= f.submit "Follow", class: "btn btn-primary followButton" %>
         <% end %>
       <% end %>
+      <hr>
+      <div class="descriptionDesk">
+      <strong id="fontTitleD">Description</strong>
+        <p id="pAttributes">
+          <%= @page.description %>
+        </p>
+      </div>
+  <%= submit_tag "Description", method: :get, class: "btn btnDescription btn-primary", :type => 'button' %>
+  <hr>
+      <div class="descriptionMob">
+      <strong id="fontTitleD">Description</strong>
+        <p id="pAttributes">
+          <%= @page.description %>
+        </p>
+      </div>
   </div>
 </div>
 <br>
   <br>
   <div class="text-center">
-  <div class="btn-group">
+  <div class="btn-group majorButtons">
     <%= submit_tag "Catalog", method: :get, class: "btn btn1 btn-primary"  %>
     <%= submit_tag "Page Posts", method: :get, class: "btn btn2 btn-primary"  %>
   </div>
