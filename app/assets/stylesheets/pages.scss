@@ -9,18 +9,30 @@
     margin-bottom: 10px;
 }
 
-    div.followRela span.following {
-        display:inline;
-    }
-    div.followRela:hover span.following {
-        display:none;
-    }
-    div.followRela span.unfollow {
-        display:none;
-    }
-    div.followRela:hover span.unfollow {
-        display:inline;
-    }
+
+.followRela{
+    position: relative;
+    left: 22px;
+}
+
+
+.followRela span.following {
+    display:block;
+}
+.followRela:hover span.following {
+    display:none;
+}
+.followRela span.unfollow {
+    display:none;
+}
+.followRela:hover span.unfollow {
+    display:block;
+}
+
+
+.onlyTitle{
+    margin-left: 40px;
+}
 
 
 .mainTitleNew{
@@ -143,7 +155,7 @@ dt{
     top: 1em;
 	position: relative;
 	font-weight: lighter;
-    margin-left: 40px;
+    margin-bottom: 52px;
 }
 
 
@@ -513,22 +525,17 @@ textarea {
 }
 
 .followButton{
-    margin-left: 42px;
-    margin-top: 56px;
+    margin-left: 40px;
 }
 
 .followingButton{
-    margin-left: 42px;
     background-color: #4CAF50;
     color: #fff;
-    margin-top: 56px;
 }
 
 .unfollowButton{
-    margin-left: 42px;
     background-color: #000;
     color: #fff;
-    margin-top: 56px;
 }
 
 .unfollowButton:hover{
@@ -547,22 +554,26 @@ textarea {
 }
 
 .descriptionDesk{
-    margin-left: 27px;
+    margin-left: 30px;
     width: 98%;
+    margin-top: -15px;
 }
 
-.majorButtons{
-    margin-top: -30px;
-}
+
 /* At Media */
 
 @media screen and (max-width: 767px) {
+
+    .followRela{
+        position: relative;
+        left: 0px;
+    }
     .descriptionDesk{
         display: none;
     }
     .descriptionMob{
         display: block;
-        margin-top: -10px;
+        margin-top: 10px;
     }
     .btnDescription{
         display: inline;
@@ -587,9 +598,6 @@ textarea {
     }
     .buttonIn{
     	font-size: 25px;
-    }
-    .titleShow{
-        font-size: 30px;
     }
     .imageShowPage{
         height: 250px;
@@ -640,10 +648,11 @@ textarea {
 
     .titleShow{
         font-size: 40px;
-        top: 1em;
-        position: relative;
         font-weight: lighter;
-        margin-left: 0em;
+    }
+
+    .onlyTitle{
+        margin-left: 0px;
     }
 
     .description{
@@ -692,7 +701,6 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
-        margin-top: 3em;
     }
 
 
@@ -702,7 +710,6 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
-        margin-top: 3em;
     }
 
     .unfollowButton{
@@ -711,12 +718,34 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
-        margin-top: 3em;
     }
 
     .btn-group {
         padding-top: 0em;
         display: inline-flex;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .followRela{
+        position: relative;
+        left: 0px;
+    }
+
+    .onlyTitle{
+        margin-left: 0px;
+    }
+
+    .descriptionDesk{
+        margin-left: 0px;
+        width: 100%;
+        margin-top: -15px;
+    }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1199px){
+    .imageShowPage{
+        margin-left: 0px;
     }
 }
 

@@ -20,7 +20,7 @@ class Page < ApplicationRecord
   		too_long: "Limit your description to %{count} words"
 	}
 	validates :description, presence: true, length: { 
-  		maximum: 50,
+  		maximum: 35,
   		tokenizer: lambda { |str| str.scan(/\w+/) },
   		too_long: "Limit your description to %{count} words"
 	}

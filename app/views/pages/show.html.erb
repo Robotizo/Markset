@@ -7,25 +7,36 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 <div class="text-center">
-<div class="row ">
+<div class="row">
   <div class="col-md-6 col-md-offset-1">
     <%= image_tag(@page.image_url(:thumb), class: "imageShowPage") if @page.image? %>
   </div>
-  <div class="col-md-5 col-md-pull-2">
-    <span class="titleShow"><%= @page.title %></span>
+  <div class="col-md-5 col-md-pull-2 titleShow">
+    <div class="onlyTitle"><%= @page.title %></div>
+  </div>
+
+
+<div class="col-md-2 text-center">
       <% if current_user.following?(@page) %>
         <%= form_for(current_user.active_relationships.find_by(followed_id: @page.id), html: { method: :delete }) do |f| %>
           <div class="followRela">
-            <span class="following"><%= f.submit "Following", class: "btn btn-primary followingButton" %></span>
-            <span class="unfollow"><%= f.submit "Unfollow", class: "btn unfollowButton" %></span>
+              <span class="following"><%= f.submit "Following", class: "btn btn-primary followingButton" %></span>
+              <span class="unfollow"><%= f.submit "Unfollow", class: "btn unfollowButton" %></span>
           </div> 
         <% end %>
+
       <% else %>
         <%= form_for(@page.passive_relationships.build, method: :post) do |f| %>
         <%= hidden_field_tag :followed_id, @page.id %>
         <%= f.submit "Follow", class: "btn btn-primary followButton" %>
         <% end %>
       <% end %>
+  </div>
+
+
+
+
+      <div class="col-md-5 col-md-pull-2">
       <hr>
       <div class="descriptionDesk">
       <strong id="fontTitleD">Description</strong>
@@ -34,14 +45,14 @@
         </p>
       </div>
   <%= submit_tag "Description", method: :get, class: "btn btnDescription btn-primary", :type => 'button' %>
-  <hr>
       <div class="descriptionMob">
       <strong id="fontTitleD">Description</strong>
         <p id="pAttributes">
           <%= @page.description %>
         </p>
       </div>
-  </div>
+    </div>
+  
 </div>
 <br>
   <br>
@@ -55,6 +66,7 @@
 
 <div id="products">
   <div class="row">
+    
   <strong id="fontTitleD">Categories</strong>
   <hr>
     <% if @page_categories.present? %>
@@ -220,3 +232,4 @@
   <% end %>
       </div>
     </div>
+</div>
