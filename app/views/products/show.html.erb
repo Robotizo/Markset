@@ -41,14 +41,14 @@
 </div>
  <% if @product.status == "Available" %>
   <div class="text-center">
-    <div class="col-lg-4 col-lg-offset-3 col-xl-1 col-xl-offset-5">
+    <div class="col-lg-4 col-lg-offset-3 col-md-4 col-xl-1 col-xl-offset-5">
       <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, name: "buyNow", class: "buttonBuy" %>
     </div>
       <div class="wholeRow">
-        <div class="col-md-1 col-xs-5 extraMargin1">
+        <div class="col-md-1 col-xs-5">
           <%= button_to '+', add_line_item_path(@product), method: :get, remote: true, class: "buttonAdd" %>
         </div>
-        <div class="col-md-1 col-xs-5 extraMargin2">
+        <div class="col-md-1 col-xs-5">
           <%= button_to '-', remove_line_item_path(@product), method: :get, remote: true, class: "buttonRemove" %>
         </div>
       </div>
