@@ -44,23 +44,20 @@
     <div class="col-lg-4 col-lg-offset-3 col-xl-1 col-xl-offset-5">
       <%= button_to 'Buy Now', add_line_item_path(@product), method: :get, name: "buyNow", class: "buttonBuy" %>
     </div>
-    <div class="container">
-      <div class="row extraMargin">
-        <div class="col-md-1 col-xs-6">
+      <div class="wholeRow">
+        <div class="col-md-1 col-xs-5 extraMargin1">
           <%= button_to '+', add_line_item_path(@product), method: :get, remote: true, class: "buttonAdd" %>
         </div>
-        <div class="col-md-1 col-xs-6">
+        <div class="col-md-1 col-xs-5 extraMargin2">
           <%= button_to '-', remove_line_item_path(@product), method: :get, remote: true, class: "buttonRemove" %>
         </div>
       </div>
-    </div>
   </div>
   <% elsif @product.status == "Not Available" %>
     <div class="text-center">
       <div class="availabilityShow">This product is currently unavailable for purchase.</div>
     </div>
   <% end %>
-<hr>
 <div class="text-center">
   <div class="secondaryTitle">Product Comments</div>
   <br>
