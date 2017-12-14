@@ -9,3 +9,16 @@ $(document).ready(function(){
     });
 });
 
+
+ $(document).ready(function() {
+    $('#cart').hide(); 
+  $('.btnTog').click(function() {
+    if(!$('#cart').hasClass('opened')){
+      $('#cart').slideUp(function(){$(this).addClass('opened')});
+    }
+    else{
+      $('#cart').slideDown(function(){$(this).removeClass('opened')});
+    }
+   
+   });
+ });

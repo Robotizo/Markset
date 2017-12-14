@@ -8,13 +8,10 @@
   <% end %>
 </div>
 <% if @cart.line_items.present? %>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <%= submit_tag "Show", method: :get, class: "btnTog2", :type => 'button' %>
-    </div>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <%= submit_tag "Hide", method: :get, class: "btnTog", :type => 'button' %>
+    <div class="completeRow">
+      <%= submit_tag "Cart", method: :get, class: "btnTog", :type => 'button' %>
     </div>
   </div>
 </div>
