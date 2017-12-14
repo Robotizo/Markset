@@ -4,22 +4,26 @@
 
 $(function(){
 	$("#cart").hide();
-    $(".btnTog2").click(function(){
-        $("#cart").slideDown("swing");
-    });
     $(".buttonAdd").click(function(){
         $("#cart").slideDown("fast");
     });
 });
 
-$(function(){
-    $(".btnTog").click(function(){
-        $("#cart").slideUp("swing");
-    });
-});
 
 
 
+ $(document).ready(function() {
+    $('#cart').hide(); 
+  $('.btnTog').click(function() {
+    if(!$('#cart').hasClass('opened')){
+      $('#cart').slideUp(function(){$(this).addClass('opened')});
+    }
+    else{
+      $('#cart').slideDown(function(){$(this).removeClass('opened')});
+    }
+   
+   });
+ });
 
 
 
