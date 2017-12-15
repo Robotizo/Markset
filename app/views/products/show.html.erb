@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="completeRow">
-            <%= submit_tag "Purchase List", method: :get, class: "btnTog", :type => 'button' %><span class="caret"></span>
+            <%= submit_tag "Purchase List", method: :get, class: "btnTog", :type => 'button' %>
           </div>
         </div>
       </div>
@@ -36,6 +36,7 @@
 
     <span class="priceShow"><%= number_to_currency(@product.price) %></span>
 </div>
+
  <% if @product.status == "Available" %>
   <div class="text-center">
     <div class="col-lg-4 col-lg-offset-3 col-md-4 col-xl-1 col-xl-offset-5">
