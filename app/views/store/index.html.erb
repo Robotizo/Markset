@@ -59,7 +59,7 @@
 		<% end %>
 		<% else %>
 		<div class="text-center">
-		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other pages.</div>
+		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
 	    <% @pages.each do |page| %>
 	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	      	<div class="pageDesign">
@@ -77,7 +77,7 @@
 </div>
 <% elsif  current_user.following.blank? && session[:user_id] %>
 	<div class="text-center">
-		<div class="secondaryTitle">Pages to follow</div>
+		<div class="secondaryTitle">Stores to follow</div>
 	    <% @pages.each do |page| %>
 	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	      	<div class="pageDesign">

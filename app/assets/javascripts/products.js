@@ -10,6 +10,20 @@ $(function(){
 });
 
 
+$(function() { 
+$(".buttonAdd").click(function(){
+ if ($('#cart tr').length == 1) {
+  $("HTML, BODY").animate({
+      scrollTop: 0
+        }, 1000);
+  $("html, body").bind("scroll mousedown DOMMouseScroll mousewheel keyup touchmove", function(){
+      $('html, body').stop();
+  });
+}
+});
+});
+
+
 
 
  $(document).ready(function() {

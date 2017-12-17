@@ -132,6 +132,8 @@
   <%= @order.instructions %>
 <hr>
 The order ID is <%= @order.id %>.
+<hr>
+Order Date: <%= @order.created_at.to_time.strftime('%B %e at %l:%M %p') %>.
 		  </div>
 	  </body>
   </html>

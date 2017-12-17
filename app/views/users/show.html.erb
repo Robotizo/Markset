@@ -19,7 +19,7 @@
     <hr>
       <div class="btn-group">
         <%= submit_tag "Overview", method: :get, class: "btn btn1 btn-primary"  %>
-        <%= submit_tag "Page Panel", method: :get, class: "btn btn2 btn-primary"  %>
+        <%= submit_tag "Store Panel", method: :get, class: "btn btn2 btn-primary"  %>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th colspan="3">Pages Following</th>
+              <th colspan="3">Stores Following</th>
             </tr>
           </thead>
           <tbody>
@@ -60,8 +60,8 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th>Pages</th>
-                <th colspan="3"><%= link_to "Create New Page", new_page_path, method: :get %></th>
+                <th>Stores</th>
+                <th colspan="3"><%= link_to "Create New Store", new_page_path, method: :get %></th>
               </tr>
             </thead>
             <tbody>
@@ -70,8 +70,8 @@
              <td class="listImageUser"><%= image_tag(page.image_url(:thumb), class: "listImageUser") %></td>
              <td><%= page.title %></td>
              <td class="followFont">Followers: <%= page.followers.count %></td>
-             <td><%= link_to 'Show Page', page, method: :get %></td>
-             <td><%= link_to "Edit Page", edit_page_path(page), method: :get %></td>
+             <td><%= link_to 'Show Store', page, method: :get %></td>
+             <td><%= link_to "Edit Store", edit_page_path(page), method: :get %></td>
            </tr>
           <% end %>
         </tbody>

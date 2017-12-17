@@ -59,7 +59,7 @@
   <div class="text-center">
   <div class="btn-group majorButtons">
     <%= submit_tag "Catalog", method: :get, class: "btn btn1 btn-primary"  %>
-    <%= submit_tag "Page Posts", method: :get, class: "btn btn2 btn-primary"  %>
+    <%= submit_tag "Store Posts", method: :get, class: "btn btn2 btn-primary"  %>
   </div>
 <hr>
 
@@ -77,7 +77,7 @@
       </div>
     <% end %>
     <% else %>
-      <p class="pNoCat">There are no categories in this page. Click button to add.</p>
+      <p class="pNoCat">There are no categories in this store. Click button to add.</p>
       <%= button_to "Add", new_category_path(@category), method: :get, class: "newCat" %>
     <% end %>
   </div>
@@ -96,7 +96,7 @@
       </div>
     <% end %>
     <% else %>
-      <p class="pNoCat">There are no products in this page. Click button to add.</p>
+      <p class="pNoCat">There are no products in this store. Click button to add.</p>
       <%= button_to "Add", new_product_path(@product), method: :get, class: "newCat" %>
     <% end %>
   </div>
@@ -175,7 +175,7 @@
       <% end %>
     <% else %>
       <% if @page.user.id == session[:user_id] %>
-        <p class="pNoCat">Add a post to announce any news within your page.</p>        
+        <p class="pNoCat">Add a post to announce any news within your store profile.</p>        
       <% else %>
         <p class="pNoCat">Currently there are no comments.</p>
       <% end %>
@@ -224,7 +224,7 @@
     <div class="text-center">
       <div class="col-md-12 col-sm-12 col-xs-12 introInfo">
         <hr>
-      <strong id="fontTitleD">Page Notes</strong>
+      <strong id="fontTitleD">Store Notes</strong>
         <p id="pAttributes">
           <%= @page.page_notes %>
         </p>
