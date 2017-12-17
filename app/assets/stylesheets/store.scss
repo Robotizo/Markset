@@ -490,6 +490,14 @@ dt{
     top: 4px;
     position: relative;
   }
+
+  .listImagePage{
+    width: 150px;
+    height: 150px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    box-shadow: 2px 2px 2px #000;
+  }
   .editPosts{
       right: 42%;
       bottom: 60px;
@@ -514,9 +522,8 @@ dt{
   } 
 
   .pagePos{
-    float: none;
     margin-right: 2em;
-    margin-left: 2em;
+    margin-left: 0em;
   }
   .pageDesign{
     border-bottom: 0px solid black;
@@ -526,16 +533,15 @@ dt{
   .pageTitle{
     font-size: 25px;
     font-weight: 300;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 0px;
     margin-left: 0em;
-    text-align: center;
   }
 
   .pageDesc{
     font-size: 20px;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     margin-left: 0px;
     text-align: -webkit-auto;
