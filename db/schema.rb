@@ -141,8 +141,10 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.string   "email"
     t.string   "username"
     t.string   "auth_token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

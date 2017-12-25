@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :payments, only: [:new, :create]
   resources :charges, only: [:new, :create]
   resources :product_comments
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
   resources :post_attachments
   resources :categories
   resources :pages
+  resources :password_resets
+
+
   get 'pages/index'
 
   get 'pages/show'

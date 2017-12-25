@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "password_resets", :media => "all" %>
+<div id="heda"><head>Password Reset</head></div>
+<div id="subheda"><head>Enter your email so we can send you the password reset instructions.</head></div>
+<div class="text-center">
+	<%= form_tag password_resets_path, :method => :post do %>
+	  <div class="inp">
+	    <%= text_field_tag :email, params[:email],placeholder: "Email", class: "fieldEmail" %>
+	  </div>
+	  <div class="logg">
+	  	<%= submit_tag "Send Email", method: :get, class: "btn btn-primary login" %>
+	  </div>
+	<% end %>
+</div>

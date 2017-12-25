@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "password_resets", :media => "all" %>
+<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<div id="heda"><head>Password Reset</head></div>
+<div id="subheda"><head>Hello <%= @user.name %>, please provide a new password.</head></div>
+<div class="text-center">
+    <div class="inp">
+      <%= f.password_field :password, placeholder: "New Password", class: "fieldPass" %>
+    </div>
+    <div class="inp">
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "fieldEmail" %>
+    </div>
+    <div class="logg">
+      <%= f.submit "Update Password", method: :get, class: "btn btn-primary login" %>
+    </div>
+  <% end %>
+</div>
+
