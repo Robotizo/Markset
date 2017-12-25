@@ -527,14 +527,17 @@ textarea {
 
 .followButton{
     margin-left: 40px;
+    margin-bottom: 20px;
 }
 
 .followingButton{
+    margin-bottom: 20px;
     background-color: #4CAF50;
     color: #fff;
 }
 
 .unfollowButton{
+    margin-bottom: 20px;
     background-color: #000;
     color: #fff;
 }
@@ -720,6 +723,7 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
+        margin-bottom: 10px;
     }
 
 
@@ -729,6 +733,7 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
+        margin-bottom: 10px;
     }
 
     .unfollowButton{
@@ -737,6 +742,7 @@ textarea {
         font-size: 20px;
         font-weight: 300;
         padding: 5px 30px;
+        margin-bottom: 10px;
     }
 
     .btn-group {
