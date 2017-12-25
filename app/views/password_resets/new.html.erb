@@ -4,7 +4,7 @@
 <div class="text-center">
 	<%= form_tag password_resets_path, :method => :post do %>
 	  <div class="inp">
-	    <%= text_field_tag :email, params[:email],placeholder: "Email", class: "fieldEmail" %>
+	    <%= text_field_tag :email, params[:email], placeholder: "Email", class: "fieldEmail" %>
 	  </div>
 	  <div class="logg">
 	  	<%= submit_tag "Send Email", method: :get, class: "btn btn-primary login" %>
