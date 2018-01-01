@@ -22,9 +22,17 @@
     <div class="inp">
       <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "fieldEmail" %>
     </div>
+      <div id="passrules">
+        - Must contain 8 or more characters<br>
+        - Must contain a digit<br>
+        - Must contain a lower case character<br>
+        - Must contain an upper case character<br>
+        - Must contain a symbol
+      </div>
     <div class="logg">
-      <%= f.submit "Update Password", method: :get, class: "btn btn-primary login" %>
+      <%= f.submit "Update Password", method: :get, class: "btn btn-primary editConfirm" %>
     </div>
+
   <% end %>
 </div>
 
