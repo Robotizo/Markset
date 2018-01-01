@@ -17,8 +17,7 @@
   <%= tag :input, :type => 'hidden', :name => 'timestamp', :value => @stale_form_check_timestamp %>
   
 <div class="container">
-  <div class="col-md-12">
-  <div class="col-md-6 col-xs-3">
+<div class="orderFields">
   <div class="field">
     <%= f.label :instructions, "Special Directions", class: "titlePageForm" %><br>
     <%= f.text_area :instructions, placeholder: "In the need of special requests direct it here!", class: "formFieldText" %>
@@ -31,12 +30,11 @@
     <%= f.label :pay_type, class: "titlePageForm" %><br>
     <%= f.select(:pay_type, Order::PAYMENT_TYPES, options = {prompt: 'Select a payment method'}, {class: "selectPayType"}) %>
   </div>
-</div>
-
-
-
 
 </div>
+
+
+
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <hr>
@@ -59,3 +57,4 @@
   </div>
 </div>
 </div>
+
