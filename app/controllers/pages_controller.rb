@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def index
     @pages = Page.all.order("created_at DESC")
     @cart = current_cart
-    followingIds = current_user.following.map(&:id)
+    followingIds = current_user.following.map(&:id).reverse!
     @pagesFollow = Page.find(params = followingIds)
   end
 
