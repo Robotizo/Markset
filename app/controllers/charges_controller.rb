@@ -53,16 +53,21 @@ class ChargesController < ApplicationController
           OrderNotifierMailer.producerConfirmed(@order, page, @user).deliver
         end
         if @order.pay_type == "Card"
-          customer = Stripe::Customer.create(
-            email: params[:stripeEmail],
-            source: params[:stripeToken]
-          )
-          charge = Stripe::Charge.create(
-            customer: customer.id,
-            amount: @amount,
-            description: @description + @order.id.to_s,
-            currency: 'cad'
-          )
+          begin
+            customer = Stripe::Customer.create(
+              email: params[:stripeEmail],
+              source: params[:stripeToken]
+            )
+            charge = Stripe::Charge.create(
+              customer: customer.id,
+              amount: @amount,
+              description: @description + @order.id.to_s,
+              currency: 'cad'
+            )
+            rescue Stripe::CardError => e
+              flash[:error] = e.message
+              redirect_to new_charge_path
+          end
           format.html { redirect_to @order, notice: 'Thank you for buying from Markset, here is your purchased list.' }
           format.json { render :show, status: :created, location: @order }
         elsif @order.pay_type == "Cash"

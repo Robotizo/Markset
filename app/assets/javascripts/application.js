@@ -41,6 +41,9 @@ function reload() {
 }
 
 
+
+
+
 function bottomNavFuncIn() {
     var trigger = document.getElementById("bottomnavjs");
     if (trigger.className === "bottomnavIn") {

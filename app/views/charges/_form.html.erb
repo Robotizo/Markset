@@ -31,14 +31,15 @@
                 </div>
               <% end %>
             </article>
-            <hr>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= current_user.name %>"
+                    data-description="<%= current_user.name %> <%= number_to_currency(@cart.total_price) %>"
                     data-amount="<%= number_to_currency(@cart.total_price) %>"
                     data-email="<%= current_user.email %>"
                     data-label="Pay <%= number_to_currency(@cart.total_price) %>"
+                    data-image="<%= current_user.image %>"
                     data-locale="auto"></script>
+
           <% end %>
       </div>
     <% elsif @order.pay_type == "Cash" %>
@@ -50,7 +51,11 @@
     <div class="text-center">
       <div class="orderNotice">Please wait while your order is processed.</div>
       <hr>
-      <%= f.submit("Create Order", {class: "buttonForm buttonGForm submitOrder"}) %>
+      <% if @order.pay_type == "Card" %>
+        <%= f.submit("Pay Order", {class: "buttonForm buttonGForm submitOrder"}) %>
+      <% elsif @order.pay_type == "Cash" %>
+        <%= f.submit("Create Order", {class: "buttonForm buttonGForm submitOrder"}) %>
+      <% end %>
     </div>
   </div>
 </div>

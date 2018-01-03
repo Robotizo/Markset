@@ -25,6 +25,7 @@
 
 }
 
+
 .title{
   margin-right: 6px; 
 }
@@ -226,6 +227,11 @@ input[type="file"] {
   background-color: #307710 !important;
 }
 
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: 100%;
+}
+
+
 @media screen and (max-width: 767px){
   body{
     background-color: rgba(240, 255, 240, 0.1);
@@ -296,12 +302,12 @@ input[type="file"] {
     margin-left: 11px;
   }
 }
-
-@media (max-device-width: 480px) and (orientation: landscape){
+@media (max-width: 340px){
   .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-    max-height: 340px;
+    max-height: 500px;
   }
 }
+
 
 @media (min-width: 768px) and (max-width: 1199px){
   .navbar-left {
