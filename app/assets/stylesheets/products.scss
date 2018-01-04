@@ -506,6 +506,13 @@ textarea {
 
 /* At Media */
 
+@media screen and (min-width: 1890px){
+    .wholeRow{
+        margin-left: 52%;
+    }
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px){
     .wholeRow{
         margin-left: 31%;
