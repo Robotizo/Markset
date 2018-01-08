@@ -1,5 +1,5 @@
 class OrderNotifierMailer < ApplicationMailer
-  default from: "brandoncaiza@markset.com"
+  default from: "orderservices@markset.com"
 
   def confirmed(order, user)
   	@order = order

@@ -31,9 +31,6 @@ a:hover{
   height: 400px;
 }
 
-.firstSection{
-  border-bottom: 1px solid black;
-}
 
 
 h1{
@@ -126,6 +123,10 @@ div.price_line{
   color: white;
 }
 
+
+.firstIntro{
+  padding: 5em;
+}
 
 
 *.unselectable {
@@ -403,16 +404,10 @@ div.price_line{
 }
 
 .listImagePage{
-  width: 200px;
-  height: 200px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  box-shadow: 2px 2px 2px #000;
+  width: 150px;
+  height: 150px;
 }
 
-.listImagePage:hover{
-    box-shadow: 2px 2px 20px #000000;
-}
 
 .pageShowcase:hover {
   background-color: transparent;
@@ -430,27 +425,39 @@ dt{
 
 .pagePos{
   float: left;
-  margin-left: 2em;
 }
 
-.pageDesign{
-  border-bottom: 1px solid black;
-}
 
 .secondaryTitle{
   font-size: 30px;
   font-weight: 300;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 
+.categoryTitle{
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  margin-top: 2em;
+}
+
+.convinientBorder{
+  border-top: 1px black solid;
+}
+
+
 .pageTitle{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 10em;
+  margin-left: 8em;
   text-align: -webkit-auto;
+}
+
+.pageWidth{
+  width: 30%;
 }
 
 .pageDesc{
@@ -461,6 +468,19 @@ dt{
   margin-left: 250px;
   text-align: -webkit-auto;
 }
+
+
+.completeBox{
+  margin: 18px;
+  box-shadow: 0px 0px 2px 0px;
+  padding-left: 0px;
+}
+
+.completeBox:hover{
+  box-shadow: 0px 0px 2px 1px;
+}
+
+
 
 @media screen and (max-width: 567px){
     .postBox{
@@ -483,6 +503,20 @@ dt{
 
 
 @media screen and (max-width: 767px){
+  .completeBox{
+    margin: 0px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0px 0px 2px 0px;
+    padding-left: 0px;
+  }
+  .firstIntro{
+    padding: 1em;
+  }
+
+  .pageWidth{
+    width: 100%;
+  }
   .listImagePagePost {
     width: 50px;
     height: 50px;
@@ -492,11 +526,9 @@ dt{
   }
 
   .listImagePage{
-    width: 150px;
-    height: 150px;
-    margin-top: 15px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 0px;
-    box-shadow: 2px 2px 2px #000;
   }
   .editPosts{
       right: 42%;
@@ -522,18 +554,13 @@ dt{
   } 
 
   .pagePos{
-    margin-right: 2em;
+    margin-right: 1em;
     margin-left: 0em;
-  }
-  .pageDesign{
-    border-bottom: 0px solid black;
-    border-top: 1px solid black;
   }
 
   .pageTitle{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 300;
-    margin-top: 20px;
     margin-bottom: 0px;
     margin-left: 0em;
   }

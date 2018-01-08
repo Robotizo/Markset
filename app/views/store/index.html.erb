@@ -10,7 +10,6 @@
 		<div class="row">
 		<% if @posts.exists? %>
 		<% @posts.each do |post| %>
-		
 			<div class="postBox">
 				<%= link_to (image_tag post.page.image_url(:thumb), class: "listImagePagePost"), post.page, method: :get %> 
 				<div class="postPageTitle"><%= link_to post.page.try(:title), post.page, method: :get %></div>
@@ -75,6 +74,9 @@
 		</div>
 	</div>
 </div>
+
+
+
 <% elsif  current_user.following.blank? && session[:user_id] %>
 	<div class="text-center">
 		<div class="secondaryTitle">Stores to follow</div>
@@ -90,29 +92,62 @@
 	    <% end %>
 	</div>
 <% end %>
+
+
+
+
 <% if !session[:user_id] %>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="firstSection">
+			<div class="firstIntro">
 	  			<div class="welcome">Welcome to Markset</div>
-	  			<div class="exSection">Markset is a place where you can buy from your favorite brands and keep in touch with their activity. Commerce is taken to a new level by making this process more efficient through Markset.</div>
+	  			<div class="exSection">Markset is a place where you can buy from your favorite brands and keep in touch with their activity.</div>
 	  			<%= link_to 'Login', login_path, method: :get, class: "btn btn-primary loginBtn" %>
 	  			<%= link_to 'Sign Up', new_user_path, method: :get, class: "btn btn-primary signBtn" %>
-	  		</div>
+  			</div>
 		</div>
 	</div>
 	<div class="text-center">
-		<div class="secondaryTitle">Stores to follow</div>
-	    <% @pages.each do |page| %>
-	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	      	<div class="pageDesign">
-	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
-	        </div>
-	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
-	        <div class="pageTitle"><%= page.genre %></div>
-	        <div class="pageDesc"><%= page.description %></div>
-	      </div>
-	    <% end %>
+		<div class="container">
+			<div class="secondaryTitle">Stores to follow</div>
+			<div class="convinientBorder"></div>
+		    <% @pages.each do |page| %>
+		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
+		      	<div class="pageDesign">
+		        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+		        </div>
+		        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+		        <div class="pageTitle"><%= page.genre %></div>
+		    </div>
+		    <% end %>
+		    </div>
+		  <div class="container">
+		   <div class="categoryTitle">Featured Categories</div>
+			<div class="convinientBorder"></div>
+		    <% @categories.limit(6).each do |category| %>
+		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
+		      	<div class="pageDesign">
+		        <%= link_to image_tag(category.image_url(:thumb), class: "listImagePage pagePos"), category, method: :get, class: "pageShowcase" %>
+		        </div>
+		        <div class="pageTitle"><%= link_to truncate(category.name, length: 20), category, method: :get %></div>
+		        <div class="pageTitle">From <%= category.page.title %></div>
+		      </div>
+		    <% end %>
+		  </div>
+		 <div class="container">
+		   <div class="categoryTitle">Featured Products</div>
+			<div class="convinientBorder"></div>
+		    <% @products.limit(6).each do |product| %>
+		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
+	      	  <% product.product_attachments.first(1).each do |p| %>
+			    <%= (link_to image_tag(p.image_url(:thumb), class: "listImagePage pagePos"), product, method: :get )if p.image?%>
+			  <% end %>
+		        <div class="pageTitle"><%= link_to truncate(product.title, length: 20), product, method: :get %></div>
+		        <div class="pageTitle">From <%= product.page.title %></div>
+		      </div>
+		    <% end %>
+		  </div>
+	   
 	</div>
 <% end %>
 </body>
