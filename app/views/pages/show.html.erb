@@ -77,6 +77,8 @@
         <dt class="dt1"><%= link_to truncate(category.name, length: 20), category, method: :get %></dt>
       </div>
     <% end %>
+    <% elsif @page.user.id != @user.id %>
+      <p class="pNoCat">There are currently no categories in this store.</p>
     <% else %>
       <p class="pNoCat">There are no categories in this store. Click button to add.</p>
       <%= button_to "Add", new_category_path(@category), method: :get, class: "newCat" %>
@@ -95,7 +97,9 @@
         <dt class="dt1"><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
         <dt><%= number_to_currency(product.price) %></dt><br>
       </div>
-    <% end %>
+      <% end %>
+    <% elsif @page.user.id != @user.id %>
+      <p class="pNoCat">There are currently no products in this store.</p>
     <% else %>
       <p class="pNoCat">There are no products in this store. Click button to add.</p>
       <%= button_to "Add", new_product_path(@product), method: :get, class: "newCat" %>
