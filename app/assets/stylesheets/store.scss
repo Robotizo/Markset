@@ -603,10 +603,26 @@ dt{
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px){s
-    .listImagePagePost{
-        right: -43%;
-    }
+@media screen and (min-width: 768px) and (max-width: 1199px){
+  .listImagePagePost{
+      right: -43%;
+  }
+  .pageWidth {
+    width: 45%;
+  }
+  .welcome {
+    font-size: 50px;
+    font-weight: 300;
+    padding-top: 1em;
+    padding-left: .7em;
+    padding-right: 1.5em;
+    margin-left: 30px;
+  }
+
+  .firstIntro {
+    padding: 0em;
+  }
+
 }
 
 
