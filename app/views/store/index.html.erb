@@ -112,39 +112,45 @@
 			<div class="secondaryTitle">Stores to follow</div>
 			<div class="convinientBorder"></div>
 		    <% @pages.each do |page| %>
+		    <%= link_to page, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 		      	<div class="pageDesign">
-		        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 		        </div>
-		        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
-		        <div class="pageTitle"><%= page.genre %></div>
+		        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
+		        <div class="pageDesc"><%= page.genre %></div>
 		    </div>
+		    <% end %>
 		    <% end %>
 		    </div>
 		  <div class="container">
 		   <div class="categoryTitle">Featured Categories</div>
 			<div class="convinientBorder"></div>
 		    <% @categories.limit(6).each do |category| %>
+		    <%= link_to category, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 		      	<div class="pageDesign">
-		        <%= link_to image_tag(category.image_url(:thumb), class: "listImagePage pagePos"), category, method: :get, class: "pageShowcase" %>
+		        <%= image_tag(category.image_url(:thumb), class: "listImagePage pagePos") %>
 		        </div>
-		        <div class="pageTitle"><%= link_to truncate(category.name, length: 20), category, method: :get %></div>
-		        <div class="pageTitle">From <%= category.page.title %></div>
+		        <div class="pageTitle"><%= truncate(category.name, length: 20) %></div>
+		        <div class="pageDesc">From <%= category.page.title %></div>
 		      </div>
+		    <% end %>
 		    <% end %>
 		  </div>
 		 <div class="container">
 		   <div class="categoryTitle">Featured Products</div>
 			<div class="convinientBorder"></div>
 		    <% @products.limit(6).each do |product| %>
+		    <%= link_to product, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 	      	  <% product.product_attachments.first(1).each do |p| %>
-			    <%= (link_to image_tag(p.image_url(:thumb), class: "listImagePage pagePos"), product, method: :get )if p.image?%>
+			    <%= image_tag(p.image_url(:thumb), class: "listImagePage pagePos") if p.image?%>
 			  <% end %>
-		        <div class="pageTitle"><%= link_to truncate(product.title, length: 20), product, method: :get %></div>
-		        <div class="pageTitle">From <%= product.page.title %></div>
+		        <div class="pageTitle"><%= truncate(product.title, length: 20) %></div>
+		        <div class="pageDesc">From <%= product.page.title %></div>
 		      </div>
+		    <% end %>
 		    <% end %>
 		  </div>
 	   
