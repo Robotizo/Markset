@@ -148,6 +148,7 @@
 			    <%= image_tag(p.image_url(:thumb), class: "listImagePage pagePos") if p.image?%>
 			  <% end %>
 		        <div class="pageTitle"><%= truncate(product.title, length: 20) %></div>
+		        <div class="pageDesc"><%= number_to_currency(product.price) %></div>
 		        <div class="pageDesc">From <%= product.page.title %></div>
 		      </div>
 		    <% end %>
