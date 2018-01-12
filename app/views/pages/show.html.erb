@@ -33,7 +33,7 @@
       <% end %>
   </div>
 
-  
+
 
       <div class="col-md-5 col-md-pull-2">
       <div class="descriptionDesk">
@@ -190,22 +190,10 @@
 <hr>
 <div class="text-center">
 <div class="col-md-12 introInfo">
-    <div class="col-xs-4 col-sm-4">
+    <div class="col-xs-12 col-sm-12">
       <strong id="fontTitleD">Genre</strong>
         <p id="pAttributes">
            <%= @page.genre %>
-        </p>
-    </div>
-    <div class="col-xs-4 col-sm-4">
-      <strong id="fontTitleD">Created</strong>
-        <p id="pAttributes">
-          <%= @page.created_at.to_time.strftime('%B %e at %l:%M %p') %>
-        </p>
-    </div>
-        <div class="col-xs-4 col-sm-4">
-      <strong id="fontTitleD">Created by</strong>
-        <p id="pAttributes">
-          <%= @page.user.name %>
         </p>
     </div>
   </div>
