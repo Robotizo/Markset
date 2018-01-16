@@ -60,8 +60,11 @@
 <div class="text-center">
   <div class="secondaryTitle">Product Comments</div>
   <br>
-  <%= submit_tag "Show Comments", method: :get, class: "btn productCommentsBtnShow btn-primary", :type => 'button' %>
-  <%= submit_tag "Hide Comments", method: :get, class: "btn productCommentsBtnHide btn-primary", :type => 'button' %>
+
+
+  <%= submit_tag "Comments on Product", method: :get, class: "productCommentsBtn", :type => 'button' %><i class="arrow down"></i>
+
+
   <div id ="productComments">
     <%= link_to "Add Comment", new_product_comment_path(product_id: @product.id), method: :get, class: "productComment btn btn-primary" %>
     <%= render template: 'product_comments/show' %>

@@ -494,13 +494,23 @@ textarea {
 }
 
 .productComment{
-    margin: 1em;
-    
+    margin: 1em; 
 }
 
     .wholeRow{
         margin-left: 14%;
     }
+
+
+.productCommentsBtn{
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 0px;
+    padding: 10px;
+    width: 30%;
+    background-color: white;
+    border: 1px solid black;
+}
 
 
 
@@ -652,6 +662,32 @@ textarea {
     .wholeRow{
         margin-left: 14%;
     }
+
+    .productCommentsBtn{
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        outline: none;
+    }
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    i {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .productComment{
+        margin: 1em;
+        margin-top: 2em; 
+        width: 50%;
+    }
+
 
 }
 

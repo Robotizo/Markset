@@ -40,16 +40,17 @@ $(".buttonAdd").click(function(){
  });
 
 
-
- $(document).ready(function() {
-    $('#productComments').hide(); 
-  $('.productCommentsBtnShow').click(function() {
-   $('#productComments').slideDown();
+  $(document).ready(function() {
+    $('#productComments').hide();  
+  $('.productCommentsBtn').click(function() {
+    if(!$('#productComments').hasClass('opened')){
+      $('#productComments').slideUp(function(){$(this).addClass('opened')});
+    }
+    else{
+      $('#productComments').slideDown(function(){$(this).removeClass('opened')});
+    }
+   
    });
  });
 
- $(document).ready(function() {
-  $('.productCommentsBtnHide').click(function() {
-   $('#productComments').slideUp();
-   });
- });
+
