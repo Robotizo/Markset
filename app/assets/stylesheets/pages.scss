@@ -165,9 +165,17 @@ dt{
     top: 4em;
 }
 
+
+
+
 .introInfo{
 	top: 3em;
 	display: block;
+}
+
+.introInfoExcept{
+    top: 3em;
+    display: block;
 }
 
 
@@ -344,25 +352,31 @@ textarea {
 .listImagePagePost {
     width: 50px;
     height: 50px;
-    right: -44%;
-    top: 8px;
-    position: relative;
-    z-index: 1;
+    margin: 5;
+    float: left
 }
 
+.storeTitle{
+  margin-bottom: 60px;
+}
+
+
 .editPosts {
-    position: relative;
-    right: 45%;
-    bottom: 30px;
     border: 1px solid transparent;
     font-size: 15px;
+    display: block;
     font-weight: 200;
     border-radius: 0px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    background-color: white;
-    border: 1px solid black;
+    float: right;
     z-index: 1;
+    margin-top: -61px;
+    margin-right: -1px;
+    border: 1px solid;
+    padding: 20px;
+    padding-bottom: 19px;
+    background-color: white;
 }
 
 
@@ -371,19 +385,11 @@ textarea {
     color: white;
 }
 
-
-.postPageTitleUser{
-    margin-top: -77px;
-    font-size: 28px;
-    font-weight: 300;
-    position: relative;
-}
-
-.postPageTitleNot{
-    margin-top: -35px;
-    font-size: 28px;
-    font-weight: 300;
-    position: relative;
+.postPageTitle {
+  margin: 10px;
+  font-size: 28px;
+  font-weight: 300;
+  float: left
 }
 
 .postTitle {
@@ -408,9 +414,11 @@ textarea {
 
 .newPost{
     border: 1px solid transparent;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 200;
     border-radius: 0px;
+    width: 60%;
+    height: 20%;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     background-color: white;
@@ -469,8 +477,8 @@ textarea {
 } 
 .showImagePosts{
     position: relative;
-    bottom: 7px;
-    padding: 5px;
+    bottom: 10px;
+    padding: 12px;
     border: 1px solid transparent;
     font-size: 15px;
     font-weight: 200;
@@ -567,6 +575,14 @@ textarea {
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    .introInfo{
+        top: 3em;
+        display: none;
+    }
+    .introInfoExcept{
+        top: 3em;
+        display: block;
+    }
 
     .down {
         transform: rotate(45deg);
@@ -602,6 +618,12 @@ textarea {
         border-bottom: none;
         border-radius: 0;
         background: white;
+    }
+
+    #mobDescription{
+        font-size: 20px;
+        font-weight: 100;
+        border-bottom: 1px solid black;
     }
 
 
@@ -655,7 +677,7 @@ textarea {
         top: 4em;
     }
     #pAttributes{
-        font-size: 15px;
+        font-size: 14px;
     }
     .listImagePageShow{
         width: 10em;
@@ -688,9 +710,6 @@ textarea {
     .listImagePagePost {
         width: 50px;
         height: 50px;
-        right: -40%;
-        top: 8px;
-        position: relative;
     }
     .editPosts {
         right: 42%;
@@ -749,6 +768,19 @@ textarea {
     .btn-group {
         padding-top: 0em;
         display: inline-flex;
+    }
+
+    .newPost{
+        border: 1px solid transparent;
+        font-size: 20px;
+        font-weight: 200;
+        border-radius: 0px;
+        width: 100%;
+        height: 15%;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        background-color: white;
+        border: 1px solid black;
     }
 }
 

@@ -4,18 +4,25 @@
 	<div class="text-center">
 		<div class="row">
 			<div class="postBox">
+
+
+			<div class="storeTitle">
 				<%= link_to (image_tag @post.page.image_url(:thumb), class: "listImagePagePost"), @post.page, method: :get %> 
+				<%= link_to @post.page.try(:title), @post.page, method: :get, class: "postPageTitle" %>
+
+			</div>
 			<% if @post.user.id == @user.id %>
-				<%= button_to "Edit", edit_post_path(@post), method: :get, class: "editPosts" %>
-			<% else %>
- 			<% end %>
- 			<% if @post.user.id != @user.id %>
-				<div class="postPageTitleNot"><%= link_to @post.page.try(:title), @post.page, method: :get %></div>
-			<% else %>
-				<div class="postPageTitleUser"><%= link_to @post.page.try(:title), @post.page, method: :get %></div>
-			<% end %>
+					<%= button_to "Edit", edit_post_path(@post), method: :get, class: "editPosts" %>
+				<% else %>
+	 			<% end %>
+
+
+
+
+
 
 				<div class="postSection">
+					<% if @post.post_attachments.length >= 1 %>
 					<div class="pictureSection">
 						 <% if @post.post_attachments.length < 2 %>
 				          <% @post.post_attachments.each do |p| %>
@@ -31,6 +38,8 @@
 				          <% end %>
 				        <% end %>
 					</div>
+					<% else %>
+              		<% end %>
 				</div>
 				<div class="contentSection">
 					<dt class="postTitle"><%= @post.title %></dt>

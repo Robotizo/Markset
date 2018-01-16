@@ -11,9 +11,14 @@
 		<% if @posts.exists? %>
 		<% @posts.each do |post| %>
 			<div class="postBox">
+			<div class="storeTitle">
 				<%= link_to (image_tag post.page.image_url(:thumb), class: "listImagePagePost"), post.page, method: :get %> 
-				<div class="postPageTitle"><%= link_to post.page.try(:title), post.page, method: :get %></div>
+				<%= link_to post.page.try(:title), post.page, method: :get, class: "postPageTitle" %>
+			</div>
+
+				
                 <div class="postSection">
+                <% if post.post_attachments.length >= 1 %>
                 	<div class="pictureSection">
                    <% if post.post_attachments.length < 2 %>
 			          <% post.post_attachments.each do |p| %>
@@ -26,7 +31,7 @@
 			          <% elsif post.post_attachments.length > 4 %>
 			          <% post.post_attachments.limit(4).each do |p| %>
 			            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
-			          <% end %><hr>
+			          <% end %>
 			          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
 			          <% else %>
 			          <% post.post_attachments.limit(4).each do |p| %>
@@ -34,7 +39,10 @@
 			          <% end %>
 			        <% end %>
               	</div>
+              	<% else %>
+              	<% end %>
 				</div>
+
 				<div class="contentSection">
 				<dt class="postTitle"><%= post.title %></dt>
 					<% if post.content.length > 200 %>
@@ -59,16 +67,18 @@
 		<% else %>
 		<div class="text-center">
 		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
+		<hr>
+	<div class="container">
 	    <% @pages.each do |page| %>
-	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 	      	<div class="pageDesign">
 	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
 	        </div>
 	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
 	        <div class="pageTitle"><%= page.genre %></div>
-	        <div class="pageDesc"><%= page.description %></div>
 	      </div>
 	    <% end %>
+	   </div>
 	</div>
 		<% end %>
 		</div>

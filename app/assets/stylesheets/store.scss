@@ -241,9 +241,8 @@ div.price_line{
 .listImagePagePost {
     width: 50px;
     height: 50px;
-    right: -44%;
-    top: 5px;
-    position: relative;
+    margin: 5;
+    float: left
 }
 
 .editPosts {
@@ -296,10 +295,15 @@ div.price_line{
     font-size: 18px;
 }
 
+.storeTitle{
+  margin-bottom: 60px;
+}
+
 .postPageTitle {
-    margin-top: -40px;
-    font-size: 28px;
-    font-weight: 300;
+  margin: 10px;
+  font-size: 28px;
+  font-weight: 300;
+  float: left
 }
 
  .postPictures{
@@ -317,7 +321,7 @@ div.price_line{
 .showImagePosts{
     position: relative;
     bottom: 10px;
-    padding: 5px;
+    padding: 12px;
     border: 1px solid transparent;
     font-size: 15px;
     font-weight: 200;
@@ -335,7 +339,6 @@ div.price_line{
 }
 
 .pictureSection{
-    margin-top: 12px;
     border-top: 1px solid black;
 }
 
@@ -535,9 +538,6 @@ dt{
   .listImagePagePost {
     width: 50px;
     height: 50px;
-    right: -40%;
-    top: 4px;
-    position: relative;
   }
 
   .listImagePage{
@@ -550,11 +550,8 @@ dt{
       bottom: 60px;
   }
   .postPageTitle {
-    margin-top: -42px;
     font-size: 28px;
     font-weight: 300;
-    margin-right: 65px;
-    margin-left: 65px;
   }
 
   .postPictures{
