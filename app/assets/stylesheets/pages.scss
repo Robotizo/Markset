@@ -577,11 +577,11 @@ textarea {
 @media screen and (max-width: 767px) {
     .introInfo{
         top: 3em;
-        display: all;
+        display: none;
     }
     .introInfoExcept{
         top: 3em;
-        display: none;
+        display: block;
     }
 
     .down {
