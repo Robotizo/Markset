@@ -50,17 +50,19 @@
         <p id="pAttributes">
           <%= @page.description %>
         </p>
+        
+        <% if @page.opening_day.present? && @page.closing_day.present? && @page.opening_time.present? && @page.closing_time.present? %>
         <hr>
         <strong id="mobDescription">Store Times</strong>
-        <% if @page.opening_day.present? && @page.closing_day.present? && @page.opening_time.present? && @page.closing_time.present? %>
         <p id="pAttributes">
           <%= @page.opening_day %> - <%= @page.closing_day %><br>
           <%= @page.opening_time.to_time.strftime('%l:%M %p') %> - <%= @page.closing_time.to_time.strftime('%l:%M %p') %> 
         </p>
         <% else %>
         <% end %>
-        <hr>
+        
         <% if @page.page_notes.present? %>
+        <hr>
       <strong id="mobDescription">Store Notes</strong>
         <p id="pAttributes">
           <%= @page.page_notes %>
