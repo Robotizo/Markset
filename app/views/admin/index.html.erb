@@ -1,10 +1,36 @@
 <div class="container">
-<h1>Welcome <%= $username.titleize %></h1>
+<h1>Welcome <%= @userAdmin.name %></h1>
 
 
 It's <%= Time.now %>
 We have <%= pluralize(@total_orders, "order") %>
-
+  <hr>
+  <% if @orders.present? %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date Ordered</th>
+            <th>Pay type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+      <%  @orders.each do |order| %>
+      <tr>
+         <td><%= order.id %></td>
+         <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+         <td><%= order.pay_type %></td>
+         <th><%= number_to_currency(order.total_price) %></th>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+  <% else %>
+  <div class="text-center">
+      <p class="noOrder">There are no orders yet.</p>
+  </div>
+  <% end %>
 </div>
 
 <!-- Algorithms -->

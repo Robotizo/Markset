@@ -9,6 +9,15 @@
     margin-bottom: 10px;
 }
 
+.namesFirst{
+    font-size: 28px;
+    font-weight: 300;
+}
+.names{
+    font-size: 25px;
+    font-weight: 300;
+}
+
 .userDropdown{
 	font-size: 16px;
 	color: black;
@@ -20,6 +29,10 @@
 	background-color: transparent !important;
 }
 
+.mainUserInfo{
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
 
 .btn {
     border: 1px solid transparent;
@@ -33,6 +46,7 @@
 .btn1{
     padding: 15px 170px;
 }
+
 .btn2{
     padding: 15px 150px;
 }
@@ -70,6 +84,10 @@
     margin-left: 20px;
 }
 
+.userSettings{
+    margin-top: 40px;
+}
+
 .usernameShow{
     font-size: 25px;
     font-weight: 400;
@@ -78,6 +96,12 @@
 
 .formFieldLine{
     width: 350px;
+}
+
+.userImage{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
 }
 
 @media screen and (max-width: 800px){
@@ -148,6 +172,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .namesFirst{
+        margin-top: 20px;
+    }
      .formFieldLine{
         width: 250px;
     }

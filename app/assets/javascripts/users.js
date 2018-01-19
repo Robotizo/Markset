@@ -5,8 +5,11 @@
 
 $(document).ready(function(){
 	$("#pagesPanel").hide();
+    $(".btn1").css({"color": "#fff", "background-color": "#222222"});
     $(".btn1").click(function(){
         $("#pagesPanel").load("/users/"+id+"/ #overview");
+        $(".btn1").css({"color": "#fff", "background-color": "#222222"});
+        $(".btn2").css({"color": "#333333", "background-color": "#ffffff", "border-color": "#333333"});
     });
 });
 
@@ -14,6 +17,8 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".btn2").click(function(){
         $("#overview").load("/users/"+id+"/ #pagesPanel");
+        $(".btn2").css({"color": "#fff", "background-color": "#222222"});
+        $(".btn1").css({"color": "#333333", "background-color": "#ffffff", "border-color": "#333333"});
     });
 });
 
