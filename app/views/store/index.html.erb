@@ -64,7 +64,11 @@
                 </div>
 			</div>
 		<% end %>
+
+
 		<% else %>
+
+
 		<div class="text-center">
 		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
 		<hr>
@@ -90,16 +94,17 @@
 <% elsif  current_user.following.blank? && session[:user_id] %>
 	<div class="text-center">
 		<div class="secondaryTitle">Stores to follow</div>
+		<div class="container">
 	    <% @pages.each do |page| %>
-	      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 	      	<div class="pageDesign">
 	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
 	        </div>
 	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
 	        <div class="pageTitle"><%= page.genre %></div>
-	        <div class="pageDesc"><%= page.description %></div>
 	      </div>
 	    <% end %>
+	</div>
 	</div>
 <% end %>
 
