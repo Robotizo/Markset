@@ -8,15 +8,19 @@
 
 <div class="row">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+  <%= link_to product, method: :get, class: "specialA" do %>
+  <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="productBorder">
       <% product.product_attachments.first(1).each do |p| %>
-                    <%= (link_to image_tag(p.image_url(:thumb), class: 'list_image'), product, method: :get )if p.image?%>
-                  <% end %>
-            <dt id="fontTitle1"><%= link_to truncate(product.title, length: 22), product, method: :get, class: "productLinks" %></dt>
+              <%= image_tag(p.image_url(:thumb), class: 'list_image') if p.image?%>
+          <% end %>
+            <dt id="fontTitle1"><%= truncate(product.title, length: 22) %></dt>
             <dt id="fontPrice"><%= number_to_currency(product.price) %></dt>
             <dt id="fontTitle2">From <%= link_to (product.page.try :title), product.page, method: :get %></dt>
-            <dd id="fontCat">Category <%= link_to (product.category.try :name), product.category, method: :get %></dd><hr>
+            <dd id="fontCat">Category <%= link_to (product.category.try :name), product.category, method: :get %></dd>
     </div>
+  </div>
+  <% end %>
   <% end %>
 
 </div>
