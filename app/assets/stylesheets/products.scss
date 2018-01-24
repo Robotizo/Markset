@@ -63,16 +63,14 @@ i {
 }
 
 .list_image{
-	width: 261px;
-	height: 250px;
+	width: 100%;
     border-radius: 5px;
     border-radius: 5px 5px 0px 0px;
 }
 
 .productBorder{
-    border: 1px solid black;
+    border: 1px solid;
     border-color: #a2a2a2;
-    box-shadow: 0px 0px 6px 0px;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -244,13 +242,13 @@ i {
 }
 
 #fontTitle1{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     margin-top: 10px;
 }
 
 #fontTitle2{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
     padding-bottom: 5px;
 }
@@ -266,13 +264,13 @@ i {
 }
 
 #fontCat{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
     margin-bottom: 10px;
 }
 
 #fontPrice{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     padding-bottom: 5px;
     padding-top: 5px;
@@ -533,6 +531,9 @@ textarea {
 
 
 
+
+
+
 /* At Media */
 
 @media screen and (min-width: 1890px){
@@ -557,10 +558,25 @@ textarea {
 
 }
 
+@media screen and (max-width: 767px) and (min-width: 450px){
 
+}
+
+@media screen and (max-width: 767px) and (min-width: 450px){
+    .wideMobiles{
+        width: 33.3333333333%;
+    }
+}
 
 
 @media screen and (max-width: 767px) {
+    .col-xs-6{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .productBorder {
+        box-shadow: 0px 0px 0px 0px; 
+    }
 	 h1{
         font-size: 30px;
     }
@@ -586,8 +602,7 @@ textarea {
       	display: none;
     }
     .list_image{
-        width: 149px;
-        height: 140px;
+        width: 100%;
     }
     .buttonIn{
     	font-size: 25px;
@@ -628,7 +643,7 @@ textarea {
     }
     .formFieldText{
         width: 250px;
-        height: 120px;
+        height: 120x;
     }
     .buttonAdd{
         padding: 20px 45px;
@@ -805,8 +820,7 @@ textarea {
         font-weight: 200;
     }
     .list_image{
-        width: 115px;
-        height: 115px;
+        width: 128px;
     }
     .wholeRow{
         margin-left: 9%;
@@ -814,12 +828,6 @@ textarea {
 
 }
 
-@media screen and (max-width: 736px) and (max-height: 414px){
-    .list_image{
-        height: 120px;
-        margin-left: -3px;
-    }
-}
 
 
 @media screen and (min-width: 768px) and (max-width: 1250px){

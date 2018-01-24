@@ -52,9 +52,9 @@
       <div class="orderNotice">Please wait while your order is processed.</div>
       <hr>
       <% if @order.pay_type == "Card" %>
-        <%= f.submit("Pay Order", {class: "buttonForm buttonGForm submitOrder"}) %>
+        <%= f.submit("Pay With Card", {class: "buttonForm buttonGForm submitOrder"}) %>
       <% elsif @order.pay_type == "Cash" %>
-        <%= f.submit("Create Order", {class: "buttonForm buttonGForm submitOrder"}) %>
+        <%= f.submit("Pay With Cash", {class: "buttonForm buttonGForm submitOrder"}) %>
       <% end %>
     </div>
   </div>

@@ -16,6 +16,11 @@
 }
 
 
+.specialA{
+  color: black !important;
+}
+
+
 .followRela span.following {
     display:block;
 }
@@ -132,7 +137,7 @@ a:hover{
 }
 
 dt{
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 300; 
 }
 
@@ -141,15 +146,8 @@ dt{
 }
 
 .listImagePageShow{
-	width: 250px;
-	height: 250px;
-    margin-top: 20px;
-    box-shadow: 2px 2px 2px #000000;
-    border-radius: 5px;
-}
-
-.listImagePageShow:hover{
-    box-shadow: 2px 2px 20px #000000;
+	width: 100%;
+    border-radius: 5px 5px 0px 0px;
 }
 
 
@@ -584,10 +582,28 @@ textarea {
     margin-top: -15px;
 }
 
+.productBorder{
+    border: 1px solid;
+    border-color: #a2a2a2;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dtCat{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
 
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    .col-xs-6{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     .introInfo{
         top: 3em;
         display: none;
@@ -693,8 +709,7 @@ textarea {
         font-size: 14px;
     }
     .listImagePageShow{
-        width: 10em;
-        height: 10em;
+        width: 100%;
     }
     .formFieldLine{
         width: 250px;
@@ -815,6 +830,12 @@ textarea {
         margin-left: 0px;
         width: 100%;
         margin-top: -15px;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 450px){
+    .wideMobiles{
+        width: 33.3333333333%;
     }
 }
 

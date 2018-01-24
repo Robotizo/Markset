@@ -91,10 +91,14 @@
   <hr>
     <% if @page_categories.present? %>
         <% @page_categories.each do |category| %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-      <%= (link_to image_tag(category.image_url(:thumb), class: "listImagePageShow"), category, method: :get) if category.image? %>
-        <dt class="dt1"><%= link_to truncate(category.name, length: 20), category, method: :get %></dt>
+        <%= link_to category, method: :get, class: "specialA" do %>
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+      <div class="productBorder">
+      <%= image_tag(category.image_url(:thumb), class: "listImagePageShow") if category.image? %>
+        <dt class="dtCat"><%= truncate(category.name, length: 20) %></dt>
       </div>
+    </div>
+    <% end %>
     <% end %>
     <% elsif @page.user.id != @user.id %>
       <p class="pNoCat">There are currently no categories in this store.</p>
@@ -108,15 +112,24 @@
   <strong id="fontTitleD">Products</strong>
   <hr>
     <% if @page_products.present? %>
+
+
         <% @page_products.each do |product| %>
-      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <%= link_to product, method: :get, class: "specialA" do %>
+      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+        <div class="productBorder">
         <% product.product_attachments.first(1).each do |p| %>
-                    <%= (link_to image_tag(p.image_url(:thumb), class: "listImagePageShow"), product, method: :get )if p.image?%>
+                    <%= image_tag(p.image_url(:thumb), class: "listImagePageShow") if p.image?%>
                   <% end %>
-        <dt class="dt1"><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
+        <dt class="dt1"><%= truncate(product.title, length: 20) %></dt>
         <dt><%= number_to_currency(product.price) %></dt><br>
       </div>
+      </div>
       <% end %>
+      <% end %>
+
+
+
     <% elsif @page.user.id != @user.id %>
       <p class="pNoCat">There are currently no products in this store.</p>
     <% else %>
