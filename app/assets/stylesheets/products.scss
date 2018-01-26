@@ -64,7 +64,6 @@ i {
 
 .list_image{
 	width: 100%;
-    border-radius: 5px;
     border-radius: 5px 5px 0px 0px;
 }
 
@@ -820,7 +819,7 @@ textarea {
         font-weight: 200;
     }
     .list_image{
-        width: 128px;
+        width: 100%;
     }
     .wholeRow{
         margin-left: 9%;

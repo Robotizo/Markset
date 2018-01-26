@@ -7,14 +7,18 @@
 <hr>
 <% if @category_products.present? %>
 <% @category_products.each do |product| %>
-<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-	<% product.product_attachments.first(1).each do |p| %>
-        <%= (link_to image_tag(p.image_url(:thumb), class: "list_image"), product, method: :get )if p.image?%>
-     <% end %>
-	<dt class="dt1"><%= link_to truncate(product.title, length: 20), product, method: :get %></dt>
-	<dt class="dt2"><%= number_to_currency(product.price) %></dt>
-	<dt id="fontTitle2">From <%= link_to (product.page.try :title), product.page, method: :get %></dt><hr>
-</div>
+<%= link_to product, method: :get, class: "specialA" do %>
+	<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+	 <div class="productBorder">
+		<% product.product_attachments.first(1).each do |p| %>
+	        <%= image_tag(p.image_url(:thumb), class: "list_image") if p.image?%>
+	     <% end %>
+		<dt class="dt1"><%= truncate(product.title, length: 20) %></dt>
+		<dt class="dt2"><%= number_to_currency(product.price) %></dt>
+		<dt id="fontTitle2">From <%= link_to (product.page.try :title), product.page, method: :get %></dt>
+		</div>
+	</div>
+<% end %>
 <% end %>
 <% else %>
 	<% if @category.user.id == @user.id %>

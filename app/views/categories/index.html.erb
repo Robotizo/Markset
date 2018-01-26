@@ -6,12 +6,16 @@
 <hr>
 <div class="row">
   <% @categories.each do |category| %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-       <%= link_to image_tag(category.image_url(:thumb), class: "list_image"), category, method: :get %><br>
-        <dt><%= link_to truncate(category.name, length: 20), category, method: :get %></dt>
-        <dt id="fontTitle2">From <%= link_to truncate(category.page.title, length: 20), category.page, method: :get %></dt><hr>
-    </div>
-  <% end %>
+  <%= link_to category, method: :get, class: "specialA" do %>
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+	    <div class="productBorder">
+	       <%= image_tag(category.image_url(:thumb), class: "list_image") %>
+	        <dt class="dt1"><%= truncate(category.name, length: 20) %></dt>
+	        <dt id="fontTitle2Index">From <%= link_to truncate(category.page.title, length: 20), category.page, method: :get %></dt>
+	    </div>	
+		</div>
+	<% end %>
+	<% end %>
 </div>
 </div>
 </div>

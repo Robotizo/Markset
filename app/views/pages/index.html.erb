@@ -10,11 +10,15 @@
     <% if current_user.following.present? %>
     <div class="row">
     <% @pagesFollow.each do |page| %>
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-          <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage"), page, method: :get, class: "pageShowcase" %>
-            <dt class="dt1"><%= link_to truncate(page.title, length: 20), page, method: :get %></dt>
-            <dt><%= page.genre %></dt><hr>
+    <%= link_to page, method: :get, class: "specialA" do %>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+          <div class="productBorder">
+          <%= image_tag(page.image_url(:thumb), class: "listImagePage") %>
+            <dt class="dtTitle"><%= truncate(page.title, length: 20) %></dt>
+            <dt class="dtGenre"><%= page.genre %></dt>
+          </div>
         </div>
+      <% end %>
       <% end %>
       </div>
     <% else %>
@@ -22,15 +26,20 @@
       <hr>
     <% end %>
     <% end %>
+    <hr>
     <div class="secondaryTitle">All Stores</div>
     <hr>
       <div class="row">
     <% @pages.each do |page| %>
-      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage"), page, method: :get, class: "pageShowcase" %>
-          <dt class="dt1"><%= link_to truncate(page.title, length: 20), page, method: :get %></dt>
-          <dt><%= page.genre %></dt><hr>
+    <%= link_to page, method: :get, class: "specialA" do %>
+      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
+        <div class="productBorder">
+        <%= image_tag(page.image_url(:thumb), class: "listImagePage") %>
+          <dt class="dtTitle"><%= truncate(page.title, length: 20) %></dt>
+          <dt class="dtGenre"><%= page.genre %></dt>
+        </div>
       </div>
+    <% end %>
     <% end %>
     </div>
   </div>
