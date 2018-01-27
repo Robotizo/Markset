@@ -57,10 +57,9 @@
       <div class="availabilityShow">This product is currently unavailable for purchase.</div>
     </div>
   <% end %>
-<div class="text-center">
-  <div class="secondaryTitle">Product Comments</div>
-  <br>
 
+
+<div class="text-center comments">
 
   <%= submit_tag "Comments on Product", method: :get, class: "productCommentsBtn", :type => 'button' %><i class="arrow down"></i>
 
@@ -70,7 +69,7 @@
     <%= render template: 'product_comments/show' %>
   </div>
 </div>
-<hr>
+
 
 <div class="container introInfo">
   <div class="col-md-10 col-md-offset-1 col-xs-12">

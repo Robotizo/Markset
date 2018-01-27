@@ -103,7 +103,7 @@ i {
 
 
 .introInfo{
-	top: 3em;
+	top: 7em;
 	display: block;
 }
 
@@ -154,6 +154,7 @@ i {
     padding: 20px 70px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    border-radius: 3px;
 }
 
 .buttonBuy:hover {
@@ -173,6 +174,7 @@ i {
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    border-radius: 3px;
 }
 
 .buttonAdd:hover {
@@ -192,6 +194,7 @@ i {
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    border-radius: 3px;
 }
 
 .buttonRemove:hover {
@@ -528,6 +531,11 @@ textarea {
     border-radius: 3px;
 }
 
+.comments{
+    margin-top: 11em;
+    margin-bottom: 5em;
+}
+
 
 
 
@@ -569,6 +577,10 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    .comments{
+        margin-top: 10em;
+        margin-bottom: 3em;
+    }
     .col-xs-6{
         padding-left: 5px;
         padding-right: 5px;
@@ -645,11 +657,13 @@ textarea {
         height: 120x;
     }
     .buttonAdd{
-        padding: 20px 45px;
+        height: 70px;
+        width: 100px;
     }
 
     .buttonRemove{
-        padding: 20px 45px;
+        height: 70px;
+        width: 100px;
     }
 
     .buttonBuy{
@@ -723,6 +737,8 @@ textarea {
         margin-left: 14%;
         margin-right: 0%;
     }
+
+
 
 }
 
@@ -802,7 +818,7 @@ textarea {
 
 @media screen and (max-width: 370px){
     .wholeRow{
-        margin-left: 9%;
+        margin-left: 8%;
         margin-right: -8%;
     }
 
@@ -822,7 +838,7 @@ textarea {
         width: 100%;
     }
     .wholeRow{
-        margin-left: 9%;
+        margin-left: 8%;
     }
 
 }

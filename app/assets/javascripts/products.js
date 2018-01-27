@@ -31,6 +31,7 @@ $(".buttonAdd").click(function(){
   $('.btnTog').click(function() {
     if(!$('#cart').hasClass('opened')){
       $('#cart').slideUp(function(){$(this).addClass('opened')});
+
     }
     else{
       $('#cart').slideDown(function(){$(this).removeClass('opened')});
@@ -45,9 +46,16 @@ $(".buttonAdd").click(function(){
   $('.productCommentsBtn').click(function() {
     if(!$('#productComments').hasClass('opened')){
       $('#productComments').slideUp(function(){$(this).addClass('opened')});
+      if($(window).width() > 767){
+        $(".comments").css({"margin-bottom": "5em"});
+      }
+        
     }
     else{
       $('#productComments').slideDown(function(){$(this).removeClass('opened')});
+      if($(window).width() > 767){
+        $(".comments").css({"margin-bottom": "10em"});
+      }
     }
    
    });

@@ -11,6 +11,11 @@ a:hover{
 }
 
 
+.postComment{
+  margin-top: 5em;
+}
+
+
 .mainTitle{
   font-size: 36px;
   font-weight: 200;
@@ -253,6 +258,9 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+  .postComment{
+    margin-top: 3em;
+  }
   .postBox{
     margin-top: 10px;
     margin-bottom: 10px;

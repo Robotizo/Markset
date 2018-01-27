@@ -101,8 +101,15 @@ textarea {
   padding-bottom: 1em;
 }
 
+.productMainInfo{
+  margin-top: 5em;
+}
 
 @media screen and (max-width: 767px){
+
+  .productMainInfo{
+    margin-top: 3em;
+  }
 	.prodPic{
 		float: none;
 		margin-left: 0%;
