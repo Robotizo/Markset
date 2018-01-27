@@ -577,6 +577,9 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    .productMainInfo{
+        margin-top: 0px;
+    }
     .comments{
         margin-top: 10em;
         margin-bottom: 3em;
@@ -671,9 +674,6 @@ textarea {
     }
     .listImageProduct{
         width: 65%;
-    }
-    .productMainInfo {
-        margin-top: 30px;
     }
     #fontTitle3{
         display: none;

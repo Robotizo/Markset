@@ -3,10 +3,8 @@
 <div class="container">
 <div class="row">
 <div class="text-center">
-<div class="mainTitleNew">Editing Comment</div>
-<hr>
 
-<div class="text-center productMainInfo">
+<div class="text-center productCommentMainInfo">
 <div class="prodPic">
   <% @product.product_attachments.first(1).each do |p| %>
     <%= (link_to image_tag(p.image_url(:thumb), class: "listImageProduct"), p, method: :get )if p.image?%>
