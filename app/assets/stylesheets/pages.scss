@@ -9,6 +9,11 @@
     margin-bottom: 10px;
 }
 
+.addedPadding{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 .followRela{
     position: relative;
@@ -599,7 +604,12 @@ textarea {
 .dtCat{
     margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+#products{
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 
@@ -808,12 +818,24 @@ textarea {
         font-size: 20px;
         font-weight: 200;
         border-radius: 0px;
-        width: 100%;
+        width: 95%;
         height: 15%;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
         background-color: white;
         border: 1px solid black;
+    }
+
+    .dtTitle{
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: 300; 
+
+    }
+    .dtGenre{
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 300; 
     }
 }
 
@@ -854,7 +876,7 @@ textarea {
     .postBox{
       margin-top: 10px;
       margin-bottom: 15px;
-      width: 100%;
+      width: 98%;
     }
 
 }
@@ -879,7 +901,10 @@ textarea {
     }
     .listImagePageShow{
         width: 100%;
-        margin-top: 20px;
+    }
+
+    .dtCat{
+        font-size: 15px;
     }
 }
 

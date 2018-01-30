@@ -16,6 +16,12 @@
     margin-bottom: 10px;
 }
 
+.addedPadding{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 .specialA{
   color: black !important;
 }
@@ -201,8 +207,8 @@ dt{
         width: 100%;
     }
     .dt1{
-        font-size: 15px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 400;
     }
     .dt2{
         font-size: 15px;
@@ -241,7 +247,15 @@ dt{
     .list_image{
         width: 100%;
     }
-   
+   .dt1{
+        font-size: 16px;
+        font-weight: 400;
+   }
+   #fontTitle2Index {
+        font-size: 16px;
+        font-weight: 200;
+        margin-bottom: 10px;
+    }
 }
 
 

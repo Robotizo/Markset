@@ -94,25 +94,6 @@
 
 
 <% elsif  current_user.following.blank? && session[:user_id] %>
-<div class="text-center">
-<div class="storePictureContainer">
-	<% @initialPosts.limit(1).each do |post| %>
-          <% post.post_attachments.each do |p| %>
-            <%= (link_to image_tag(p.image_url(:horizontal), class: "notFollowStorePic"), post.page, method: :get) if p.image?%>
-          <% end %>
-        <div class="postcontentArea">
-			<div class="postContentTitle"><%= truncate post.title, length: 65 %></div>
-			<% if post.content.length > 200 %>
-				<div class="postContentContent"><%= truncate post.content, length: 200 %></div>
-			<% else %>
-				<div class="postContentContent"><%= post.content %></div>
-			<% end %>
-		</div>
-	<% end %>
-
-</div>
-</div>
-
 	<div class="text-center">
 		<div class="secondaryTitle">Stores to follow</div>
 		

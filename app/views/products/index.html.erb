@@ -1,12 +1,12 @@
 <%= stylesheet_link_tag "products", :media => "all" %>
 <p id="notice"><%= notice %></p>
-<div class="container">
+<div class="container addedPadding">
 
 <div class="text-center">
   <div class="mainTitle">Products</div>
 <hr>
 
-<div class="row">
+<div class="row ">
   <% @products.each do |product| %>
   <%= link_to product, method: :get, class: "specialA" do %>
   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
