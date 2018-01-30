@@ -122,7 +122,7 @@
                     <%= image_tag(p.image_url(:thumb), class: "listImagePageShow") if p.image?%>
                   <% end %>
         <dt class="dt1"><%= truncate(product.title, length: 20) %></dt>
-        <dt><%= number_to_currency(product.price) %></dt><br>
+        <dt class="dt2"><%= number_to_currency(product.price) %></dt>
       </div>
       </div>
       <% end %>
