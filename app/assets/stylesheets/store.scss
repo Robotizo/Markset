@@ -276,6 +276,44 @@ div.price_line{
     border-bottom: 1px solid;
 }
 
+
+.notFollowStorePic{
+  width: 70%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.storePictureContainer{
+  margin-top: 1em;
+  margin-bottom: -100px;
+}
+
+.postContentArea{
+  background-color: rgba(255,255,255,0.7);
+  position: relative;
+  bottom: 120px;
+  padding-bottom: 120px;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  height: 0px;
+}
+
+.postContentContent{
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.postContentTitle{
+  text-align: left;
+  padding-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
 .lowerAttri {
     padding-top: 10px;
     padding-bottom: 32px;
@@ -478,6 +516,13 @@ dt{
   text-align: -webkit-auto;
 }
 
+.pageLongDesc{
+  font-size: 12px;
+  font-weight: 300;
+  margin-left: 158px;
+  text-align: -webkit-auto;
+}
+
 .productInfo{
   font-size: 16px;
   font-weight: 300;
@@ -522,6 +567,37 @@ dt{
 
 
 @media screen and (max-width: 767px){
+  .storePictureContainer{
+    margin-top: 0em;
+    margin-bottom: -60px;
+  }
+  .notFollowStorePic{
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .postContentContent{
+    display: none;
+  }
+  .postContentTitle {
+    text-align: center;
+    padding-top: 0px;
+    margin-left: 0px;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .postContentArea{
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    bottom: 60px;
+    padding-bottom: 60px;
+  }
+  .secondaryTitle{
+    margin-bottom: 0px;
+    font-size: 25px;
+  }
   .completeBox{
     margin: 0px;
     margin-top: 18px;

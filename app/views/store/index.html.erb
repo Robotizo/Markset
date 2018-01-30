@@ -70,17 +70,19 @@
 
 
 		<div class="text-center">
-		<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
+	<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
 		<hr>
 	<div class="container">
 	    <% @pages.each do |page| %>
+	    <%= link_to page, method: :get, class: "specialA" do %>
 	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 	      	<div class="pageDesign">
-	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+	        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 	        </div>
-	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+	        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
 	        <div class="pageTitle"><%= page.genre %></div>
 	      </div>
+	    <% end %>
 	    <% end %>
 	   </div>
 	</div>
@@ -92,17 +94,40 @@
 
 
 <% elsif  current_user.following.blank? && session[:user_id] %>
+<div class="text-center">
+<div class="storePictureContainer">
+	<% @initialPosts.limit(1).each do |post| %>
+          <% post.post_attachments.each do |p| %>
+            <%= (link_to image_tag(p.image_url(:horizontal), class: "notFollowStorePic"), post.page, method: :get) if p.image?%>
+          <% end %>
+        <div class="postcontentArea">
+			<div class="postContentTitle"><%= truncate post.title, length: 65 %></div>
+			<% if post.content.length > 200 %>
+				<div class="postContentContent"><%= truncate post.content, length: 200 %></div>
+			<% else %>
+				<div class="postContentContent"><%= post.content %></div>
+			<% end %>
+		</div>
+	<% end %>
+
+</div>
+</div>
+
 	<div class="text-center">
 		<div class="secondaryTitle">Stores to follow</div>
+		
 		<div class="container">
+			<hr>
 	    <% @pages.each do |page| %>
+	    <%= link_to page, method: :get, class: "specialA" do %>
 	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
 	      	<div class="pageDesign">
-	        <%= link_to image_tag(page.image_url(:thumb), class: "listImagePage pagePos"), page, method: :get, class: "pageShowcase" %>
+	        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 	        </div>
-	        <div class="pageTitle"><%= link_to truncate(page.title, length: 20), page, method: :get %></div>
+	        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
 	        <div class="pageTitle"><%= page.genre %></div>
 	      </div>
+	    <% end %>
 	    <% end %>
 	</div>
 	</div>
@@ -144,11 +169,9 @@
 		    <% @categories.limit(6).each do |category| %>
 		    <%= link_to category, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
-		      	<div class="pageDesign">
 		        <%= image_tag(category.image_url(:thumb), class: "listImagePage pagePos") %>
-		        </div>
 		        <div class="pageTitle"><%= truncate(category.name, length: 20) %></div>
-		        <div class="pageDesc">From <%= category.page.title %></div>
+		        <div class="pageDesc">From <%= link_to (category.page.title), category.page, method: :get %></div>
 		      </div>
 		    <% end %>
 		    <% end %>
@@ -164,7 +187,7 @@
 			  <% end %>
 		        <div class="pageTitle"><%= truncate(product.title, length: 20) %></div>
 		        <div class="productInfo"><%= number_to_currency(product.price) %></div>
-		        <div class="productInfo">From <%= product.page.title %></div>
+		        <div class="productInfo">From <%= link_to (product.page.title), product.page, method: :get %></div>
 		      </div>
 		    <% end %>
 		    <% end %>
