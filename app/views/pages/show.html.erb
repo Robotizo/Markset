@@ -95,7 +95,7 @@
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
       <div class="productBorder">
       <%= image_tag(category.image_url(:thumb), class: "listImagePageShow") if category.image? %>
-        <dt class="dtCat"><%= truncate(category.name, length: 20) %></dt>
+        <dt class="dtCat"><%= truncate(category.name, length: 18) %></dt>
       </div>
     </div>
     <% end %>

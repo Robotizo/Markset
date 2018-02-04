@@ -15,6 +15,54 @@ a:hover{
   color: black !important;
 }
 
+.storeBorder{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 20px;
+}
+
+.individualStoresSection{
+  margin-top: 30px;
+}
+
+.individualStores{
+  margin-bottom: 20px;
+}
+
+.individualPictures{
+  width: 200px;
+  height: 200px;
+}
+
+div.scrollStores {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollStores a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    width: 30%;
+}
+
+
+div.scrollProducts {
+    overflow: auto;
+    white-space: nowrap;
+    margin-left: 20%;
+}
+
+div.scrollProducts a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 30%;
+    margin-right: 10px;
+}
+
+
 
 #images{
 	padding: 3em;
@@ -419,6 +467,12 @@ div.price_line{
   height: 150px;
 }
 
+.iProductImage{
+  width: 100px;
+  height: 100px;
+  border-radius: 5px 0px 0px 5px;
+}
+
 
 .pageShowcase:hover {
   background-color: transparent;
@@ -438,6 +492,12 @@ dt{
   float: left;
 }
 
+.topTitle{
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 
 .secondaryTitle{
   font-size: 30px;
@@ -467,8 +527,54 @@ dt{
   text-align: -webkit-auto;
 }
 
+.pageCredentials{
+  border-bottom: 1px solid black;
+  margin-left: 15em;
+}
+
+
+.iProductTitle{
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 9px;
+  margin-left: 110px;
+  text-align: -webkit-auto;
+}
+
+.individualTitle{
+  font-size: 24px;
+  font-weight: 300;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  margin-left: 15px;
+  text-align: -webkit-auto;
+}
+
+
+.individualGenre{
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  text-align: -webkit-auto;
+}
+
 .pageWidth{
   width: 30%;
+}
+
+.iBoxWidth{
+  width: 24%;
+}
+
+
+.iBox{
+  padding-left: 0px;
+  box-shadow: 0px 0px 2px 0px;
+  border-radius: 5px;
+  margin-top: 9px;
+  width: 100%;
 }
 
 .pageDesc{
@@ -496,6 +602,26 @@ dt{
   text-align: -webkit-auto;
 }
 
+
+.iProductInfo{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 9px;
+    margin-left: 110px;
+    text-align: -webkit-auto
+}
+
+.completeBoxPages{
+  box-shadow: 0px 0px 2px 0px;
+  padding-left: 0px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.completeBoxPages:hover{
+  box-shadow: 0px 0px 1px 1px;
+}
 
 .completeBox{
   margin: 18px;

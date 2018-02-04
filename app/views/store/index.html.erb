@@ -95,22 +95,65 @@
 
 <% elsif  current_user.following.blank? && session[:user_id] %>
 	<div class="text-center">
-		<div class="secondaryTitle">Stores to follow</div>
+
+		<div class="container storeBorder">
+			<div class="titleFrontPageNF">
+				<div class="topTitle">Stores to follow</div>
+			</div>
 		
-		<div class="container">
-			<hr>
-	    <% @pages.each do |page| %>
-	    <%= link_to page, method: :get, class: "specialA" do %>
-	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
-	      	<div class="pageDesign">
-	        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
-	        </div>
-	        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
-	        <div class="pageTitle"><%= page.genre %></div>
-	      </div>
-	    <% end %>
-	    <% end %>
+		<div class="scrollStores">
+		    <% @pages.each do |page| %>
+		    <%= link_to page, method: :get, class: "specialA" do %>
+		      <div class="col-xs-12 col-sm-12 pageWidth completeBoxPages">
+		      	<div class="pageDesign">
+		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
+		        </div>
+		        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
+		        <div class="pageTitle"><%= page.genre %></div>
+		      </div>
+		    <% end %>
+		    <% end %>
+		 </div>
+		</div>
+	<div class="container individualStoresSection">
+
+		<% @notFollowingPages.each do |page| %>
+		    <%= link_to page, method: :get, class: "specialA" do %>
+		      <div class="col-xs-12 col-sm-12 individualStores completeBoxPages">
+		      	<div class="pageDesign">
+		        <%= image_tag(page.image_url(:thumb), class: "individualPictures pagePos") %>
+		        </div>
+
+		     <div class="pageCredentials">
+		        <div class="individualTitle"><%= truncate(page.title, length: 20) %></div>
+		        <div class="individualGenre"><%= page.genre %></div>
+		     </div>
+
+
+
+
+
+		      
+		    <% end %>
+		   <div class="scrollProducts">
+	       <% page.products.limit(6).each do |product| %>
+			    <%= link_to product, method: :get, class: "specialA" do %>
+			      <div class="col-xs-12 col-sm-12 iBoxWidth iBox">
+		      	  <% product.product_attachments.first(1).each do |p| %>
+				    <%= image_tag(p.image_url(:thumb), class: "iProductImage pagePos") if p.image?%>
+				  <% end %>
+			        <div class="iProductTitle"><%= truncate(product.title, length: 20) %></div>
+			        <div class="iProductInfo"><%= number_to_currency(product.price) %></div>
+			      </div>
+			    <% end %>
+			    <% end %>
+		</div>
 	</div>
+		    <% end %>
+	</div>
+
+
+
 	</div>
 <% end %>
 
