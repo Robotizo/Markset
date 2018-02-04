@@ -115,6 +115,10 @@
 		    <% end %>
 		 </div>
 		</div>
+
+
+
+		
 	<div class="container individualStoresSection">
 
 		<% @notFollowingPages.limit(6).each do |page| %>
@@ -127,7 +131,7 @@
 		     <div class="pageCredentials">
 			     <div class="section1">
 			        <div class="individualTitle"><%= truncate(page.title, length: 20) %></div>
-			        <div class="individualGenre"><%= page.genre %></div>
+			        <div class="individualGenre"><%= truncate(page.genre, length: 20) %></div>
 			     </div>
 
 				<div class="section2">
