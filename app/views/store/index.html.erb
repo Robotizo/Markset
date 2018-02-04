@@ -117,7 +117,7 @@
 		</div>
 	<div class="container individualStoresSection">
 
-		<% @notFollowingPages.each do |page| %>
+		<% @notFollowingPages.limit(6).each do |page| %>
 		    <%= link_to page, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 individualStores completeBoxPages">
 		      	<div class="pageDesign">
@@ -125,16 +125,39 @@
 		        </div>
 
 		     <div class="pageCredentials">
-		        <div class="individualTitle"><%= truncate(page.title, length: 20) %></div>
-		        <div class="individualGenre"><%= page.genre %></div>
-		     </div>
+			     <div class="section1">
+			        <div class="individualTitle"><%= truncate(page.title, length: 20) %></div>
+			        <div class="individualGenre"><%= page.genre %></div>
+			     </div>
 
+				<div class="section2">
+				  <% if page.opening_day.present? && page.closing_day.present? && page.opening_time.present? && page.closing_time.present? %>
+				       
+				      <strong id="fontTitleD">Store Times</strong>
+				        <p id="pAttributes">
+				          <%= page.opening_day %> - <%= page.closing_day %><br>
+				          <%= page.opening_time.to_time.strftime('%l:%M %p') %> - <%= page.closing_time.to_time.strftime('%l:%M %p') %> 
+				        </p>
+				  <% else %>
+				  	<p id="noTimes">
+				  		No times availible.
+				  	</p>
+				  <% end %>
+			     </div>
+			     <div class="section3">
+			     <% if page.page_notes.present? %>
+			        <strong id="fontTitleD">Store Notes</strong>
+			        <p id="pAttributes">
+			          <%= page.page_notes %>
+			        </p>
+			     <% end %>
+			       </div>
 
-
-
-
+		    </div>
 		      
 		    <% end %>
+
+
 		   <div class="scrollProducts">
 	       <% page.products.limit(6).each do |product| %>
 			    <%= link_to product, method: :get, class: "specialA" do %>
@@ -147,7 +170,11 @@
 			      </div>
 			    <% end %>
 			    <% end %>
-		</div>
+			</div>
+
+
+
+
 	</div>
 		    <% end %>
 	</div>

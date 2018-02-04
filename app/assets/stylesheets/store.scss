@@ -32,6 +32,7 @@ a:hover{
 .individualPictures{
   width: 200px;
   height: 200px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 div.scrollStores {
@@ -49,9 +50,11 @@ div.scrollStores a {
 
 
 div.scrollProducts {
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap;
     margin-left: 20%;
+    height: 117px;
+    overflow-y: hidden;
 }
 
 div.scrollProducts a {
@@ -62,7 +65,45 @@ div.scrollProducts a {
     margin-right: 10px;
 }
 
+.section1{
+  width: 25%;
+}
 
+.section2{
+    width: 25%;
+    margin-top: -72px;
+    margin-left: 235px;
+    height: 72px;
+    text-align: left;
+}
+
+
+.section3{
+  width: 40%;
+  margin-top: -72px;
+  margin-left: 475px;
+  height: 72px;
+  text-align: left;
+
+}
+
+
+#noTimes{
+  font-size: 20px;
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+#pAttributes{
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#fontTitleD{
+  font-size: 15px;
+  font-weight: 400;
+}
 
 #images{
 	padding: 3em;
@@ -465,6 +506,7 @@ div.price_line{
 .listImagePage{
   width: 150px;
   height: 150px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .iProductImage{
@@ -577,6 +619,12 @@ dt{
   width: 100%;
 }
 
+
+
+.iBox:hover{
+  box-shadow: 0px 0px 1px 1px;
+}
+
 .pageDesc{
   font-size: 16px;
   font-weight: 300;
@@ -617,10 +665,6 @@ dt{
   padding-left: 0px;
   border-radius: 5px;
   width: 100%;
-}
-
-.completeBoxPages:hover{
-  box-shadow: 0px 0px 1px 1px;
 }
 
 .completeBox{
