@@ -773,6 +773,7 @@ dt{
 
   .section1 {
     margin-left: 90px;
+    width: 70%;
   }
 
   .section2 {
@@ -891,28 +892,19 @@ dt{
     width: 49%;
   } 
 
-
-
-.pageTitle {
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 0px;
-    margin-left: 6em;
-  }
-
-  .pageDesc{
+  .pageDesc {
     font-size: 16px;
     font-weight: 300;
-    margin-left: 6em;
+    margin-left: 110px;
     text-align: -webkit-auto;
   }
 
-  .productInfo{
+  .productInfo {
     font-size: 16px;
     font-weight: 300;
     margin-top: 7px;
     margin-bottom: 0px;
-    margin-left: 0em;
+    margin-left: 110px;
     text-align: -webkit-auto;
   }
   .welcome{
@@ -937,6 +929,17 @@ dt{
   .noPostTitle{
     margin-left: 15px;
     margin-right: 15px;
+  }
+
+  .pageWidth {
+    width: 100%;
+  }
+
+  .pageTitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 0px;
+    margin-left: 110px;
   }
 
 }
