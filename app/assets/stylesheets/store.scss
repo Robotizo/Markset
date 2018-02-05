@@ -60,7 +60,7 @@ div.scrollStores a {
 div.scrollProducts {
     overflow-x: auto;
     white-space: nowrap;
-    margin-left: 20%;
+    padding-left: 10px;
     height: 130px;
     overflow-y: hidden;
 }
@@ -722,7 +722,7 @@ dt{
   div.scrollProducts {
     overflow-x: auto;
     white-space: nowrap;
-    margin-left: 5px;
+    padding-left: 5px;
     height: 90px;
     overflow-y: hidden;
   }
