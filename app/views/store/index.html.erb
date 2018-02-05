@@ -124,6 +124,8 @@
 		<% @notFollowingPages.limit(6).each do |page| %>
 		    <%= link_to page, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 individualStores completeBoxPages">
+
+
 		      	<div class="pageDesign">
 		        <%= image_tag(page.image_url(:thumb), class: "individualPictures pagePos") %>
 		        </div>
