@@ -26,7 +26,15 @@ a:hover{
 }
 
 .individualStores{
-  margin-bottom: 30px;
+  margin-bottom: 90px;
+}
+
+
+.storeContainer{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .individualPictures{
@@ -701,6 +709,142 @@ dt{
 
 
 @media screen and (max-width: 767px){
+
+  .storeBorder{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .individualStoresSection{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  div.scrollProducts {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 5px;
+    height: 95px;
+    overflow-y: hidden;
+  }
+
+  .iProductTitle {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 80px;
+    text-align: -webkit-auto;
+  }
+
+  .individualStores {
+    margin-bottom: 30px;
+  }
+
+  .iProductInfo {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 80px;
+    text-align: -webkit-auto;
+  }
+
+  .iProductImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  div.scrollProducts a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 70%;
+    margin-right: 10px;
+
+  }
+
+  .completeBoxPages {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .section1 {
+    margin-left: 90px;
+  }
+
+  .section2 {
+    width: 42%;
+    margin-top: 30px;
+    margin-left: 10px;
+    height: 60px;
+    text-align: left;
+  }
+
+  .section3 {
+    width: 52%;
+    margin-top: -60px;
+    margin-left: 45%;
+    height: 60px;
+    text-align: left;
+  }
+
+  .individualTitle {
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+  }
+
+  #noTimes {
+    font-size: 17px;
+    font-weight: 300;
+    padding-top: 0px;
+  }
+
+  #pAttributes {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  #fontTitleD {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .individualGenre {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    text-align: -webkit-auto;
+  }
+
+  .pageCredentials {
+    height: 160px;
+    margin-left: 0;
+  }
+
+
+  .individualPictures{
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  .storeBorder {
+    margin-top: 0px;
+  }
+  .storeContainer{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px; 
+  }
   .completeBox{
     margin: 0px;
     margin-top: 18px;
@@ -712,9 +856,11 @@ dt{
     padding: 1em;
   }
 
-  .pageWidth{
-    width: 100%;
+  div.scrollStores a{
+    width: 70%;
+    padding: 5px;
   }
+
   .listImagePagePost {
     width: 50px;
     height: 50px;
@@ -745,16 +891,13 @@ dt{
     width: 49%;
   } 
 
-  .pagePos{
-    margin-right: 1em;
-    margin-left: 0em;
-  }
 
-  .pageTitle{
+
+.pageTitle {
     font-size: 18px;
     font-weight: 300;
     margin-bottom: 0px;
-    margin-left: 0em;
+    margin-left: 6em;
   }
 
   .pageDesc{
