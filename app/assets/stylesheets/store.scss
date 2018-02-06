@@ -737,7 +737,11 @@ dt{
   }
 
   .individualStores {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+  }
+
+  .individualStoresSection {
+    margin-bottom: 40px;
   }
 
   .iProductInfo {
@@ -779,7 +783,7 @@ dt{
   }
 
   .section2 {
-    width: 34%;
+    width: 35%;
     margin-top: 4px;
     margin-left: 10px;
     height: 60px;
@@ -788,9 +792,9 @@ dt{
   }
 
   .section3 {
-    width: 61%;
+    width: 59%;
     margin-top: -60px;
-    margin-left: 38%;
+    margin-left: 40%;
     height: 60px;
     text-align: left;
   }
@@ -952,6 +956,52 @@ dt{
   }
   .pageWidth {
     width: 45%;
+  }
+
+  .pageWidthLogged{
+    width: 100%;
+  }
+
+  #pAttributes {
+    font-size: 14px;
+  }
+
+  .section1 {
+    width: 33%;
+  }
+
+  .section2 {
+    width: 25%;
+    margin-top: -72px;
+    margin-left: 170px;
+    height: 72px;
+    text-align: left;
+  }
+
+  .section3 {
+    width: 40%;
+    margin-top: -72px;
+    margin-left: 308px;
+    height: 72px;
+    text-align: left;
+  }
+
+  #noTimes {
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 15px;
+  }
+
+  div.scrollProducts a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 55%;
+    margin-right: 10px;
+  }
+
+  div.scrollStores a {
+    width: 50%;
   }
   .welcome {
     font-size: 50px;

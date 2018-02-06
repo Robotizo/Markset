@@ -104,7 +104,7 @@
 		<div class="scrollStores">
 		    <% @pages.each do |page| %>
 		    <%= link_to page, method: :get, class: "specialA" do %>
-		      <div class="col-xs-12 col-sm-12 pageWidth completeBoxPages">
+		      <div class="col-xs-12 col-sm-12 pageWidth pageWidthLogged completeBoxPages">
 		      	<div class="pageDesign">
 		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 		        </div>
