@@ -111,7 +111,7 @@
               <td class="listImageUser"><%= (link_to image_tag(p.image_url(:thumb), class: "listImageUser"), product, method: :get )if p.image?%></td>
             <% end %>
              <td><%= product.title %></td>
-             <td class="pageRef">From <%= product.page.try :title %></td>
+             <td class="pageRef">Category <%= product.category.try :name %></td>
              <td><%= link_to 'Show Product', product, method: :get %></td>
              <td><%= link_to "Edit Product", edit_product_path(product), method: :get %></td>
            </tr>

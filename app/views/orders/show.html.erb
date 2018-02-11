@@ -14,6 +14,7 @@
         <th>Name of buyer</th>
         <th class="ordMail">Email</th>
         <th>Pay type</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,11 @@
         <th><%= @order.user.name %></th>
         <th class="ordMail"><%= @order.user.email %></th>
         <th><%= @order.pay_type %></th>
+        <% if @order.charge.try(:status) == "complete" %>
+          <th class="statusComplete">Complete</th>
+        <% else %>
+          <th class="statusIncomplete">Incomplete</th>
+        <% end %>
       </tr>
     </tbody>
   </table>
@@ -74,7 +80,7 @@
 </div>
 <hr>
 <div class="text-center orderNote">
-  If this order was created but you have not received an email confirmation the transaction was not completed and the store owner was not sent the order.
+  If this order is "Incomplete" the transaction was not completed or you were not charged and the store owner was not sent the order.
 </div>
 </div>
 

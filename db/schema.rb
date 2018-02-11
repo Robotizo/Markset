@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
     t.index ["order_id"], name: "index_charges_on_order_id"
   end
 

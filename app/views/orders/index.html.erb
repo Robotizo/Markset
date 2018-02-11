@@ -12,6 +12,7 @@
             <th>Order ID</th>
             <th>Date Ordered</th>
             <th>Pay type</th>
+            <th class="statusSection">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
          <td><%= order.id %></td>
          <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
          <td><%= order.pay_type %></td>
+          <% if order.charge.try(:status) == "complete" %>
+            <td class="statusCompleteI">Complete</td>
+          <% else %>
+            <td class="statusIncompleteI">Incomplete</td>
+          <% end %>
          <td><%= link_to 'Show', order, method: :get %></td>
         </tr>
       <% end %>

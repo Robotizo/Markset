@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base 
 	has_many :line_items, dependent: :destroy	
 	belongs_to :user
-	has_many :charges
+	has_one :charge
 	has_many :payments
 
 	PAYMENT_TYPES = ["Cash", "Card"]

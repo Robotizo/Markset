@@ -17,6 +17,22 @@ a:hover{
     margin-bottom: 10px;
 }
 
+.statusComplete{
+    color: green;
+}
+
+.statusIncomplete{
+    color: red;
+}
+
+.statusCompleteI{
+    color: green;
+}
+
+.statusIncompleteI{
+    color: red;
+}
+
 .mainTitleNew{
     font-size: 36px;
     font-weight: 200;
@@ -297,6 +313,15 @@ textarea {
 }
 
 @media screen and (max-width: 340px){
+    .statusSection{
+        display: none;
+    }
+    .statusCompleteI{
+        display: none;
+    }
+    .statusIncompleteI{
+        display: none;
+    }
     .formFieldText{
         width: 265px;
         height: 130px;

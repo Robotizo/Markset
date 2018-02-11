@@ -39,6 +39,8 @@ class ChargesController < ApplicationController
     @pages = Page.where(id: [$pageIds]) 
     secondary_amount = @cart.total_price * 100
     overall_amount = secondary_amount.floor
+    @charge.status = "complete"
+
 
     @amount = overall_amount
 
@@ -46,6 +48,7 @@ class ChargesController < ApplicationController
 
     respond_to do |format|
       if @charge.save
+
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifierMailer.confirmed(@order, @user).deliver
@@ -113,6 +116,6 @@ class ChargesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def charge_params
-      params.require(:charge).permit(:order_id)
+      params.require(:charge).permit(:order_id, :status)
     end
 end
