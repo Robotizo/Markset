@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: "userservices@markset.com"
+	default from: "Markset User <userservices@markset.com>"
 
 	def signup_confirmation(user)
 		@user = user
