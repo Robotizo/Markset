@@ -18,12 +18,12 @@
     <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
     <div class="field">
     <%= f.label "Product name", class: "titlePageForm" %><br>
-    <%= f.text_field :title, placeholder: "Title for your product", class: "formFieldLine" %>
+    <%= f.text_field :title, placeholder: "Title for your product", class: "fieldStyle" %>
   </div>
 <hr>
   <div class="field">
     <%= f.label "Product Price".titleize, class: "titlePageForm" %><br>
-    <%= f.text_field :price, placeholder: "Price of your product", class: "formFieldLine"%>
+    <%= f.text_field :price, placeholder: "Price of your product", class: "fieldStyle"%>
   </div>
 <hr>
 </div>
@@ -55,18 +55,23 @@
 
 <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
 
+
     <% if params[:action] == 'edit' || params[:action] == 'update' %>
-      <%= f.label "Product Images", class: "titlePageForm" %><br>
-      <%= f.file_field :image, multiple: true, name: "product_attachments[image][]" %>
-      <hr>
+    <%= f.label "Product Images (Multiple Images)", class: "titlePageForm" %>
+      <div class="fileUpload">
+        <%= f.file_field :image, multiple: true, name: "product_attachments[image][]", class: "upload" %>
+      </div>
+    <hr>
       <div class="titlePageInf">Each time a new image is uploaded the product album is deleted. Reupload the full product album.</div>
     <% end %>
 
   <% if params[:action] == 'new' || params[:action] == 'create' %>
     <%= f.fields_for :product_attachments do |p| %>
         <div class="field">
-          <%= p.label "Product Images (Multiple Images)", class: "titlePageForm" %><br>
-          <%= p.file_field :image, multiple: true, name: "product_attachments[image][]" %>
+          <%= p.label "Product Images (Multiple Images)", class: "titlePageForm" %>
+          <div class="fileUpload">
+            <%= p.file_field :image, multiple: true, name: "product_attachments[image][]", class: "upload" %>
+          </div>
         </div>
         <% end %>
         <hr>
@@ -76,7 +81,7 @@
 
         <div class="field">
         <%= f.label "Product Description", class: "titlePageForm" %><br>
-        <%= f.text_area :description, placeholder: "Give your product a description", class: "formFieldText" %>
+        <%= f.text_area :description, placeholder: "Give your product a description", class: "fieldStyleForm" %>
       </div>
     <hr>
       <div class="field">
@@ -92,7 +97,11 @@
         <br>
         <%= f.select(:status, Product::PRODUCT_AVAILABILITY, options = {prompt: 'Select the product status'}, {class: "selectProduct"}) %>
       </div>
-    <hr>
+  </div>
+
+  <div class="col-md-12">
+      <hr>
+      <div class="text-center">
       <div class="actions">
         <%= f.submit({class: "buttonForm buttonGForm"}) %>
       </div>
@@ -101,6 +110,8 @@
       <%= button_to 'Delete Product', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
     <% end %>
   </div>
+  </div>
+
   </div>
 </div>
 

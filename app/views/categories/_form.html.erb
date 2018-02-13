@@ -12,21 +12,27 @@
   <% end %>
 
 <div class="container">
-<div class="col-md-3 col-md-offset-1 col-xs-3">
+<div class="col-md-6 col-md-offset-1 col-xs-12">
   <div class="field">
     <%= f.label "Name the category", class: "titlePageForm" %><br>
-    <%= f.text_field :name, placeholder: "Name for the category", class: "formFieldLine" %>
+    <%= f.text_field :name, placeholder: "Name for the category", class: "fieldStyle" %>
   </div>
 <hr>
    <div class="field">
-      <%= f.label :image, class: "titlePageForm" %><br>
-      <%= f.file_field :image %>
+      <div class="fileUpload btn btn-primary">
+        <span>Upload Category Image</span>
+          <%= f.file_field :image, class: "upload" %>
+      </div>
   </div>
   <hr>
   <div class="field">
     <%= f.collection_select(:page_id, $user_pages, :id, :title, options = {prompt: "Choose a Page"}, {class: "selectProduct"}) %>
   </div>
-  <hr>
+ 
+  </div>
+<div class="col-md-12">
+   <hr>
+  <div class="text-center">
   <div class="actions">
     <%= f.submit({class: "button buttonG"}) %>
   </div>
@@ -35,4 +41,6 @@
   <%= button_to 'Delete Category', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
 <% end %>
 </div>
+</div>
+
 </div>

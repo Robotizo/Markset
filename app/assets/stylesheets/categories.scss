@@ -21,6 +21,61 @@
   padding-right: 20px;
 }
 
+.btn {
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 200;
+    border-radius: 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn-primary {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+}
+.btn-primary:hover{
+    color: #fff !important;
+    background-color: #222222 !important;
+    outline: none !important;
+}
+
+.btn-primary:focus{
+    color: #fff !important;
+    background-color: #333333 !important;
+    outline: none !important;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    right: 0;
+    margin: 0;
+    padding: 13px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.fieldStyle{
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #333333;
+    width: 90%;
+    height: 60px;
+    font-size: 25px;
+    font-weight: 300;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
 
 .specialA{
   color: black !important;

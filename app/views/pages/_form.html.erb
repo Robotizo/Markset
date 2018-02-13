@@ -35,20 +35,22 @@
 <hr>
 <% end %>
 
-<div class="col-md-3 col-md-offset-1 col-xs-3 ">
+<div class="col-md-6 col-md-offset-1 col-xs-12 ">
     <div class="field">
       <%= f.label :title, class: "titlePageForm" %><br>
-      <%= f.text_field :title, placeholder: "Title of your store", class: "formFieldLine" %>
+      <%= f.text_field :title, placeholder: "Title of your store", class: "fieldStyle" %>
     </div>
 <hr>
     <div class="field">
-      <%= f.label :image, class: "titlePageForm" %><br>
-      <%= f.file_field :image %>
+      <div class="fileUpload btn btn-primary">
+        <span>Upload Store Image</span>
+          <%= f.file_field :image, class: "upload" %>
+      </div>
     </div>
 <hr>
   <div class="field">
     <%= f.label :description, class: "titlePageForm" %><br>
-    <%= f.text_area :description, placeholder: "Give your store a description", class: "formFieldText" %>
+    <%= f.text_area :description, placeholder: "Give your store a description", class: "fieldStyleForm" %>
   </div>
 <hr>
 <%= submit_tag "Store Times and Important Information", method: :get, class: "btn btnStore btn-primary", :type => 'button' %>
@@ -81,23 +83,29 @@
     <div class="field">
       <div class="timePageInf">Write any other important announcements.</div>
       <br>
-        <%= f.text_area :page_notes, placeholder: "Important announcements regarding your page.", class: "formFieldText" %>
+        <%= f.text_area :page_notes, placeholder: "Important announcements regarding your page.", class: "fieldStyleForm" %>
       </div>
 </div>
 <hr>
  <div class="field">
       <%= f.label :genre, class: "titlePageForm" %><br>
-      <%= f.text_field(:genre, placeholder: "What do you sell?", class: "formFieldLine") %>
+      <%= f.text_field(:genre, placeholder: "What do you sell?", class: "fieldStyle") %>
     </div>
-  <hr>
-  <div class="actions">
-    <%= f.submit({class: "button buttonG"}) %>
-  </div>
-  <% end %>
-  <% if params[:action] == 'edit' || params[:action] == 'update' %> 
-  <%= button_to 'Delete Page', @page, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
-  <% end %>
+
 </div>
+<div class="col-md-12">
+  <hr>
+  <div class="text-center">
+    <div class="actions">
+      <%= f.submit({class: "button buttonG"}) %>
+    </div>
+    <% end %>
+    <% if params[:action] == 'edit' || params[:action] == 'update' %> 
+    <%= button_to 'Delete Page', @page, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
+    <% end %>
+  </div>
+</div>
+
 </div>
 
 

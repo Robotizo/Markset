@@ -17,20 +17,20 @@
     <% if params[:action] == 'new' || params[:action] == 'create' %> 
       <legend>Enter your details</legend>
       <% end %>
-        <%= image_tag @user.image_url(:thumb) if @user.image? %>
-      <hr>
-       <div class="field">
-          <%= f.label "Profile Image", class: "titlePostForm" %><br>
-          <%= f.file_field :image %>
+        <%= image_tag @user.image_url(:thumb), class: "userImage" if @user.image? %>
+       <div class="fileUpload btn btn-primary">
+        <span>Upload Profile Image</span>
+          <%= f.file_field :image, class: "upload" %>
         </div>
     </div>
+      <hr>
   </div>
 
-<div class="col-md-3 col-md-offset-1 col-xs-10">
-  <hr>
+<div class="col-md-5 col-md-offset-1 col-xs-12">
+
   <div class="field">
     <%= f.label :name, class: "titlePostForm" %><br>
-    <%= f.text_field :name, class: "formFieldLine" %>
+    <%= f.text_field :name, class: "fieldUsers" %>
   </div>
 <hr>
 <% if params[:action] == 'edit' || params[:action] == 'update' || params[:action] == 'show' %> 
@@ -46,7 +46,7 @@
   <hr>
 <div class="field">
     <%= f.label :email, class: "titlePostForm" %><br>
-    <%= f.email_field :email, class: "formFieldLine" %>
+    <%= f.email_field :email, class: "fieldUsers" %>
   </div>
   <hr>
 </div>
@@ -56,12 +56,12 @@
     <div class="col-md-6 passFields">
       <div class="field">
         <%= f.label :password, 'New Password',  class: "titlePostForm" %><br>
-        <%= f.password_field :password, class: "formFieldLine" %>
+        <%= f.password_field :password, class: "fieldUsers" %>
       </div>
     <hr>
       <div class="field">
         <%= f.label :password_confirmation, 'Confirm Password',  class: "titlePostForm" %><br>
-        <%= f.password_field :password_confirmation, class: "formFieldLine" %>
+        <%= f.password_field :password_confirmation, class: "fieldUsers" %>
       </div>
     </div>
     <div class="col-md-6 passwordNoticePos col-xs-30">
@@ -101,12 +101,12 @@
     <div class="col-md-6 passFields">
       <div class="field">
         <%= f.label :password, 'New Password',  class: "titlePostForm" %><br>
-        <%= f.password_field :password, class: "formFieldLine" %>
+        <%= f.password_field :password, class: "fieldUsers" %>
       </div>
     <hr>
       <div class="field">
         <%= f.label :password_confirmation, 'Confirm Password',  class: "titlePostForm" %><br>
-        <%= f.password_field :password_confirmation, class: "formFieldLine" %>
+        <%= f.password_field :password_confirmation, class: "fieldUsers" %>
       </div>
     </div>
     <div class="col-md-6 passwordNoticePos">
@@ -132,18 +132,21 @@
 </div>
 
 
-<div class="col-md-3 col-md-offset-1 col-xs-12">
+<div class="col-md-5 col-md-offset-1 col-xs-12">
   <hr>
     <div class="field">
-      <%= f.label :current_password, 'To confirm changes enter Current Password',  class: "titlePostForm" %><br>
-      <%= f.password_field :current_password, class: "formFieldLine" %>
-    </div>
-<% end %>
-  <hr>
-    <div class="actions">
-      <%= f.submit({class: "button buttonG"}) %>
+      <%= f.label :current_password, 'To confirm changes enter Current Password',  class: "titlePostFormSmall" %><br>
+      <%= f.password_field :current_password, class: "fieldUsers" %>
     </div>
 <% end %>
 </div>
+<div class="col-md-12 col-xs-12">
+  <hr>
+    <div class="actions text-center">
+      <%= f.submit({class: "button buttonG"}) %>
+    </div>
+</div>
+<% end %>
+
 </div>
 

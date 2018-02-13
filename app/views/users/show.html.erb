@@ -40,6 +40,11 @@
             </tr>
           </thead>
           <tbody>
+          <% if @user.following.blank? %>
+            <tr>
+              <td class= "names">You are currently not following any stores.</td>
+            </tr>
+          <% else %>
             <% @user.following.each do |page| %>
             <tr>
               <td><%= (link_to image_tag(page.image_url(:thumb), class: "listFollowing"), page, method: :get )if page.image?%></td>
@@ -48,6 +53,7 @@
             </tr>
             <% end %>
           </tbody>
+        <% end %>
         </table>
          </div>
     </div>

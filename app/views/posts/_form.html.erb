@@ -17,12 +17,12 @@
     <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
       <div class="field">
         <%= f.label :title, class: "titlePostForm" %><br>
-        <%= f.text_field :title, class: "formFieldLine" %>
+        <%= f.text_field :title, class: "fieldStyle" %>
       </div>
     <hr>
       <div class="field">
         <%= f.label :content, class: "titlePostForm" %><br>
-        <%= f.text_area :content, class: "formFieldText" %>
+        <%= f.text_area :content, class: "fieldStyleForm" %>
       </div>
     <hr> 
   </div>
@@ -52,8 +52,10 @@
 
   <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
     <% if params[:action] == 'edit' || params[:action] == 'update' %>
-      <%= f.label "Image Attachment (Multiple Images)", class: "titlePostForm" %><br>
-      <%= f.file_field :image, multiple: true, name: "post_attachments[image][]" %>
+      <%= f.label "Image Attachment (Multiple Images)", class: "titlePostForm" %>
+      <div class="fileUpload">
+        <%= f.file_field :image, multiple: true, name: "post_attachments[image][]", class: "upload" %>
+      </div>
     <% end %>
   </div>
 
@@ -63,8 +65,10 @@
       <% if params[:action] == 'new' || params[:action] == 'create' %>
         <%= f.fields_for :post_attachments do |p| %>
         <div class="field">
-          <%= p.label "Image Attachments (Multiple Images)", class: "titlePostForm" %><br>
-          <%= p.file_field :image, multiple: true, name: "post_attachments[image][]" %>
+          <%= p.label "Image Attachments (Multiple Images)", class: "titlePostForm" %>
+          <div class="fileUpload">
+            <%= p.file_field :image, multiple: true, name: "post_attachments[image][]", class: "upload" %>
+          </div>
         </div>
         <% end %>
       <% end %>
@@ -72,7 +76,13 @@
         <div class="field">
           <%= f.collection_select(:page_id, $user_pages, :id, :title, {prompt: "Choose a store"}, {class: "selectPost"}) %>
         </div>
-      <hr>
+    </div>
+
+      
+
+<div class="col-md-12">
+  <hr>
+  <div class="text-center">
         <div class="actions">
           <%= f.submit({class: "button buttonG"}) %>
         </div>
@@ -80,7 +90,9 @@
         <% if params[:action] == 'edit' || params[:action] == 'update' %> 
           <%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
         <% end %>
-    </div>
+     </div>
+   </div>
+
   </div>
 </div>
 
