@@ -267,7 +267,7 @@ i {
  }
 
 #sidev{
-    top: 16px;
+    top: 29px;
     left: 0px;
     padding-top: 3em;
     background: #000000;
@@ -621,6 +621,9 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    #sidev{
+        top: 25px;
+    }
     .titlePageForm{
         font-size: 25px;
     }
