@@ -25,7 +25,7 @@ $(".buttonAdd").click(function(){
 
  $(document).ready(function() {
     if ($('#cart tr').length > 1) {
-      $(".productMainInfo").css({"margin-top": "30px"});
+      $(".productMainInfo").css({"margin-top": "50px"});
     }
  });
 
