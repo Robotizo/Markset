@@ -266,7 +266,7 @@ textarea {
         height: 130px;
     }
     .infoCon {
-        margin-top: 70px;
+        margin-top: 60px;
     }
 
     .btnTog{
@@ -277,8 +277,7 @@ textarea {
         height: 40px;
     }
     #sidev{
-        top: 25px;
-        position: fixed;
+        display: none;
     }
 
     .orderFields{
@@ -290,10 +289,10 @@ textarea {
 
 @media screen and (min-width: 768px) and (max-width: 1199px){
     #sidev{
-        padding-top: 8em;
+        display: none;
     }
     .infoCon {
-        margin-top: 70px;
+        margin-top: 60px;
     }
 
 }
