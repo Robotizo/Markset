@@ -41,17 +41,17 @@ a:hover{
 }
 
 #sidev{
-    top: 16px;
+    top: 29px;
     left: 0px;
     padding-top: 3em;
     background: #000000;
-    position: fixed;
     z-index: 1;
     width: 100%;
+    position: fixed;
 }
 
 .infoCon{
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 .cart, #sidev #cart{
@@ -266,7 +266,7 @@ textarea {
         height: 130px;
     }
     .infoCon {
-        margin-top: 60px;
+        margin-top: 70px;
     }
 
     .btnTog{
@@ -277,6 +277,7 @@ textarea {
         height: 40px;
     }
     #sidev{
+        top: 25px;
         position: fixed;
     }
 
@@ -289,10 +290,10 @@ textarea {
 
 @media screen and (min-width: 768px) and (max-width: 1199px){
     #sidev{
-        padding-top: 7em;
+        padding-top: 8em;
     }
     .infoCon {
-        margin-top: 60px;
+        margin-top: 70px;
     }
 
 }
