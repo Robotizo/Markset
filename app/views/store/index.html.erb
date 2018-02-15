@@ -98,13 +98,13 @@
 
 		<div class="container storeBorder">
 			<div class="titleFrontPageNF">
-				<div class="topTitle">Stores</div>
+				<div class="topTitle">All Stores</div>
 			</div>
 		
 		<div class="scrollStores">
 		    <% @pages.each do |page| %>
 		    <%= link_to page, method: :get, class: "specialA" do %>
-		      <div class="col-xs-12 col-sm-12 pageWidth pageWidthLogged completeBoxPages">
+		      <div class="col-xs-12 col-sm-12 pageWidth pageWidthLogged completeBoxPagesAll">
 		      	<div class="pageDesign">
 		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 		        </div>
@@ -117,13 +117,15 @@
 		</div>
 
 
-
+	<div class="container titleFrontPageNFFeatured">
+		<div class="topTitle">Featured Stores</div>
+	</div>
 
 	<div class="container individualStoresSection">
 
 		<% @notFollowingPages.limit(6).each do |page| %>
 		    <%= link_to page, method: :get, class: "specialA" do %>
-		      <div class="col-xs-12 col-sm-12 individualStores completeBoxPages">
+		      <div class="col-xs-12 col-sm-12 individualStores completePages">
 
 
 		      	<div class="pageDesign">

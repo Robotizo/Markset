@@ -14,6 +14,10 @@ a:hover{
   border-bottom: 1px solid;
 }
 
+.titleFrontPageNFFeatured{
+  border-bottom: 1px solid;
+}
+
 .storeBack{
   padding-bottom: 80px;
 }
@@ -684,7 +688,15 @@ dt{
     text-align: -webkit-auto
 }
 
-.completeBoxPages{
+.completeBoxPagesAll{
+  box-shadow: 0px 0px 2px 0px;
+  padding-left: 0px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+.completePages{
   box-shadow: 0px 0px 2px 0px;
   padding-left: 0px;
   border-radius: 5px;
@@ -725,14 +737,18 @@ dt{
 
 
 @media screen and (max-width: 767px){
+  .titleFrontPageNFFeatured{
+    border-bottom: 0px solid;
+  }
 
   .storeBorder{
     padding-left: 0px;
     padding-right: 0px;
   }
   .individualStoresSection{
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 10px;
   }
 
   div.scrollProducts {
@@ -750,15 +766,15 @@ dt{
     margin-bottom: 0px;
     margin-left: 80px;
     text-align: -webkit-auto;
+
   }
 
   .individualStores {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
-  .individualStoresSection {
-    margin-bottom: 40px;
-  }
 
   .iProductInfo {
     font-size: 14px;
@@ -784,18 +800,22 @@ dt{
 
   }
 
-  .completeBoxPages {
+  .completePages {
     padding-left: 0px;
-    padding-right: 0px;
-    border-radius: 5px;
     width: 100%;
+    border-top: 1px solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+
+  .completePages:last-child {
+    border-bottom: 1px solid;
   }
 
   .section1 {
     padding-left: 90px;
     width: 100%;
     height: 90px;
-    border-bottom: 1px solid;
   }
 
   .section2 {
@@ -804,7 +824,6 @@ dt{
     margin-left: 10px;
     height: 60px;
     text-align: left;
-    border-right: 1px solid;
   }
 
   .section3 {
@@ -851,13 +870,16 @@ dt{
   .pageCredentials {
     height: 160px;
     margin-left: 0;
+    border-bottom: 0px;
   }
 
 
   .individualPictures{
-    width: 90px;
-    height: 90px;
-    border-radius: 5px 0px 0px 0px;
+    width: 80px;
+    height: 80px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
   }
   .storeBorder {
     margin-top: 0px;
