@@ -26,7 +26,7 @@
       <hr>
   </div>
 
-<div class="col-md-5 col-md-offset-1 col-xs-12">
+<div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
 
   <div class="field">
     <%= f.label :name, class: "titlePostForm" %><br>
@@ -89,9 +89,9 @@
 
 
 
-<div class="col-md-10 col-md-push-1 col-xs-12">
+<div class="col-md-12 col-md-offset-1 col-xs-12 newMargin">
   <% if params[:action] == 'edit' || params[:action] == 'update' || params[:action] == 'show'%> 
-  <%= submit_tag "Password Change", method: :get, class: "btn btn4 btn-primary", :type => 'button' %>
+  <%= submit_tag "Password Change", method: :get, class: "btn btn4 btn-primary vewton", :type => 'button' %>
 
 
 
@@ -132,7 +132,7 @@
 </div>
 
 
-<div class="col-md-5 col-md-offset-1 col-xs-12">
+<div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
   <hr>
     <div class="field">
       <%= f.label :current_password, 'To confirm changes enter Current Password',  class: "titlePostFormSmall" %><br>
