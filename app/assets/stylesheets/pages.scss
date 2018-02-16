@@ -17,21 +17,14 @@
 .fileUpload {
     position: relative;
     overflow: hidden;
-    margin: 10px;
+    margin: 15px;
 }
 .fileUpload input.upload {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    right: 0;
-    margin: 0;
-    padding: 13px;
+
     font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
+    font-weight: 300;
+
 }
-
-
 
 
 .fieldStyle{
@@ -664,6 +657,10 @@ textarea {
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    .newMargin{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     .col-xs-6{
         padding-left: 5px;
         padding-right: 5px;
@@ -784,6 +781,11 @@ textarea {
     .fieldStyleForm{
         width: 100%;
         height: 120px;
+    }
+
+    .fieldStyle{
+        width: 100%;
+        padding-left: 10px;
     }
 
     .titleShow{

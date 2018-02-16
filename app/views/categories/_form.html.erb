@@ -12,17 +12,17 @@
   <% end %>
 
 <div class="container">
-<div class="col-md-6 col-md-offset-1 col-xs-12">
+<div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
   <div class="field">
-    <%= f.label "Name the category", class: "titlePageForm" %><br>
-    <%= f.text_field :name, placeholder: "Name for the category", class: "fieldStyle" %>
+    <%= f.label "Category Name", class: "titlePageForm" %><br>
+    <%= f.text_field :name, placeholder: "Name your cotegory.", class: "fieldStyle" %>
   </div>
 <hr>
    <div class="field">
-      <div class="fileUpload btn btn-primary">
-        <span>Upload Category Image</span>
+        <%= f.label "Upload Category Image", class: "titlePageForm" %>
+        <div class="fileUpload">
           <%= f.file_field :image, class: "upload" %>
-      </div>
+        </div>
   </div>
   <hr>
   <div class="field">
@@ -30,7 +30,7 @@
   </div>
  
   </div>
-<div class="col-md-12">
+<div class="col-md-12 col-xs-12">
    <hr>
   <div class="text-center">
   <div class="actions">

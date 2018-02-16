@@ -14,7 +14,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
+    <div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
       <div class="field">
         <%= f.label :title, class: "titlePostForm" %><br>
         <%= f.text_field :title, class: "fieldStyle" %>
@@ -34,7 +34,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="text-center">
-            <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2"> 
+            <div class="col-md-6 col-md-offset-1 col-xs-12 newMargin"> 
               <hr>
                 <%= f.label "Post Images", class: "titlePostForm" %>
               <hr>
@@ -50,7 +50,7 @@
   <% end %>
 
 
-  <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
+  <div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
     <% if params[:action] == 'edit' || params[:action] == 'update' %>
       <%= f.label "Image Attachment (Multiple Images)", class: "titlePostForm" %>
       <div class="fileUpload">
@@ -61,7 +61,7 @@
 
 
 
-    <div class="col-md-6 col-md-offset-1 col-xs-offset-1 col-sm-offset-1">
+    <div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
       <% if params[:action] == 'new' || params[:action] == 'create' %>
         <%= f.fields_for :post_attachments do |p| %>
         <div class="field">
@@ -80,7 +80,7 @@
 
       
 
-<div class="col-md-12">
+<div class="col-md-12 col-xs-12">
   <hr>
   <div class="text-center">
         <div class="actions">
