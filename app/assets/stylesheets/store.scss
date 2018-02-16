@@ -758,7 +758,7 @@ dt{
     overflow-x: auto;
     white-space: nowrap;
     padding-left: 5px;
-    height: 90px;
+    height: 100px;
     overflow-y: hidden;
   }
 
@@ -767,15 +767,15 @@ dt{
     font-weight: 300;
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-left: 80px;
+    margin-left: 85px;
     text-align: -webkit-auto;
 
   }
 
   .individualStores {
-    margin-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
 
@@ -784,13 +784,13 @@ dt{
     font-weight: 300;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 80px;
+    margin-left: 85px;
     text-align: -webkit-auto;
   }
 
   .iProductImage {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 5px 0px 0px 5px;
   }
 
@@ -805,14 +805,9 @@ dt{
 
   .completePages {
     padding-left: 0px;
-    width: 100%;
-    border-top: 1px solid;
-    border-radius: 0px;
-    box-shadow: 0px 0px 0px 0px;
-  }
-
-  .completePages:last-child {
-    border-bottom: 1px solid;
+    width: 97%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 0px;
   }
 
   .section1 {
@@ -822,19 +817,11 @@ dt{
   }
 
   .section2 {
-    width: 38%;
-    margin-top: 4px;
-    margin-left: 10px;
-    height: 60px;
-    text-align: left;
+    display: none;
   }
 
   .section3 {
-    width: 57%;
-    margin-top: -60px;
-    margin-left: 43%;
-    height: 60px;
-    text-align: left;
+    display: none;
   }
 
   .individualTitle {
@@ -842,7 +829,7 @@ dt{
     font-weight: 300;
     padding-top: 7px;
     padding-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 25px;
   }
 
   #noTimes {
@@ -866,20 +853,20 @@ dt{
     font-size: 18px;
     font-weight: 300;
     margin-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 25px;
     text-align: -webkit-auto;
   }
 
   .pageCredentials {
-    height: 160px;
+    height: 110px;
     margin-left: 0;
     border-bottom: 0px;
   }
 
 
   .individualPictures{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin-left: 5px;
     margin-top: 5px;
     border-radius: 5px;
