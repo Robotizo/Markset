@@ -109,7 +109,7 @@
 		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
 		        </div>
 		        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
-		        <div class="pageTitle"><%= page.genre %></div>
+		        <div class="pageTitle"><%= truncate(page.genre, length: 20) %></div>
 		      </div>
 		    <% end %>
 		    <% end %>
@@ -134,8 +134,8 @@
 
 		     <div class="pageCredentials">
 			     <div class="section1">
-			        <div class="individualTitle"><%= truncate(page.title, length: 20) %></div>
-			        <div class="individualGenre"><%= truncate(page.genre, length: 20) %></div>
+			        <div class="individualTitle"><%= truncate(page.title, length: 30) %></div>
+			        <div class="individualGenre"><%= truncate(page.genre, length: 30) %></div>
 			     </div>
 
 				<div class="section2">

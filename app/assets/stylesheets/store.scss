@@ -49,8 +49,8 @@ a:hover{
 }
 
 .individualPictures{
-  width: 207px;
-  height: 207px;
+  width: 216px;
+  height: 216px;
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -72,7 +72,7 @@ div.scrollProducts {
     overflow-x: auto;
     white-space: nowrap;
     padding-left: 10px;
-    height: 130px;
+    height: 135px;
     overflow-y: hidden;
 }
 
@@ -90,7 +90,7 @@ div.scrollProducts a {
 
 .section2{
     width: 25%;
-    margin-top: -72px;
+    margin-top: -62px;
     margin-left: 235px;
     height: 72px;
     text-align: left;
@@ -623,7 +623,7 @@ dt{
 
 
 .individualGenre{
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   margin-bottom: 5px;
   margin-left: 15px;
@@ -752,6 +752,14 @@ dt{
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 10px;
+  }
+
+  .individualGenre{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    text-align: -webkit-auto;
   }
 
   div.scrollProducts {
@@ -984,6 +992,13 @@ dt{
 
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .section3 {
+      display: none;
+  }
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px){
   .listImagePagePost{
       right: -43%;
@@ -1001,13 +1016,13 @@ dt{
   }
 
   .section1 {
-    width: 33%;
+    width: 47%;
   }
 
   .section2 {
     width: 28%;
-    margin-top: -72px;
-    margin-left: 164px;
+    margin-top: -64px;
+    margin-left: 236px;
     height: 72px;
     text-align: left;
   }
@@ -1015,7 +1030,7 @@ dt{
   .section3 {
     width: 40%;
     margin-top: -72px;
-    margin-left: 308px;
+    margin-left: 442px;
     height: 72px;
     text-align: left;
   }
@@ -1056,6 +1071,12 @@ dt{
 @media screen and (max-width: 350px){
   .welcome {
     font-size: 30px;
+  }
+  .pageTitle {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 0px;
+    margin-left: 106px;
   }
 
 }
