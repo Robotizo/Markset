@@ -384,8 +384,6 @@ div.price_line{
 }
 
 
-
-
 .image1{
   margin-top: 10px;
   height: 30%;
@@ -757,6 +755,29 @@ dt{
 
 
 @media screen and (max-width: 767px){
+  .stageMid{
+    border-right: 0px solid #c7c7c7;
+    border-left: 0px solid #c7c7c7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  .image1 {
+    margin-top: 10px;
+    height: 23%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .pageIns {
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
   .storeBack{
     padding-bottom: 0px;
   }
@@ -985,7 +1006,6 @@ dt{
     padding-bottom: .7em;
   }
   .loginBtn {
-    margin-left: 21%;
     margin-bottom: 30px;
   }
   .noPostTitle{
@@ -1016,7 +1036,39 @@ dt{
     .section3 {
       display: none;
   }
+  .stageMid{
+    border-right: 0px solid #c7c7c7;
+    border-left: 0px solid #c7c7c7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  .image1 {
+    margin-top: 10px;
+    height: 23%;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  .pageIns {
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
 
+}
+
+@media screen and (min-width: 1300px){
+  .image1 {
+    margin-top: 10px;
+    height: 24%;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px){
