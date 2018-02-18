@@ -18,9 +18,6 @@ a:hover{
   border-bottom: 1px solid;
 }
 
-.storeBack{
-  padding-bottom: 80px;
-}
 
 
 .specialA{
@@ -239,8 +236,9 @@ div.price_line{
 
 
 .firstIntro{
-  padding: 5em;
-  opacity: 1 !important;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-top: 5em;
 }
 
 
@@ -387,6 +385,16 @@ div.price_line{
 
 
 
+
+.image1{
+  margin-top: 10px;
+  height: 30%;
+  margin-right: 40px; 
+  margin-left: 40px;
+}
+
+
+
 .lowerAttri {
     padding-top: 10px;
     padding-bottom: 32px;
@@ -488,10 +496,10 @@ div.price_line{
 }
 
 .exSection{
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 300;
-  margin-left: 120px;
-  width: 80%;
+  margin-left: 115px;
+  width: 81%;
   padding-bottom: .7em;
   color: black;
 }
@@ -517,7 +525,6 @@ div.price_line{
 }
 
 .loginBtn{
-  margin-left: 50%;
   margin-bottom: 30px;
   background-color: transparent;
   color: black;
@@ -573,7 +580,6 @@ dt{
   font-size: 30px;
   font-weight: 300;
   margin-bottom: 15px;
-  margin-top: 25px;
 }
 
 .categoryTitle{
@@ -647,6 +653,10 @@ dt{
   width: 100%;
 }
 
+.stageMid{
+  border-right: 1px solid #c7c7c7;
+  border-left: 1px solid #c7c7c7;
+}
 
 
 .iBox:hover{
@@ -660,6 +670,16 @@ dt{
   margin-bottom: 9px;
   margin-left: 10em;
   text-align: -webkit-auto;
+}
+
+.pageIns{
+  font-size: 20px;
+  font-weight: 300;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .pageLongDesc{

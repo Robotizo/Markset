@@ -199,12 +199,34 @@
 	<div class="container storeBack">
 		<div class="row">
 			<div class="firstIntro">
-	  			<div class="welcome">Welcome to Markset</div>
-	  			<div class="exSection">Markset is a place where you can buy from your favorite brands and keep in touch with their activity.</div>
-	  			<%= link_to 'Login', login_path, method: :get, class: "btn btn-primary loginBtn" %>
-	  			<%= link_to 'Sign Up', new_user_path, method: :get, class: "btn btn-primary signBtn" %>
+	  			<div class="welcome">Markset</div>
+	  			<div class="exSection">Buy direcly from stores and stay updated with them.</div>
+	  			<div class="text-center">
+		  			<%= link_to 'Login', login_path, method: :get, class: "btn btn-primary loginBtn" %>
+		  			<%= link_to 'Sign Up', new_user_path, method: :get, class: "btn btn-primary signBtn" %>
+	  			</div>
   			</div>
 		</div>
+	</div>
+	<hr>
+	<div class="col-md-12 text-center"> 
+	<div class="container"> 
+		<div class="col-md-4">
+			<%= image_tag("Image1.png", class: "image1") %>
+			<div class="pageIns">Browse through stores that align with your interests.</div>
+		</div>
+		<div class="col-md-4 stageMid">
+			<%= image_tag("Image2.png", class: "image1") %>
+			<div class="pageIns">Once you choose a store, you have the ability to buy from them and also follow them.</div>
+		</div>
+		<div class="col-md-4">
+			<%= image_tag("Image3.png", class: "image1") %> 
+			<div class="pageIns">Buy any product from the listed stores with a quick purchasing process.</div>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-12">
+		<hr>
 	</div>
 	<div class="text-center">
 		<div class="container">
