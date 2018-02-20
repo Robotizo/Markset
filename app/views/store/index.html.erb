@@ -4,89 +4,107 @@
 	<p id="notice"><%= notice %></p>
 <% end %>
 <body>
+
+
+
 <% if current_user.following.present? && session[:user_id] %>
 <div class="container">
 	<div class="text-center">
 		<div class="row">
-		<% if @posts.exists? %>
-		<% @posts.each do |post| %>
-			<div class="postBox">
-			<div class="storeTitle">
-				<%= link_to (image_tag post.page.image_url(:thumb), class: "listImagePagePost"), post.page, method: :get %> 
-				<%= link_to post.page.try(:title), post.page, method: :get, class: "postPageTitle" %>
+
+	<div class="container followingSection">
+		<% @pagesFollowing.each do |page| %>
+		<%= link_to page, method: :get, class: "specialA" do %>
+
+		<div class="col-xs-12 col-sm-12 individualStoresF storeSecF">
+		      	<div class="pageDesign">
+		        <%= image_tag(page.image_url(:thumb), class: "storePicF pagePos") %>
+		        </div>
+		        <div class="pageCredentialsF">
+				     <div class="section1F">
+				        <div class="individualTitleF"><%= truncate(page.title, length: 30) %></div>
+				        <div class="individualGenreF"><%= truncate(page.genre, length: 30) %></div>
+				     </div>
+
+		    	</div>
+		    <% end %>
+
+		    <div class="titleFrontPageF">
+				<div class="topTitleSecF">Popular Products</div>
 			</div>
 
-				
-                <div class="postSection">
-                <% if post.post_attachments.length >= 1 %>
-                	<div class="pictureSection">
-                   <% if post.post_attachments.length < 2 %>
-			          <% post.post_attachments.each do |p| %>
-			            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
-			          <% end %>
-			          <% elsif post.post_attachments.length < 3 %>
-			           <% post.post_attachments.each do |p| %>
-			            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
-			          <% end %>
-			          <% elsif post.post_attachments.length > 4 %>
-			          <% post.post_attachments.limit(4).each do |p| %>
-			            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
-			          <% end %>
-			          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
-			          <% else %>
-			          <% post.post_attachments.limit(4).each do |p| %>
-			            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
-			          <% end %>
-			        <% end %>
-              	</div>
-              	<% else %>
-              	<% end %>
-				</div>
-
-				<div class="contentSection">
-				<dt class="postTitle"><%= post.title %></dt>
-					<% if post.content.length > 200 %>
-                    	<div class="postContent"><%= truncate post.content, length: 200 %></div>
-                    <%= link_to 'read more', post, method: :get %>
-                  <% else %>
-                    <div class="postContent"><%= post.content %></div>
-                  <% end %>
-                </div>
-				<div class="lowerAttri">
-				<% if post.comments.present? %>
-					<% post.comments.limit(1).each do |comment| %>
-						<span class="comment"><%= link_to "Comments", comment, method: :get %></span>
-					<% end %>
-				<% else %>
-					<span class="comment"><%= link_to "Add Comment", new_comment_path(post_id: post.id), method: :get %></span>
-				<% end %>
-                	<span class="dateNtime"><%= post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
-                </div>
+		   <div class="scrollProductsF">
+	       <% page.products.limit(6).each do |product| %>
+			    <%= link_to product, method: :get, class: "specialA" do %>
+			      <div class="col-xs-12 col-sm-12 iBoxWidth iBox">
+		      	  <% product.product_attachments.first(1).each do |p| %>
+				    <%= image_tag(p.image_url(:thumb), class: "iProductImage pagePos") if p.image?%>
+				  <% end %>
+			        <div class="iProductTitle"><%= truncate(product.title, length: 20) %></div>
+			        <div class="iProductInfo"><%= number_to_currency(product.price) %></div>
+			      </div>
+			    <% end %>
+			    <% end %>
 			</div>
+
+		    <div class="titleFrontPageF">
+				<div class="topTitleSecF">Lastest Post</div>
+			</div>
+
+		<% page.posts.reverse.first(1).each do |post| %>
+
+		      <div class="postSectorF">
+		        <div class="pictureSection">
+		          <% if post.post_attachments.length < 2 %>
+		          <% post.post_attachments.each do |p| %>
+		            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
+		          <% end %>
+		          <% elsif post.post_attachments.length < 3 %>
+		           <% post.post_attachments.each do |p| %>
+		            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
+		          <% end %>
+		          <% elsif post.post_attachments.length > 4 %>
+		          <% post.post_attachments.limit(4).each do |p| %>
+		            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+		          <% end %>
+		          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
+		          <% else %>
+		          <% post.post_attachments.limit(4).each do |p| %>
+		            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+		          <% end %>
+		        <% end %>
+		      </div>
+
+		     <div class="contentSector">
+		     	<dt class="postTitleSector"><%= post.title %></dt>
+
+		          <% if post.content.length > 300 %>
+		            <div class="postContentSector"><%= truncate post.content, length: 300 %></div>
+		            <%= link_to 'read more', post, method: :get %>
+		          <% else %>
+		            <div class="postContentSector"><%= post.content %></div>
+		            <% end %>
+		     </div>
+		    </div>
+
+
+
+
+		 <% end %>
+
+
+
+
+
+		</div>
+
+			
+
 		<% end %>
-
-
-		<% else %>
-
-
-		<div class="text-center">
-	<div class="noPostTitle">It seems that the page you are following has not posted anything yet. Check out these other stores.</div>
-		<hr>
-	<div class="container">
-	    <% @pages.each do |page| %>
-	    <%= link_to page, method: :get, class: "specialA" do %>
-	      <div class="col-xs-12 col-sm-12 pageWidth completeBox">
-	      	<div class="pageDesign">
-	        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
-	        </div>
-	        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
-	        <div class="pageTitle"><%= page.genre %></div>
-	      </div>
-	    <% end %>
-	    <% end %>
-	   </div>
 	</div>
-		<% end %>
+
+
+
 		</div>
 	</div>
 </div>
