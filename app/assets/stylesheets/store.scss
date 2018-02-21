@@ -160,6 +160,18 @@ div.scrollProductsF a {
 }
 
 
+.titleFollowing{
+  margin-top: 35px;
+  border-bottom: 1px solid black;
+}
+
+.textFollowing{
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+
 
 /* Following End */
 
@@ -590,12 +602,11 @@ div.price_line{
 }
 
 .pictureSection{
-    border-top: 1px solid black;
+    border: 1px solid black;
 }
 
 .contentSection{
-
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .postContent {
