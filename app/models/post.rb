@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 	belongs_to :user
-	belongs_to :page
+	belongs_to :page, touch: true
 	has_many :comments, dependent: :destroy
 	validates_presence_of :content, presence: true
 	has_many :post_attachments, dependent: :destroy

@@ -15,7 +15,7 @@
 				<div class="textFollowing">Stores that you follow</div>
 			</div>
 	<div class="container followingSection">
-		<% @pagesFollowing.each do |page| %>
+		<% @pagesFollowing.reverse.each do |page| %>
 		<%= link_to page, method: :get, class: "specialA" do %>
 
 		<div class="col-xs-12 col-sm-12 individualStoresF storeSecF">
@@ -24,8 +24,8 @@
 		        </div>
 		        <div class="pageCredentialsF">
 				     <div class="section1F">
-				        <div class="individualTitleF"><%= truncate(page.title, length: 30) %></div>
-				        <div class="individualGenreF"><%= truncate(page.genre, length: 30) %></div>
+				        <div class="individualTitleF"><%= truncate(page.title, length: 80) %></div>
+				        <div class="individualGenreF"><%= truncate(page.genre, length: 80) %></div>
 				     </div>
 
 		    	</div>
@@ -34,7 +34,7 @@
 		    <div class="titleFrontPageF">
 				<div class="topTitleSecF">Popular Products</div>
 			</div>
-
+	<% if page.products.present? %>
 		   <div class="scrollProductsF">
 	       <% page.products.limit(6).each do |product| %>
 			    <%= link_to product, method: :get, class: "specialA" do %>
@@ -48,11 +48,14 @@
 			    <% end %>
 			    <% end %>
 			</div>
+	<% else %>
+		<div class="blankTitleF">This store currently has no products.</div>
+	<% end %>
 
 		    <div class="titleFrontPageF">
 				<div class="topTitleSecF">Lastest Post</div>
 			</div>
-
+	<% if page.posts.present? %>
 		<% page.posts.reverse.first(1).each do |post| %>
 
 		      <div class="postSectorF">
@@ -78,7 +81,7 @@
 		      </div>
 
 		     <div class="contentSector">
-		     	<dt class="postTitleSector"><%= post.title %></dt>
+		     	<dt class="postTitleSector"><%= truncate post.title, length: 40 %></dt>
 
 		          <% if post.content.length > 300 %>
 		            <div class="postContentSector"><%= truncate post.content, length: 300 %></div>
@@ -86,13 +89,27 @@
 		          <% else %>
 		            <div class="postContentSector"><%= post.content %></div>
 		            <% end %>
+
 		     </div>
+
 		    </div>
+		    		    <div class="lowerAttriF">
+				        <% if post.comments.present? %>
+				          <% post.comments.limit(1).each do |comment| %>
+				            <span class="comment"><%= link_to "Comments", comment, method: :get %></span>
+				          <% end %>
+				        <% else %>
+				          <span class="comment"><%= link_to "Add Comment", new_comment_path(post_id: post.id), method: :get %></span>
+				        <% end %>
+				        <span class="dateNtime"><%= post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
+				      </div>
 
+		 	<% end %>
 
+		 <% else %>
 
-
-		 <% end %>
+			<div class="blankTitleF">This store currently has no posts.</div>
+		<% end %>
 
 
 
