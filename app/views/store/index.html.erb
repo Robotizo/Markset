@@ -14,7 +14,7 @@
 			<div class="titleFollowing">
 				<div class="textFollowing">Stores that you follow</div>
 			</div>
-	<div class="container followingSection">
+	<div class="containerCustom followingSection">
 		<% @pagesFollowing.reverse.each do |page| %>
 		<%= link_to page, method: :get, class: "specialA" do %>
 

@@ -125,6 +125,14 @@ div.scrollProductsF a {
   width: 97%;
 }
 
+
+.containerCustom{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .post1Pictures {
     width: 100%;
     border-radius: 4px;
@@ -1191,6 +1199,31 @@ dt{
     margin-top: 20px;
   }
 
+
+  /* Following Mob Start */
+  .containerCustom{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .followingSection{
+    margin-top: 40px;
+    width: 100%;
+  }
+  .storeSecF {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    box-shadow: 0px 0px 0px 0px;
+    padding-left: 0px;
+    border-radius: 0px;
+  }
+
+  .titleFollowing {
+    margin-top: 35px;
+    border-bottom: 0px; 
+  }
+
+  /* Following Mob End */
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -1221,12 +1254,15 @@ dt{
     text-align: center;
   }
 
+
+
+
 }
 
 @media screen and (min-width: 1300px){
   .image1 {
     margin-top: 10px;
-    height: 24%;
+    height: 20%;
     margin-right: 40px;
     margin-left: 40px;
   }
