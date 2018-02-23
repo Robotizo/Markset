@@ -122,6 +122,8 @@
 		<% end %>
 	</div>
 
+
+<% if @pagesNotFollowing.present? %>
 		<div class="titleFollowing">
 			<div class="textFollowing">Check out these other stores</div>
 		</div>
@@ -183,7 +185,8 @@
 				
 			<% end %>
 		</div>
-
+<% else %>
+<% end %>
 
 
 
