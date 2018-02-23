@@ -81,19 +81,19 @@
 		      </div>
 
 		     <div class="contentSector">
-		     	<dt class="postTitleSector"><%= truncate post.title, length: 40 %></dt>
+		     	<dt class="postTitleSector col-md-12 col-xs-12"><%= truncate post.title, length: 40 %></dt>
 
 		          <% if post.content.length > 300 %>
-		            <div class="postContentSector"><%= truncate post.content, length: 300 %></div>
+		            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 300 %></div>
 		            <%= link_to 'read more', post, method: :get %>
 		          <% else %>
-		            <div class="postContentSector"><%= post.content %></div>
+		            <div class="postContentSector col-md-12 col-xs-12"><%= post.content %></div>
 		            <% end %>
 
 		     </div>
 
 		    </div>
-		    		    <div class="lowerAttriF">
+		    		    <div class="lowerAttriF col-md-5 col-xs-12">
 				        <% if post.comments.present? %>
 				          <% post.comments.limit(1).each do |comment| %>
 				            <span class="comment"><%= link_to "Comments", comment, method: :get %></span>
@@ -124,10 +124,9 @@
 
 
 <% if @pagesNotFollowing.present? %>
-		<div class="titleFollowing">
-			<div class="textFollowing">Check out these other stores</div>
-		</div>
-
+	<div class="col-md-12 col-xs-12">
+			<div class="secondTilteF">Check out these other stores</div>
+	</div>
 
 		<div class="container individualStoresSection">
 			<% @pagesNotFollowing.each do |page| %>
@@ -203,6 +202,7 @@
 		<div class="container storeBorder">
 			<div class="titleFrontPageNF">
 				<div class="topTitle">All Stores</div>
+				<div class="subTopTitle">The complete selection of stores.</div>
 			</div>
 		
 		<div class="scrollStores">
@@ -223,6 +223,7 @@
 
 	<div class="container titleFrontPageNFFeatured">
 		<div class="topTitle">Featured Stores</div>
+		<div class="subTopTitle">Get a more in-depth look at stores with a brief list of their products.</div>
 	</div>
 
 	<div class="container individualStoresSection">

@@ -742,12 +742,13 @@ textarea {
         width: 200px;
     }
     .btn {
-        font-size: 12px;
-        font-weight: 500;
+        font-size: 17px;
+        font-weight: 300;
         border-radius: 0px;
     }
     .btn1{
         padding: 10px 50px;
+        border-radius: 5px;
     }
     .btn2{
         padding: 10px 40px;
@@ -963,12 +964,18 @@ textarea {
     .dtCat{
         font-size: 15px;
     }
+    .btn {
+        font-size: 13px;
+        font-weight: 300;
+        border-radius: 3px;
+    }
 }
 
 
 @media screen and (min-width: 768px) and (max-width: 1199px){
     .btn1{
         padding: 10px 100px;
+        border-radius: 5px;
     }
     .btn2{
         padding: 10px 90px;

@@ -10,15 +10,6 @@ a:hover{
     color: green;
 }
 
-.titleFrontPageNF{
-  border-bottom: 1px solid;
-}
-
-.titleFrontPageNFFeatured{
-  border-bottom: 1px solid;
-}
-
-
 
 .specialA{
   color: black !important;
@@ -26,10 +17,13 @@ a:hover{
 
 .storeBorder{
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-.individualStoresSection{
+.secondTilteF{
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 20px;
   margin-top: 40px;
 }
 
@@ -37,7 +31,6 @@ a:hover{
 /* Following Start */
 
 .followingSection{
-  margin-top: 40px;
   width: 90%;
 }
 
@@ -111,7 +104,6 @@ div.scrollProductsF a {
 }
 
 .titleFrontPageF{
-  border-bottom: 1px solid;
   margin-left: 15px;
 }
 
@@ -178,7 +170,6 @@ div.scrollProductsF a {
 
 .titleFollowing{
   margin-top: 35px;
-  border-bottom: 1px solid black;
 }
 
 .textFollowing{
@@ -188,8 +179,7 @@ div.scrollProductsF a {
 }
 
 .lowerAttriF{
-  padding-bottom: 28px;
-  margin-left: 54%;
+  width: 47%;
 }
 
 
@@ -735,12 +725,20 @@ dt{
 .pagePos{
   float: left;
 }
+.individualStoresSection{
+  margin-top: 14px;
+}
 
 .topTitle{
   font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.subTopTitle{
+  font-size: 20px;
   font-weight: 300;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 .secondaryTitle{
@@ -952,6 +950,7 @@ dt{
   }
   .titleFrontPageNFFeatured{
     border-bottom: 0px solid;
+    text-align: left;
   }
 
   .storeBorder{
@@ -1023,6 +1022,7 @@ dt{
 
   .completePages {
     padding-left: 0px;
+    padding-right: 0px;
     width: 97%;
     border-radius: 5px;
     box-shadow: 0px 0px 2px 0px;
@@ -1193,10 +1193,14 @@ dt{
     margin-left: 110px;
   }
   .topTitle{
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  .subTopTitle {
+    font-size: 14px;
     font-weight: 300;
     margin-bottom: 20px;
-    margin-top: 20px;
   }
 
 
@@ -1219,10 +1223,16 @@ dt{
   }
 
   .titleFrontPageF {
-    border-bottom: 1px solid;
     margin-left: 5px;
     margin-right: 5px;
   }
+
+  .titleFrontPageNF {
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
 
   .titleFollowing {
     margin-top: 35px;
