@@ -443,10 +443,10 @@ textarea {
 }
 
 .postPageTitle {
-  margin: 10px;
-  font-size: 28px;
+  margin-top: 18px;
+  font-size: 22px;
   font-weight: 300;
-  float: left
+  float: left;
 }
 
 .postTitle {
@@ -659,6 +659,7 @@ textarea {
 @media screen and (max-width: 767px) {
     .btnStore{
         width: 100%;
+        font-size: 15px !important;
     }
     .newMargin{
         padding-left: 5px;
@@ -823,6 +824,12 @@ textarea {
         font-weight: 300;
         margin-right: 65px;
         margin-left: 65px;
+    }
+    .postPageTitle {
+      margin-top: 18px;
+      font-size: 18px;
+      font-weight: 300;
+      float: left;
     }
     .postPageTitleNot{
         margin-right: 65px;
