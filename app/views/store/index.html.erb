@@ -95,7 +95,7 @@
 		          <% end %>
 		          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
 		          <% else %>
-		          <% post.post_attachments.limit(4).each do |p| %>
+		          <% post.post_attachments.limit(2).each do |p| %>
 		            <%= (image_tag(p.image_url(:small), class: "postPictures")) if p.image?%>
 		          <% end %>
 		        <% end %>
