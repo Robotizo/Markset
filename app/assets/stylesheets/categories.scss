@@ -248,6 +248,11 @@ dt{
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    #fontTitle2Index{
+        font-size: 14px;
+        font-weight: 200;
+        margin-bottom: 10px;
+    }
     .fieldStyle{
         width: 100%;
         padding-left: 10px;
@@ -317,7 +322,7 @@ dt{
         font-weight: 400;
    }
    #fontTitle2Index {
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 200;
         margin-bottom: 10px;
     }

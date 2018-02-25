@@ -11,7 +11,7 @@
 	    <div class="productBorder">
 	       <%= image_tag(category.image_url(:thumb), class: "list_image") %>
 	        <dt class="dt1"><%= truncate(category.name, length: 20) %></dt>
-	        <dt id="fontTitle2Index">From <%= link_to truncate(category.page.title, length: 20), category.page, method: :get %></dt>
+	        <dt id="fontTitle2Index">From <%= link_to truncate(category.page.title, length: 15), category.page, method: :get %></dt>
 	    </div>	
 		</div>
 	<% end %>

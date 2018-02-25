@@ -657,6 +657,9 @@ textarea {
 /* At Media */
 
 @media screen and (max-width: 767px) {
+    .btnStore{
+        width: 100%;
+    }
     .newMargin{
         padding-left: 5px;
         padding-right: 5px;
