@@ -15,15 +15,15 @@
   <div class="row">
     <div class="text-center">
     <% if params[:action] == 'new' || params[:action] == 'create' %> 
-      <legend>Enter your details</legend>
       <% end %>
+          <hr>
         <%= image_tag @user.image_url(:thumb), class: "userImage" if @user.image? %>
        <div class="fileUpload btn btn-primary">
         <span>Upload Profile Image</span>
           <%= f.file_field :image, class: "upload" %>
         </div>
     </div>
-      <hr>
+  
   </div>
 
 <div class="col-md-6 col-md-offset-1 col-xs-12 newMargin">
@@ -40,7 +40,7 @@
 <% if params[:action] == 'new' || params[:action] == 'create' %> 
  <div class="field">
     <%= f.label :username, class: "titlePostForm" %><br>
-    <%= f.text_field :username, class: "formFieldLine" %>
+    <%= f.text_field :username, class: "fieldUsers" %>
   </div>
 <% end %>
   <hr>
