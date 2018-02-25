@@ -27,8 +27,22 @@ a:hover{
   margin-top: 40px;
 }
 
+.titleFrontPageFTop{
+  margin-top: 20px;
+}
+
 
 /* Following Start */
+.overallPost{
+  border: 1px solid #b7b7b7;
+  height: 275px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.overallPost:hover{
+  box-shadow: 0px 0px 2px 0px;
+}
 
 .followingSection{
   width: 90%;
@@ -39,23 +53,39 @@ a:hover{
 }
 
 
+div.scrollPostsF {
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 300px;
+  overflow-y: hidden;
+}
+
+div.scrollPostsF a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  width:  100%;
+}
+
+
 .storeSecF{
   box-shadow: 0px 0px 2px 1px;
   padding-left: 0px;
   border-radius: 5px;
+  padding-right: 0px;
 }
 
 .storePicF{
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 5px;
   margin: 10px;
 }
 
 .pageCredentialsF{
-    margin-left: 13em;
-    padding-top: 25px;
-    margin-bottom: 60px;
+  margin-left: 8em;
+  padding-top: 8px;
+  margin-bottom: 23px;
 }
 
 .section1F{
@@ -64,7 +94,7 @@ a:hover{
 
 
 .individualTitleF{
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 300;
   padding-top: 7px;
   padding-bottom: 5px;
@@ -73,7 +103,7 @@ a:hover{
 }
 
 .individualGenreF{
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 300;
   margin-bottom: 5px;
   margin-left: 15px;
@@ -110,7 +140,7 @@ div.scrollProductsF a {
 
 .postSectorf {
   background: #ffffff none repeat scroll 0 0;
-  margin: 1em;
+  margin: 5px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -131,10 +161,11 @@ div.scrollProductsF a {
 }
 
 
+
 .pictureSection{
   width: 53%;
   float: left;
-  border: 1px solid black;
+  border: 1px solid #b7b7b7;
   margin-bottom: 15px;
   border-radius: 5px;
 }
@@ -144,11 +175,12 @@ div.scrollProductsF a {
   width: 47%;
   float: right;
   height: 235px;
+  white-space: normal;
 }
 
 
 .postTitleSector {
-  margin-top: 15px;
+  margin-top: 10px;
   right: -3%;
   padding-bottom: 15px;
   width: 100%;
@@ -189,6 +221,7 @@ div.scrollProductsF a {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 
 /* Following End */
 
@@ -1205,17 +1238,21 @@ dt{
 
 
   /* Following Mob Start */
+  .titleFrontPageFTop {
+    margin-top: 0px;
+    text-align: left;
+  }
+
   .containerCustom{
     padding-left: 0px;
     padding-right: 0px;
   }
   .followingSection{
-    margin-top: 40px;
     width: 100%;
   }
   .storeSecF {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid #b7b7b7;
+    border-top: 1px solid #b7b7b7;
     box-shadow: 0px 0px 0px 0px;
     padding-left: 0px;
     padding-right: 0px;
@@ -1240,29 +1277,29 @@ dt{
   }
 
   .storePicF {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   .pageCredentialsF {
     margin-left: 0em;
     padding-top: 0px;
-    margin-bottom: 45px;
+    margin-bottom: 24px;
   }
 
   .individualTitleF {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 300;
-    padding-top: 7px;
+    padding-top: 20px;
     padding-bottom: 5px;
-    margin-left: 120px;
+    margin-left: 100px;
     text-align: -webkit-auto;
   }
 
   .individualGenreF {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     margin-bottom: 5px;
-    margin-left: 120px;
+    margin-left: 100px;
     text-align: -webkit-auto;
   }
   div.scrollProductsF {
@@ -1285,7 +1322,7 @@ dt{
   .contentSector {
     width: 100%;
     float: none;
-    height: auto;
+    height: 370px;
   }
 
   .postSectorf {
@@ -1294,20 +1331,20 @@ dt{
   }
 
   .postTitleSector {
-    margin-top: 5px;
+    margin-top: 0px;
     right: 0%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
     width: 100%;
     position: relative;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 20px;
   }
   .postContentSector {
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: -webkit-auto;
     position: relative;
     right: 0%;
@@ -1317,22 +1354,35 @@ dt{
   .pictureSection {
     width: 100%;
     float: left;
-    border: 1px solid black;
-    margin-bottom: 15px;
-    border-radius: 0px;
-    margin-top: 5px;
+    border: 1px solid #b7b7b7;
+    border-radius: 2px;
   }
 
   .post1Pictures {
     width: 100%;
-    border-radius: 0px;
+    border-radius: 2px;
   }
 
   .lowerAttriF {
     padding-bottom: 28px;
     margin-left: 0%;
     margin-top: 15px;
+    width: 100%;
   }
+
+  div.scrollPostsF {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 415px;
+    overflow-y: hidden;
+  }
+  .overallPost {
+    border: 1px solid #b7b7b7;
+    height: 400px;
+    margin: 5px;
+    border-radius: 3px;
+  }
+
 
   /* Following Mob End */
 

@@ -152,6 +152,7 @@ h1{
   margin-left: auto;
   margin-right: auto;
   height: auto;
+  border-radius: 3px;
 }
 
 .storeTitle{
@@ -182,6 +183,7 @@ h1{
     padding: 20px;
     padding-bottom: 19px;
     background-color: white;
+    border-radius: 0px 3px 0px 0px;
 }
 
 .editPosts:hover{
@@ -344,7 +346,7 @@ h1{
     .postBox{
       margin-top: 0px;
       margin-bottom: 10px;
-      width: 100%;
+      width: 98%;
     }
     .listImagePagePost{
         width: 50px;
