@@ -36,8 +36,10 @@ a:hover{
 .overallPost{
   border: 1px solid #b7b7b7;
   height: 275px;
-  margin: 5px;
+  margin: 6px;
   border-radius: 5px;
+  width: 100%;
+  margin-left: 5px;
 }
 
 .overallPost:hover{
@@ -58,13 +60,16 @@ div.scrollPostsF {
   white-space: nowrap;
   height: 300px;
   overflow-y: hidden;
+  padding-right: 10px;
 }
 
 div.scrollPostsF a {
   display: inline-block;
   color: white;
   text-align: center;
-  width:  100%;
+  width: 90%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 
@@ -144,7 +149,7 @@ div.scrollProductsF a {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  width: 97%;
+  width: 100%;
 }
 
 
@@ -163,16 +168,16 @@ div.scrollProductsF a {
 
 
 .pictureSection{
-  width: 53%;
+  width: 58%;
   float: left;
-  border: 1px solid #b7b7b7;
   margin-bottom: 15px;
   border-radius: 5px;
+  margin-top: 1px;
 }
 
 
 .contentSector{
-  width: 47%;
+  width: 42%;
   float: right;
   height: 235px;
   white-space: normal;
@@ -181,22 +186,24 @@ div.scrollProductsF a {
 
 .postTitleSector {
   margin-top: 10px;
-  right: -3%;
+  right: -2%;
   padding-bottom: 15px;
-  width: 100%;
+  width: 99%;
+  padding-left: 0px;
   position: relative;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 20px;
   text-align: left;
 }
 
 
 .postContentSector {
-  font-size: 18px;
+  font-size: 16px;
   text-align: -webkit-auto;
   position: relative;
-  right: -3%;
-  width: 100%;
+  right: -2%;
+  padding-left: 0px;
+  width: 99%;
 }
 
 
@@ -1358,7 +1365,7 @@ dt{
 
   .post1Pictures {
     width: 100%;
-    border-radius: 2px;
+    border-radius: 2px 2px 0px 0px;
   }
 
   .lowerAttriF {
@@ -1373,6 +1380,14 @@ dt{
     white-space: nowrap;
     height: 415px;
     overflow-y: hidden;
+  }
+  div.scrollPostsF a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 90%;
+    padding-left: 2px;
+    padding-right: 2px;
   }
   .overallPost {
     border: 1px solid #b7b7b7;
