@@ -18,8 +18,8 @@ class PagesController < ApplicationController
   def show
     @user = current_user
     @cart = current_cart
-    @page_products = @page.products.order("created_at DESC")
-    @page_categories = @page.categories.order("created_at DESC")
+    @page_products = @page.products
+    @page_categories = @page.categories
     @page_posts = @page.posts.order("created_at DESC")
     @page = Page.find(params[:id])
   end
