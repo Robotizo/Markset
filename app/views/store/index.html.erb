@@ -11,8 +11,29 @@
 <div class="container">
 	<div class="text-center">
 		<div class="row">
-			<div class="container titleFrontPageFTop">
+		<div class="container storeBorder">
+			<div class="titleFrontPageNF">
 				<div class="topTitle">Stores that you follow</div>
+				<div class="subTopTitle">Quick list to the stores you are following.</div>
+			</div>
+		
+		<div class="scrollStores">
+		    <% @pagesFollowing.reverse.each do |page| %>
+		    <%= link_to page, method: :get, class: "specialA" do %>
+		      <div class="col-xs-12 col-sm-12 pageWidth pageWidthLogged completeBoxPagesAll">
+		      	<div class="pageDesign">
+		        <%= image_tag(page.image_url(:thumb), class: "scrollImagePage pagePos") %>
+		        </div>
+		        <div class="pageTitleScroll"><%= truncate(page.title, length: 20) %></div>
+		        <div class="pageTitleScroll"><%= truncate(page.genre, length: 20) %></div>
+		      </div>
+		    <% end %>
+		    <% end %>
+		 </div>
+		</div>
+
+			<div class="container titleFrontPageFTop">
+				<div class="topTitle">Featured Stores</div>
 				<div class="subTopTitle">Here you can get updates from your favorite stores.</div>
 			</div>
 	<div class="containerCustom followingSection">
@@ -105,10 +126,10 @@
 		     	<dt class="postTitleSector col-md-12 col-xs-12"><%= truncate post.title, length: 40 %></dt>
 
 		          <% if post.content.length > 300 %>
-		            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 300 %></div>
+		            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 100 %></div>
 		          <% else %>
 		            <div class="postContentSector col-md-12 col-xs-12"><%= post.content %></div>
-		            <% end %>
+		           <% end %>
 
 		     </div>
 		     
@@ -236,10 +257,10 @@
 		    <%= link_to page, method: :get, class: "specialA" do %>
 		      <div class="col-xs-12 col-sm-12 pageWidth pageWidthLogged completeBoxPagesAll">
 		      	<div class="pageDesign">
-		        <%= image_tag(page.image_url(:thumb), class: "listImagePage pagePos") %>
+		        <%= image_tag(page.image_url(:thumb), class: "scrollImagePage pagePos") %>
 		        </div>
-		        <div class="pageTitle"><%= truncate(page.title, length: 20) %></div>
-		        <div class="pageTitle"><%= truncate(page.genre, length: 20) %></div>
+		        <div class="pageTitleScroll"><%= truncate(page.title, length: 20) %></div>
+		        <div class="pageTitleScroll"><%= truncate(page.genre, length: 20) %></div>
 		      </div>
 		    <% end %>
 		    <% end %>
