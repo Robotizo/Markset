@@ -125,8 +125,8 @@
 		     <div class="contentSector">
 		     	<dt class="postTitleSector col-md-12 col-xs-12"><%= truncate post.title, length: 40 %></dt>
 
-		          <% if post.content.length > 300 %>
-		            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 100 %></div>
+		          <% if post.content.length > 150 %>
+		            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 150 %></div>
 		          <% else %>
 		            <div class="postContentSector col-md-12 col-xs-12"><%= post.content %></div>
 		           <% end %>

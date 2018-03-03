@@ -184,7 +184,7 @@ div.scrollProductsF a {
 }
 
 
-.postTitleSector {
+.postTitleSector{
   margin-top: 30px;
   right: -2%;
   padding-bottom: 15px;
@@ -978,10 +978,20 @@ dt{
 
 
 @media screen and (max-width: 767px){
-
-  .truncate {
-    width: 1%;
+  .pageTitleScroll {
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 8em;
+    text-align: -webkit-auto;
   }
+  .scrollImagePage{
+    width: 90px;
+    height: 90px;
+    border-radius: 5px 0px 0px 5px;
+  }
+
   .stageMid{
     border-right: 0px solid #c7c7c7;
     border-left: 0px solid #c7c7c7;
@@ -1349,7 +1359,7 @@ dt{
   .contentSector {
     width: 100%;
     float: none;
-    height: 268px;
+    height: 295px;
   }
 
   .postSectorf {
@@ -1400,7 +1410,7 @@ dt{
   div.scrollPostsF {
     overflow-x: auto;
     white-space: nowrap;
-    height: 314px;
+    height: 340px;
     overflow-y: hidden;
   }
   div.scrollPostsF a {
@@ -1413,7 +1423,7 @@ dt{
   }
   .overallPost {
     border: 1px solid #b7b7b7;
-    height: 297px;
+    height: 325px;
     margin: 5px;
     border-radius: 3px;
   }

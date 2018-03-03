@@ -22,9 +22,10 @@ class ProductsController < ApplicationController
   def show
     @cart = current_cart
     @product_attachments = @product.product_attachments.all
-    @product = Product.find(params[:id])
     @product_comments = @product.product_comments.order("created_at DESC")
+    @product = Product.find(params[:id])
   end
+
 
   # GET /products/1
   # GET /products/1.json
