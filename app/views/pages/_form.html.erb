@@ -59,13 +59,13 @@
     <div class="field">
       <div class="timePageInf">List the day your store opens.</div>
       <br>
-        <%= f.select(:opening_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select a day of the week'}, {class: "selectDay"}) %>
+        <%= f.select(:opening_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select an opening time'}, {class: "selectDay"}) %>
     </div>
   <hr>
     <div class="field">
-      <div class="timePageInf">List the time your store opens.</div>
+      <div class="timePageInf">List the day your store closes.</div>
       <br>
-        <%= f.select(:closing_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select an opening time'}, {class: "selectDay"}) %>
+        <%= f.select(:closing_day, Page::DAYS_OF_WEEK, options = {prompt: 'Select a closing time'}, {class: "selectDay"}) %>
     </div>
   <hr>
     <div class="field">
@@ -89,7 +89,7 @@
 <hr>
  <div class="field">
       <%= f.label :genre, class: "titlePageForm" %><br>
-      <%= f.text_field(:genre, placeholder: "What do you sell?", class: "fieldStyle") %>
+      <%= f.text_field(:genre, placeholder: "Eg. Restaurant", class: "fieldStyle") %>
     </div>
 
 </div>
