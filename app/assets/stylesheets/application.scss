@@ -246,6 +246,11 @@ input[type="file"] {
 
 
 @media screen and (max-width: 767px){
+  #notice {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-top: 5px;
+  }
   body{
     background-color: rgba(255, 255, 255, 1);
   }
@@ -277,6 +282,14 @@ input[type="file"] {
   .col-xs-3 {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 340px){
+  #notice {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1000px){
