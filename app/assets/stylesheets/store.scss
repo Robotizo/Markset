@@ -251,6 +251,7 @@ div.scrollProductsF a {
 .individualPictures{
   width: 216px;
   height: 216px;
+  border-right: 1px solid #b7b7b7;
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -825,7 +826,7 @@ dt{
 }
 
 .pageCredentials{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #b7b7b7;
   margin-left: 15em;
 }
 
@@ -940,6 +941,7 @@ dt{
 .completePages{
   box-shadow: 0px 0px 2px 0px;
   padding-left: 0px;
+  padding-right: 0px;
   border-radius: 5px;
   width: 100%;
 }
@@ -1157,6 +1159,7 @@ dt{
     height: 100px;
     margin-left: 5px;
     margin-top: 5px;
+    border-right: 0px solid;
     border-radius: 5px;
   }
   .storeBorder {
