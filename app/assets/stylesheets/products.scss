@@ -621,6 +621,9 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    #sidev #cart{
+        overflow-y: scroll; 
+    }
     .selectProduct{
         width: 100%;
         height: 55px;

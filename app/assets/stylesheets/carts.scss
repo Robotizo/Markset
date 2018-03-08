@@ -180,6 +180,11 @@
 
     #paddingCart {
         padding: 0;
+        height: 300px
+    }
+    #sidev #cart{
+        font-weight: 300;
+        overflow-y: scroll; 
     }
 }
 

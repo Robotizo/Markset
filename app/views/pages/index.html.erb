@@ -9,7 +9,7 @@
     <hr>
     <% if current_user.following.present? %>
     <div class="row">
-    <% @pagesFollow.each do |page| %>
+    <% @pagesFollow.reverse.each do |page| %>
     <%= link_to page, method: :get, class: "specialA" do %>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 wideMobiles">
           <div class="productBorder">
