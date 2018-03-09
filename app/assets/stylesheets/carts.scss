@@ -13,6 +13,7 @@
 .containerMob{
     padding-left: 5px;
     padding-right: 5px;
+    height: 316px;
 }
 
 .cartTable{
@@ -67,7 +68,6 @@
 #sidev #cart{
     font-weight: 300;
     overflow-y: scroll; 
-    height: 400px;
 	.item_price .total_line{
 		text-align: right;
         color: white;
@@ -109,6 +109,7 @@
 
 #paddingCart{
 	padding: 3em;
+
 
 }
 .emptyCart{
@@ -186,13 +187,16 @@
         display: none;
     }
 
+    .containerMob{
+        height: 300px;
+    }
+
     #paddingCart {
         padding: 0;
-        height: 300px;
+
     }
     #sidev #cart{
         font-weight: 300;
-        height: 300px;
         overflow-y: scroll; 
     }
 }

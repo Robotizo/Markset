@@ -7,11 +7,11 @@ $(function(){
     $(".buttonAdd").click(function(){
       if ($('#cart tr').length == 1){
         $("body").css({"overflow-y": "scroll"});
-        $("#cart").css({"height": "316px"});
       }
       else{
         $("body").css({"overflow-y": "hidden"});
       }
+        
         $("#cart").slideDown("fast");
     });
 });
@@ -40,9 +40,12 @@ $(".buttonAdd").click(function(){
 
 
 
+
+
+
  $(document).ready(function() {
     $('#cart').hide(); 
-  $('.btnTog').click(function() {
+  $('.btnTog' ).click(function() {
     $("body").css({"overflow-y": "hidden"});
     if(!$('#cart').hasClass('opened')){
       $('#cart').slideUp(function(){$(this).addClass('closed').removeClass('opened')});
