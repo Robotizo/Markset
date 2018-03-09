@@ -5,7 +5,13 @@
 $(function(){
 	$("#cart").hide();
     $(".buttonAdd").click(function(){
+      if ($('#cart tr').length == 1){
+        $("body").css({"overflow-y": "scroll"});
+        $("#cart").css({"height": "316px"});
+      }
+      else{
         $("body").css({"overflow-y": "hidden"});
+      }
         $("#cart").slideDown("fast");
     });
 });

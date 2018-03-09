@@ -98,9 +98,16 @@
 <div class="col-xs-12 col-md-12">
   <hr>
   <div class="text-center">
-    <div class="actions">
-      <%= f.submit({class: "button buttonG"}) %>
-    </div>
+    <% if params[:action] == 'edit' || params[:action] == 'update' %> 
+      <div class="actions">
+        <%= f.submit('Update Store', {class: "button buttonG"}) %>
+      </div>
+    <% end %>
+    <% if params[:action] == 'new' || params[:action] == 'create' %> 
+      <div class="actions">
+        <%= f.submit('Create Store', {class: "button buttonG"}) %>
+      </div>
+    <% end %>
     <% end %>
     <% if params[:action] == 'edit' || params[:action] == 'update' %> 
     <%= button_to 'Delete Store', @page, method: :delete, data: { confirm: 'Are you sure?' }, class: "button buttonDel" %>
