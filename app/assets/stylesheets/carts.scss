@@ -10,6 +10,11 @@
     margin-bottom: 10px;
 }
 
+.containerMob{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .cartTable{
  margin-left: auto;
  margin-right: auto;
@@ -61,6 +66,8 @@
 }
 #sidev #cart{
     font-weight: 300;
+    overflow-y: scroll; 
+    height: 400px;
 	.item_price .total_line{
 		text-align: right;
         color: white;
@@ -102,6 +109,7 @@
 
 #paddingCart{
 	padding: 3em;
+
 }
 .emptyCart{
 	position: absolute;
@@ -180,7 +188,7 @@
 
     #paddingCart {
         padding: 0;
-        height: 300px
+        height: 300px;
     }
     #sidev #cart{
         font-weight: 300;

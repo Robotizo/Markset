@@ -5,6 +5,7 @@
 $(function(){
 	$("#cart").hide();
     $(".buttonAdd").click(function(){
+        $("body").css({"overflow-y": "hidden"});
         $("#cart").slideDown("fast");
     });
 });
@@ -49,6 +50,9 @@ $(".buttonAdd").click(function(){
    
    });
  });
+
+
+
 
 
   $(document).ready(function() {
