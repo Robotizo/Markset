@@ -36,6 +36,7 @@ $(".buttonAdd").click(function(){
  $(document).ready(function() {
     $('#cart').hide(); 
   $('.btnTog').click(function() {
+    $("body").css({"overflow-y": "hidden"});
     if(!$('#cart').hasClass('opened')){
       $('#cart').slideUp(function(){$(this).addClass('closed').removeClass('opened')});
       $("body").css({"overflow-y": "auto"});
