@@ -15,7 +15,9 @@
       <div class="container-fluid">
         <div class="row">
           <div class="completeRow">
-            <%= submit_tag "View Purchase List", method: :get, class: "btnTog", :type => 'button' %>
+            <%= button_tag( class: "btnTog") do %>
+              Open Purchase List
+            <% end %>
           </div>
         </div>
       </div>
@@ -27,9 +29,7 @@
     <%= (link_to image_tag(p.image_url(:thumb), class: "listImageProduct"), p, method: :get )if p.image?%>
   <% end %>
   <div id="titlePos">
-    <dt id="fontTitle2">Press on image to see more.</dt>
     <dt id="fontTitle3">Scroll down for information.</dt>
-    <hr>
     <strong><%= @product.title %></strong>
     <dt id="fontTitle2">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
   </div>

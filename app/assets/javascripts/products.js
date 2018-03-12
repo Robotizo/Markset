@@ -34,7 +34,7 @@ $(".buttonAdd").click(function(){
 
  $(document).ready(function() {
     if ($('#cart tr').length > 1) {
-      $(".productMainInfo").css({"margin-top": "50px"});
+      $(".productMainInfo").css({"margin-top": "20px"});
     }
  });
 
@@ -50,11 +50,13 @@ $(".buttonAdd").click(function(){
     if(!$('#cart').hasClass('opened')){
       $('#cart').slideUp(function(){$(this).addClass('closed').removeClass('opened')});
       $("body").css({"overflow-y": "auto"});
+      $('.btnTog').text('Open Purchase List');
 
     }
     else{
       $('#cart').slideDown(function(){$(this).removeClass('closed').addClass('opened')});
-       $("body").css({"overflow-y": "hidden"});
+        $("body").css({"overflow-y": "hidden"});
+        $('.btnTog').text('Close Purchase List');
     }
    
    });
