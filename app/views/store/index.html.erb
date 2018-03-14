@@ -91,8 +91,9 @@
 
 
 
-
+ <% if post.post_attachments.present? %>
 <%= link_to post, method: :get, class: "specialA" do %>
+
 		<div class="overallPost">
 
 
@@ -100,27 +101,27 @@
 
 
 		      <div class="postSectorF">
-		      	
+		     	
 		        <div class="pictureSection">
-		          <% if post.post_attachments.length < 2 %>
-		          <% post.post_attachments.each do |p| %>
-		            <%= (image_tag(p.image_url(:horizontal), class: "post1Pictures")) if p.image?%>
-		          <% end %>
-		          <% elsif post.post_attachments.length < 3 %>
-		           <% post.post_attachments.each do |p| %>
-		            <%= (image_tag(p.image_url(:small), class: "post2Pictures")) if p.image?%>
-		          <% end %>
-		          <% elsif post.post_attachments.length > 4 %>
-		          <% post.post_attachments.limit(4).each do |p| %>
-		            <%= (image_tag(p.image_url(:small), class: "postPictures")) if p.image?%>
-		          <% end %>
-		          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
-		          <% else %>
-		          <% post.post_attachments.limit(2).each do |p| %>
-		            <%= (image_tag(p.image_url(:small), class: "postPictures")) if p.image?%>
-		          <% end %>
-		        <% end %>
-		      </div>
+			        <% if post.post_attachments.length < 2 %>
+			          <% post.post_attachments.each do |p| %>
+			            <%= (image_tag(p.image_url(:horizontal), class: "post1Pictures")) if p.image?%>
+			          <% end %>
+			          <% elsif post.post_attachments.length < 3 %>
+			           <% post.post_attachments.each do |p| %>
+			            <%= (image_tag(p.image_url(:small), class: "post2Pictures")) if p.image?%>
+			          <% end %>
+			          <% elsif post.post_attachments.length > 4 %>
+			          <% post.post_attachments.limit(4).each do |p| %>
+			            <%= (image_tag(p.image_url(:small), class: "postPictures")) if p.image?%>
+			          <% end %>
+			          <%= link_to 'Show more', post, method: :get, class: "showImagePosts" %>
+			          <% else %>
+			          <% post.post_attachments.limit(2).each do |p| %>
+			            <%= (image_tag(p.image_url(:small), class: "postPictures")) if p.image?%>
+			          <% end %>
+			        <% end %>
+		      	</div>
 
 		     <div class="contentSector">
 		     	<dt class="postTitleSector col-md-12 col-xs-12"><%= truncate post.title, length: 40 %></dt>
@@ -145,11 +146,37 @@
 
 			</div>
 
+			<% end %>
+
+			<% else %>
+			<%= link_to post, method: :get, class: "specialB" do %>
+			<div class="overallPost">
+				<div class="postSectorFNoI">
+					<div class="contentSectorNoImage">
+		     			<dt class="postTitleSector col-md-12 col-xs-12"><%= truncate post.title, length: 40 %></dt>
+
+			          <% if post.content.length > 300 %>
+			            <div class="postContentSector col-md-12 col-xs-12"><%= truncate post.content, length: 300 %></div>
+			          <% else %>
+			            <div class="postContentSector col-md-12 col-xs-12"><%= post.content %></div>
+			           <% end %>
+
+		     		</div>
+		     		<span class="dateNtime"><%= post.updated_at.to_time.strftime('%B %e at %l:%M %p') %></span>
+		     
+
+				</div>
+			</div>
+
+			<% end %>
 
 			<% end %>
 
 		 	<% end %>
+
 </div>
+
+
 		 <% else %>
 
 			<div class="blankTitleF">This store currently has no posts.</div>

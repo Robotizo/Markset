@@ -15,6 +15,8 @@ a:hover{
   color: black !important;
 }
 
+
+
 .storeBorder{
   margin-top: 20px;
   margin-bottom: 10px;
@@ -31,6 +33,11 @@ a:hover{
   margin-top: 20px;
 }
 
+.contentSectorNoImage{
+  width: 100%;
+  height: 240px;
+  white-space: normal;
+}
 
 /* Following Start */
 .overallPost{
@@ -71,6 +78,16 @@ div.scrollPostsF a {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+div.scrollPostsF .specialB {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  width: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 
 
 .storeSecF{
@@ -150,6 +167,15 @@ div.scrollProductsF a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   width: 100%;
+}
+
+.postSectorFNoI {
+  background: #ffffff none repeat scroll 0 0;
+  margin: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 98%;
 }
 
 
@@ -1362,7 +1388,7 @@ dt{
   .contentSector {
     width: 100%;
     float: none;
-    height: 295px;
+    height: 321px;
   }
 
   .postSectorf {
@@ -1413,7 +1439,7 @@ dt{
   div.scrollPostsF {
     overflow-x: auto;
     white-space: nowrap;
-    height: 340px;
+    height: 365px;
     overflow-y: hidden;
   }
   div.scrollPostsF a {
@@ -1426,7 +1452,7 @@ dt{
   }
   .overallPost {
     border: 1px solid #b7b7b7;
-    height: 325px;
+    height: 350px;
     margin: 5px;
     border-radius: 3px;
   }
@@ -1436,6 +1462,18 @@ dt{
     font-weight: 300;
     margin-bottom: 5px;
     margin-top: 10px;
+  }
+  .contentSectorNoImage{
+    width: 100%;
+    height: 281px;
+    margin-top: 40px;
+    white-space: normal;
+  }
+  div.scrollPostsF .specialB{
+    width: 72%;
+  }
+  .postSectorFNoI{
+    margin: 0px;
   }
 
 
@@ -1474,8 +1512,8 @@ dt{
 
   .pictureSection {
     width: 100%;
-    float: none;
-    margin-bottom: 15px;
+    float: left;
+    margin-bottom: 10px;
     border-radius: 5px;
     margin-top: 3px;
     padding-right: 1px;
@@ -1523,7 +1561,13 @@ dt{
   .contentSector {
     width: 100%;
     float: none;
-    height: 186px;
+    height: 410px;
+    white-space: normal;
+  }
+
+  .contentSectorNoImage {
+    width: 100%;
+    height: 415px !important;
     white-space: normal;
   }
 
@@ -1547,6 +1591,10 @@ dt{
     width: 59%;
     padding-left: 2px;
     padding-right: 2px;
+  }
+
+  div.scrollPostsF .specialB{
+    width: 50%;
   }
 
 }
@@ -1594,6 +1642,12 @@ dt{
     border-radius: 5px;
     width: 100%;
     margin-left: 5px;
+  }
+
+  .contentSectorNoImage {
+    width: 100%;
+    height: 233px;
+    white-space: normal;
   }
 
   .containerCustom {
