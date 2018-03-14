@@ -5,16 +5,17 @@
 $(function(){
 	$("#cart").hide();
     $(".buttonAdd").click(function(){
-      if ($('#cart tr').length == 1){
-        $("body").css({"overflow-y": "scroll"});
-      }
-      else{
-        $("body").css({"overflow-y": "hidden"});
-      }
-        
-        $("#cart").slideDown("fast");
+      $('.btnTog').text('Close Purchase List');
+        $('#cart').slideDown();
+        if(!$('#cart').hasClass('opened')){
+          if ($('.btnTog').length){
+            $("body").css({"overflow-y": "hidden"});
+          }
+        }
     });
 });
+
+
 
 
 
@@ -45,6 +46,7 @@ $(".buttonAdd").click(function(){
 
  $(document).ready(function() {
     $('#cart').hide(); 
+    $('#cart').addClass('closed');
   $('.btnTog' ).click(function() {
     $("body").css({"overflow-y": "hidden"});
     if(!$('#cart').hasClass('opened')){
