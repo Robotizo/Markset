@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 	has_many :orders, through: :line_items, dependent: :destroy
 	has_many :product_attachments, dependent: :destroy
 	has_many :product_comments, dependent: :destroy
-	accepts_nested_attributes_for :product_attachments, allow_destroy: true
+	accepts_nested_attributes_for :product_attachments, allow_destroy: true, :reject_if => lambda {|a| a['image'].blank?}
 	belongs_to :page
 	belongs_to :category
 	belongs_to :user

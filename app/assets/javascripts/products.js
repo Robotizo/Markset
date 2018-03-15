@@ -15,6 +15,12 @@ $(function(){
     });
 });
 
+$(function(){
+  $('.carousel').carousel({
+      interval: false
+  }); 
+});
+
 
 
 

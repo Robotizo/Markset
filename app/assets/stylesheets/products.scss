@@ -102,10 +102,83 @@ i {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/* Carousel Start */
+.carousel {
+    position: relative;
+    width: 500px;
+}
+
+.carousel-indicators {
+    bottom: -38px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.carousel-indicators .active {
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #000000;
+}
+
+.carousel-control.left {
+    background-color: white !important;
+    background-image: none; 
+}
+
+.carousel-control.right {
+    background-color: white !important;
+    background-image: none; 
+}
+
+
+
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 13%;
+    filter: alpha(opacity=50);
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.glyphicon-chevron-left:before {
+    content: "\e079";
+    color: black;
+}
+
+
+.glyphicon-chevron-right:before {
+    content: "\e080";
+    color: black;
+}
+
+
+
+/* Carousel End */
+
 /* Still modifiable */
 
 .productMainInfo{
     margin-top: 25px;
+    text-align: -webkit-center;
 }
 
 .list_image{
@@ -139,6 +212,7 @@ i {
 	font-size: 30px;
 	font-weight: 100;
 	padding-bottom: 1em;
+    padding-top: 30px;
 }
 
 #fontTitleD{
@@ -626,6 +700,10 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    .carousel {
+        position: relative;
+        width: 100%;
+    }
     #sidev #cart{
         overflow-y: scroll; 
     }

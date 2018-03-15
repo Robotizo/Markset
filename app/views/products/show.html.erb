@@ -25,11 +25,45 @@
     </div>
 
 <div class="text-center productMainInfo">
-  <% @product.product_attachments.first(1).each do |p| %>
-    <%= (link_to image_tag(p.image_url(:thumb), class: "listImageProduct"), p, method: :get )if p.image?%>
-  <% end %>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+   <% @product.product_attachments.each_with_index do |p, index| %>
+     <li data-target='#MyCarousel' data-slide-to="#{n}" class="#{'active' if index == 0}"></li>
+   <% end %>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    <% if @product.product_attachments.exists? %>
+      <%= image_tag @product.product_attachments.first.image_url(:thumb), class: "listImageProduct" %>
+    <% else %>
+    <% end %>
+    </div>    
+    <% @product.product_attachments.drop(1).each do |p| %>
+      <div class="item">
+        <%= image_tag(p.image_url(:thumb), class: "listImageProduct") if p.image? %>
+      </div>
+    <% end %>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </div>
+</div>
+
+
+
+
+
+
+
   <div id="titlePos">
-    <dt id="fontTitle3">Scroll down for information.</dt>
     <strong><%= @product.title %></strong>
     <dt id="fontTitle2">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
   </div>
