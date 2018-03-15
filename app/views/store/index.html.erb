@@ -240,6 +240,7 @@
 		        	<% end %>
 		        	</div>
 
+		<% if page.products.present? %>
 				        <div class="scrollProducts">
 				       <% page.products.limit(6).each do |product| %>
 						    <%= link_to product, method: :get, class: "specialA" do %>
@@ -253,6 +254,10 @@
 						    <% end %>
 						    <% end %>
 						</div>
+		<% else %>
+			<div class="noProducts">Currently there are no products available.</div>
+		<% end %>
+
 
 					</div>
 				
@@ -343,8 +348,7 @@
 		    </div>
 		      
 		    <% end %>
-
-
+<% if page.products.present? %>
 		   <div class="scrollProducts">
 	       <% page.products.limit(6).each do |product| %>
 			    <%= link_to product, method: :get, class: "specialA" do %>
@@ -358,6 +362,9 @@
 			    <% end %>
 			    <% end %>
 			</div>
+<% else %>
+	<div class="noProducts">Currently there are no products available.</div>
+<% end %>
 
 
 

@@ -16,6 +16,18 @@
 @import "bootstrap";
 
 
+#error_explanation{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2{
+  font-weight: 300;
+}
+
 #notice {
   background-color: #307710;
   color: white;
@@ -243,8 +255,25 @@ input[type="file"] {
   max-height: 100%;
 }
 
+@media screen and (min-width: 1600px){
+  #error_explanation{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 
+}
 @media screen and (max-width: 767px){
+  #error_explanation h2{
+    font-weight: 300;
+    font-size: 22px;
+  }
+
+  #error_explanation{
+    font-weight: 300;
+    font-size: 22px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   #notice {
     font-size: 18px;
     padding-left: 10px;
