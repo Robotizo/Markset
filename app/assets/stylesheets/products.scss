@@ -364,6 +364,10 @@ i {
 	}
 }
 
+
+#pAttributes{
+    font-size: 18px;
+}
 #fontTitle1{
     font-size: 20px;
     font-weight: 400;
@@ -701,6 +705,13 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+    .introInfo{
+        top: 7em;
+        display: block;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
     .carousel {
         position: relative;
         width: 100%;
