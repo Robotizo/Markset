@@ -30,7 +30,7 @@
 
   <ol class="carousel-indicators">
    <% @product.product_attachments.each_with_index do |p, index| %>
-     <li data-target='#MyCarousel' data-slide-to="#{n}" class="#{'active' if index == 0}"></li>
+     <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
    <% end %>
   </ol>
 
