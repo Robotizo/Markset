@@ -48,7 +48,7 @@ class ChargesController < ApplicationController
     @description = "#{current_user.name} Order ID: "
 
     if session[:last_created_at].to_i > params[:timestamp].to_i
-        redirect_to @order, notice: 'Order has already been confirmed.' 
+        redirect_to @order, notice: 'Order has already been confirmed. You were not charged again.' 
     else
     respond_to do |format|
       @time_stamp = Time.now.to_i
