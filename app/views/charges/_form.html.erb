@@ -22,6 +22,10 @@
     <%= f.hidden_field :order_id, value: @order.id %>
   </div>
 
+    <div class="field">
+    <%= tag :input, :type => 'hidden', :name => 'timestamp', :value => @time_stamp %>
+  </div>
+
 <% if @order.pay_type == "Card" %>
           <%= form_tag charges_path do %>
             <article>

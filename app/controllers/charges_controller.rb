@@ -22,6 +22,7 @@ class ChargesController < ApplicationController
     @charge = Charge.new(order_id: params[:order_id])
     lastOrder = Order.last.id
     @order = Order.find(params = lastOrder)
+    @time_stamp = Time.now.to_i
   end
 
   # GET /charges/1/edit
@@ -46,9 +47,13 @@ class ChargesController < ApplicationController
 
     @description = "#{current_user.name} Order ID: "
 
+    if session[:last_created_at].to_i > params[:timestamp].to_i
+        redirect_to @order, notice: 'Order has already been confirmed.' 
+    else
     respond_to do |format|
+      @time_stamp = Time.now.to_i
+      session[:last_created_at] = @time_stamp
       if @charge.save
-
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifierMailer.confirmed(@order, @user).deliver
@@ -82,6 +87,7 @@ class ChargesController < ApplicationController
         format.json { render json: @charge.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /charges/1

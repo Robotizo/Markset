@@ -74,7 +74,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     
     respond_to do |format|
-      format.html { redirect_to store_url, notice: 'Purchase list was successfully deleted.'}
+      format.html { redirect_to :back, notice: 'Purchase list was successfully deleted.'}
       format.json { head :no_content }
     end
   end

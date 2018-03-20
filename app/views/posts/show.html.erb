@@ -26,15 +26,15 @@
 					<div class="pictureSection">
 						 <% if @post.post_attachments.length < 2 %>
 				          <% @post.post_attachments.each do |p| %>
-				            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), p, method: :get) if p.image?%>
+				            <%= (link_to image_tag(p.image_url(:horizontal), class: "post1Pictures"), @post.page, method: :get) if p.image?%>
 				          <% end %>
 				          <% elsif @post.post_attachments.length < 3 %>
 				           <% @post.post_attachments.each do |p| %>
-				            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), p, method: :get) if p.image?%>
+				            <%= (link_to image_tag(p.image_url(:small), class: "post2Pictures"), @post.page, method: :get) if p.image?%>
 				          <% end %>
 				          <% else %>
 				          <% @post.post_attachments.each do |p| %>
-				            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), p, method: :get) if p.image?%>
+				            <%= (link_to image_tag(p.image_url(:small), class: "postPictures"), @post.page, method: :get) if p.image?%>
 				          <% end %>
 				        <% end %>
 					</div>
