@@ -1,34 +1,31 @@
+<%= stylesheet_link_tag "admin", :media => "all" %>
 <div class="container">
 <h1>Welcome <%= @userAdmin.name %></h1>
 
-
-It's <%= Time.now %>
-We have <%= pluralize(@total_orders, "order") %>
+We have <%= pluralize(@total_pages, "pages") %>
   <hr>
-  <% if @orders.present? %>
+  <% if @pages.present? %>
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Order ID</th>
-            <th>Date Ordered</th>
-            <th>Pay type</th>
-            <th>Amount</th>
+            <th>Page Name</th>
           </tr>
         </thead>
         <tbody>
-      <%  @orders.each do |order| %>
+      <%  @pages.each do |page| %>
       <tr>
-         <td><%= order.id %></td>
-         <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
-         <td><%= order.pay_type %></td>
-         <th><%= number_to_currency(order.total_price) %></th>
-        </tr>
+        <td>
+          <%= link_to page, method: :get, class: "SpecialA" do %>
+            <div><%= page.title %></div>
+          <% end %>
+        </td>
+      </tr>
       <% end %>
     </tbody>
     </table>
   <% else %>
   <div class="text-center">
-      <p class="noOrder">There are no orders yet.</p>
+      <p class="noOrder">There are no pages yet.</p>
   </div>
   <% end %>
 </div>

@@ -91,6 +91,12 @@
       <%= f.label :genre, class: "titlePageForm" %><br>
       <%= f.text_field(:genre, placeholder: "Eg. Restaurant", class: "fieldStyle") %>
     </div>
+    <hr>
+    <div class="field">
+      <div class="timePageInf">Do you only deliver, only pick-up or both?</div>
+      <br>
+        <%= f.select(:access_options, Page::ACCESS_OPTIONS, options = {prompt: 'Select your access options'}, {class: "selectDay"}) %>
+    </div>
 
 </div>
 

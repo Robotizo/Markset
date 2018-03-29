@@ -16,8 +16,11 @@
 
 
         <div class="postBox">
-        <%= link_to (image_tag @post.page.image_url(:thumb), class: "listImagePagePost"), @post.page, method: :get %> 
-        <div class="postPageTitle"><%= link_to @post.page.try(:title), @post.page, method: :get %></div>
+          <div class="storeTitle">
+            <%= link_to (image_tag @post.page.image_url(:thumb), class: "listImagePagePost"), @post.page, method: :get %> 
+            <%= link_to @post.page.try(:title), @post.page, method: :get, class: "postPageTitle" %>
+          </div>
+
 
                 <div class="postSection">
                   <div class="pictureSection">

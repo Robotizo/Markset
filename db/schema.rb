@@ -76,8 +76,9 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.time     "opening_time"
     t.time     "closing_time"
     t.text     "page_notes"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "access_options"
   end
 
   create_table "post_attachments", force: :cascade do |t|

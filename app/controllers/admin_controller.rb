@@ -5,6 +5,8 @@ class AdminController < ApplicationController
   	@user = current_user
   	@userAdmin = User.find_by_id(params = 1)
   	@total_orders = Order.count
+    @total_pages = Page.count
+    @pages = Page.all.order("created_at DESC")
   	@orders = Order.all.order("created_at DESC")
 
 

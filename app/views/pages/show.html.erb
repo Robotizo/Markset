@@ -50,6 +50,11 @@
         <p id="pAttributes">
           <%= @page.description %>
         </p>
+      <hr>
+      <strong id="mobDescription">Access</strong>
+        <p id="pAttributes">
+          <%= @page.access_options %>
+        </p>
         
         <% if @page.opening_day.present? && @page.closing_day.present? && @page.opening_time.present? && @page.closing_time.present? %>
         <hr>
@@ -71,8 +76,6 @@
       <% end %>
       </div>
     </div>
-    
-  
 </div>
 <br>
   <br>
@@ -225,8 +228,19 @@
 
 <hr>
 <div class="text-center">
+    <div class="col-xs-12 col-sm-12">
+      <strong id="fontTitleD">Access</strong>
+        <p id="pAttributes">
+           <%= @page.access_options %>
+        </p>
+       <hr>
+    </div>
+</div>
+
+<div class="text-center">
+
 <div class="col-md-12">
-    <div class="col-xs-12 col-sm-12 introInfoExcept">
+    <div class="col-xs-12 col-sm-12 ">
       <strong id="fontTitleD">Genre</strong>
         <p id="pAttributes">
            <%= @page.genre %>
@@ -237,7 +251,7 @@
 
   <% if @page.opening_day.present? && @page.closing_day.present? && @page.opening_time.present? && @page.closing_time.present? %>
     <div class="text-center">
-      <div class="col-md-12 col-sm-12 col-xs-12 introInfo">
+      <div class="col-md-12 col-sm-12 col-xs-12">
         <hr>
       <strong id="fontTitleD">Store Times</strong>
         <p id="pAttributes">
@@ -251,7 +265,7 @@
 
   <% if @page.page_notes.present? %>
     <div class="text-center">
-      <div class="col-md-12 col-sm-12 col-xs-12 introInfo">
+      <div class="col-md-12 col-sm-12 col-xs-12">
         <hr>
       <strong id="fontTitleD">Store Notes</strong>
         <p id="pAttributes">

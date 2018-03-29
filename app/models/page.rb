@@ -12,6 +12,9 @@ class Page < ApplicationRecord
 	validates :closing_time, presence: false
 	validates :page_notes, presence: false
 
+	ACCESS_OPTIONS = ["Delivery", "Pick-Up", "Delivery & Pick-Up"]
+	validates :access_options, inclusion: ACCESS_OPTIONS
+
 	validates :genre, presence: true
 	validates :image, presence: true
 	validates :title, presence: true, length: { 
