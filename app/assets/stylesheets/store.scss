@@ -1013,12 +1013,18 @@ dt{
 
 
 @media screen and (max-width: 767px){
+  .titleFrontPageNF{
+    display: none;
+  }
+  div.scrollStores{
+    margin-top: 10px;
+  }
   .pageTitleScroll {
     font-size: 13px;
     font-weight: 300;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 8em;
+    margin-left: 95px;
     text-align: -webkit-auto;
   }
   .scrollImagePage{

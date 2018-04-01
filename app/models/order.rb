@@ -7,6 +7,11 @@ class Order < ActiveRecord::Base
 	PAYMENT_TYPES = ["Cash", "Card"]
 	validates :pay_type, inclusion: PAYMENT_TYPES
 
+	ACCESS_OPTIONS_ORDERS = ["Delivery", "Pick-Up"]
+	validates :access_options, inclusion: ACCESS_OPTIONS_ORDERS
+
+	
+
 	def total_price
 		line_items.to_a.sum{|item| item.total_price}
 	end

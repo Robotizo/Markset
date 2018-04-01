@@ -15,6 +15,7 @@
         <th class="ordMail">Email</th>
         <th>Pay type</th>
         <th>Status</th>
+        <th>Access Method</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
         <% else %>
           <th class="statusIncomplete">Incomplete</th>
         <% end %>
+        <th><%= @order.access_options %></th>
       </tr>
     </tbody>
   </table>

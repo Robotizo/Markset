@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.string   "pay_type"
     t.integer  "user_id"
     t.text     "instructions"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "access_options"
   end
 
   create_table "pages", force: :cascade do |t|

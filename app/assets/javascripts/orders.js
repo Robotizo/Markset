@@ -22,3 +22,15 @@ $(document).ready(function(){
    
    });
  });
+
+
+
+
+$(document).ready(function(){
+  $(".ordersDelBox option[value='Pick-Up']").remove();
+});
+
+
+$(document).ready(function(){
+  $(".ordersPUBox option[value='Delivery']").remove();
+});

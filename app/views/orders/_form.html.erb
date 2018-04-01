@@ -24,6 +24,31 @@
   </div>
 
 
+  <hr>    
+
+ 
+
+ <!--Fix for multiple stores-->
+<% @pages.each do |page| %>
+  <% if page.access_options == "Delivery & Pick-Up" %>
+  <div class="titlePageForm">For delivery or pick-up?</div>
+   <div class="field">
+      <%= f.select(:access_options, Order::ACCESS_OPTIONS_ORDERS, options = {prompt: 'Select an access option'}, {class: "selectPayType"}) %>
+    </div>
+  <% elsif page.access_options == "Delivery" %>
+  <div class="titlePageForm">For delivery.</div>
+    <div class="field">
+        <%= f.select(:access_options, Order::ACCESS_OPTIONS_ORDERS, {selected: 'Delivery', disabled: 'Pick-Up'}, {class: "selectPayType ordersDelBox"}) %>
+    </div>
+    <% elsif page.access_options == "Pick-Up" %>
+    <div class="titlePageForm">For pick-up.</div>
+      <div class="field">
+        <%= f.select(:access_options, Order::ACCESS_OPTIONS_ORDERS, {selected: 'Pick-Up', disabled: 'Delivery'}, {class: "selectPayType ordersPUBox"}) %>
+      </div>
+  <% end %>
+<% end %>
+
+
 
 <hr>
   <div class="field">
@@ -32,9 +57,6 @@
   </div>
 
 </div>
-
-
-
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <hr>

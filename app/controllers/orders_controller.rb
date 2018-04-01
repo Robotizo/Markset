@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @cart = current_cart
+    @pages = Page.where(id: [$pageIds])
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Your cart is empty"
       return
@@ -50,6 +51,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    @pages = Page.where(id: [$pageIds])
     @cart = current_cart
     @order = current_user.orders.build(order_params)
     @order.add_line_items_from_cart(current_cart)
@@ -99,6 +101,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:pay_type, :user_id, :instructions)
+      params.require(:order).permit(:pay_type, :user_id, :instructions, :access_options)
     end
 end
