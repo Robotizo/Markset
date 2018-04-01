@@ -20,7 +20,7 @@
 <div class="orderFields">
   <div class="field">
     <%= f.label :instructions, "Additional Requests", class: "titlePageForm" %><br>
-    <%= f.text_area :instructions, placeholder: "In the need of special requests direct it here!", class: "formFieldText" %>
+    <%= f.text_area :instructions, placeholder: "E.g. Extra ketchup packets please.", class: "formFieldText" %>
   </div>
 
 
@@ -29,7 +29,7 @@
  
 
  <!--Fix for multiple stores-->
-<% @pages.each do |page| %>
+<% @pages.first(1).each do |page| %>
   <% if page.access_options == "Delivery & Pick-Up" %>
   <div class="titlePageForm">For delivery or pick-up?</div>
    <div class="field">
@@ -45,6 +45,8 @@
       <div class="field">
         <%= f.select(:access_options, Order::ACCESS_OPTIONS_ORDERS, {selected: 'Pick-Up', disabled: 'Delivery'}, {class: "selectPayType ordersPUBox"}) %>
       </div>
+    <% else %>
+     THERE MIGHT GE AN ACCESS CONFLICT
   <% end %>
 <% end %>
 
