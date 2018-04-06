@@ -647,7 +647,9 @@ textarea {
         margin-left: 14%;
     }
 
-
+#fontTitleShow{
+    font-size: 17px;
+}
 .productCommentsBtn{
     font-weight: 300;
     font-size: 20px;
@@ -706,6 +708,11 @@ textarea {
 
 
 @media screen and (max-width: 767px) {
+
+    #fontTitleShow{
+        font-size: 17px;
+        font-weight: 300;
+    }
     .introInfo{
         top: 7em;
         display: block;

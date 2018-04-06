@@ -65,7 +65,7 @@
 
   <div id="titlePos">
     <strong><%= @product.title %></strong>
-    <dt id="fontTitle2">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
+    <dt id="fontTitleShow">From <%= link_to (@product.page.try :title), @product.page, method: :get, class: "productLinks" %></dt>
   </div>
 
     <span class="priceShow"><%= number_to_currency(@product.price) %></span>
