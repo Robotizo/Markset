@@ -846,7 +846,7 @@ textarea {
         display: none;
     }
     #fontTitle2{
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 400;
         margin-left: 5px;
         margin-right: 5px;
@@ -1001,7 +1001,7 @@ textarea {
 
 @media screen and (max-width: 350px){
     #fontTitle1{
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 600;
     }
       #fontPrice{
@@ -1013,6 +1013,9 @@ textarea {
     }
     .wholeRow{
         margin-left: 8%;
+    }
+    #fontTitle2{
+        font-size: 11px;
     }
 
 }
