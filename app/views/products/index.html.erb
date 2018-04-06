@@ -16,7 +16,7 @@
           <% end %>
             <dt id="fontTitle1"><%= truncate(product.title, length: 20) %></dt>
             <dt id="fontPrice"><%= number_to_currency(product.price) %></dt>
-            <dt id="fontTitle2">From <%= link_to truncate((product.page.try :title), length: 20), product.page, method: :get %></dt>
+            <dt id="fontTitle2">From <%= link_to truncate((product.page.try :title), length: 18), product.page, method: :get %></dt>
             <dd id="fontCat">Category <%= link_to (product.category.try :name), product.category, method: :get %></dd>
     </div>
   </div>
