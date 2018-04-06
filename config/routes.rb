@@ -32,7 +32,12 @@ controller :sessions do
 end
 
 
-  resources :users
+  resources :users do
+      get 'agreement'
+      get 'store_owner'
+  end
+
+
   resources :orders
   resources :carts
   get 'store/index'

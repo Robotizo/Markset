@@ -10,6 +10,22 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  # GET /users/1
+  # GET /users/1.json
+  def agreement
+    @user = current_user
+  end
+
+
+  # GET /users/1
+  # GET /users/1.json
+  def store_owner
+    @user = current_user
+    @user_pages = @user.pages.order("created_at DESC")
+    @user_products = @user.products.order("created_at DESC")
+    @user_categories = @user.categories.order("created_at DESC")
+  end
+
 
   # GET /users/1
   # GET /users/1.json

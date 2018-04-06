@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "users", :media => "all" %>
+
+<div class="container">
+	<div class="text-center">
+
+
+      <div class="col-md-12 mainUserInfo"> 
+        <div class="col-md-3">
+          <%= image_tag @user.image_url(:thumb), class: "userImage" if @user.image?  %>
+          
+        </div>
+        <div class="col-md-4">
+          <p class="namesFirst"><%= user_chosen_name %></p>
+          <p class= "names"><%= @user.email %></p>
+        </div>
+        <div class="col-md-3">
+          <%= button_to "Store Owner Dashboard", user_store_owner_path(@user), method: :get, class: "btn userSettings btn-primary"  %>
+        </div>
+      </div>
+
+      <h1>Agreement Goes Here</h1>
+     </div>
+</div>
