@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.datetime "updated_at",             null: false
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.boolean  "store_owner_agreement"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
