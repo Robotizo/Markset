@@ -10,7 +10,9 @@ class StoreOwnersController < ApplicationController
   # GET /store_owners/1
   # GET /store_owners/1.json
   def show
+    @user = User.find(params[:id])
     @user = current_user
+    @store_owner = StoreOwner.find(params[:id])
     @user_pages = @user.pages.order("created_at DESC")
     @user_categories = @user.categories.order("created_at DESC")
     @user_products = @user.products.order("created_at DESC")

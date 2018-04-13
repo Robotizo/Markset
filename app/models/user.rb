@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 	validates :password, allow_nil: true, format: { with: PASSWORD_FORMAT }, confirmation: true, on: :update
 
 
-	has_many :store_owner, dependent: :destroy
+	has_one :store_owner, dependent: :destroy
 
 
 	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
