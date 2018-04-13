@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 	after_destroy :ensure_an_admin_remains 
 	has_many :pages, dependent: :destroy
 	has_many :posts, dependent: :destroy
+
 	has_many :products, dependent: :destroy
 	has_many :categories, dependent: :destroy
 	has_many :orders, dependent: :destroy
@@ -27,6 +28,9 @@ class User < ActiveRecord::Base
 	/x
 	validates :password, presence: true, format: { with: PASSWORD_FORMAT }, on: :create
 	validates :password, allow_nil: true, format: { with: PASSWORD_FORMAT }, confirmation: true, on: :update
+
+
+	has_many :store_owner, dependent: :destroy
 
 
 	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy

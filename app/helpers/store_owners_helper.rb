@@ -1,0 +1,2 @@
+module StoreOwnersHelper
+end

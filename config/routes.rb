@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :store_owners
   resources :payments, only: [:new, :create]
   resources :charges, only: [:new, :create]
   resources :product_comments

@@ -2,19 +2,6 @@ class UsersController < ApplicationController
   before_action :authorize, except: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
-  def index
-    @cart = current_cart
-    @user = current_user
-    redirect_to @user
-  end
-
-  # GET /users/1
-  # GET /users/1.json
-  def agreement
-    @user = current_user
-  end
 
 
   # GET /users/1

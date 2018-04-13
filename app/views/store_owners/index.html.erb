@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Store Owners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Store owner agreement</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @store_owners.each do |store_owner| %>
+      <tr>
+        <td><%= store_owner.store_owner_agreement %></td>
+        <td><%= link_to 'Show', store_owner %></td>
+        <td><%= link_to 'Edit', edit_store_owner_path(store_owner) %></td>
+        <td><%= link_to 'Destroy', store_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Store Owner', new_store_owner_path %>

@@ -137,6 +137,13 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "store_owners", force: :cascade do |t|
+    t.string   "store_owner_agreement"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"
@@ -148,7 +155,6 @@ ActiveRecord::Schema.define(version: 201611239085154) do
     t.datetime "updated_at",             null: false
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.boolean  "store_owner_agreement"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

@@ -1,0 +1,22 @@
+<%= form_for(store_owner) do |f| %>
+  <% if store_owner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store_owner.errors.count, "error") %> prohibited this store_owner from being saved:</h2>
+
+      <ul>
+      <% store_owner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :store_owner_agreement %>
+    <%= f.text_field :store_owner_agreement %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

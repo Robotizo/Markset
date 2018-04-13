@@ -1,0 +1,32 @@
+/*// Place all the styles related to the store_owners controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+
+.userImage{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+}
+
+.namesFirst{
+    font-size: 28px;
+    font-weight: 300;
+}
+.names{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+.listImageUser{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+
+.mainUserInfo{
+    padding-bottom: 4em;
+    padding-top: 3em;
+}
