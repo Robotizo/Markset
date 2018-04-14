@@ -26,7 +26,7 @@ class StoreOwnersController < ApplicationController
 
   # GET /store_owners/new
   def new
-    @store_owner = current_user.store_owner.build
+    @store_owner = current_user.build_store_owner
   end
 
   # GET /store_owners/1/edit
@@ -36,7 +36,7 @@ class StoreOwnersController < ApplicationController
   # POST /store_owners
   # POST /store_owners.json
   def create
-    @store_owner = current_user.store_owner.build(store_owner_params)
+    @store_owner = current_user.create_store_owner
 
     respond_to do |format|
       if @store_owner.save
