@@ -10,7 +10,6 @@ class StoreOwnersController < ApplicationController
   # GET /store_owners/1
   # GET /store_owners/1.json
   def show
-    @user = User.find(params[:id])
     @user = current_user
     @store_owner = StoreOwner.find(params[:id])
     @user_pages = @user.pages.order("created_at DESC")
@@ -26,7 +25,8 @@ class StoreOwnersController < ApplicationController
 
   # GET /store_owners/new
   def new
-    @store_owner = current_user.build_store_owner
+    @user = current_user
+    @store_owner = @user.build_store_owner
   end
 
   # GET /store_owners/1/edit
@@ -36,7 +36,8 @@ class StoreOwnersController < ApplicationController
   # POST /store_owners
   # POST /store_owners.json
   def create
-    @store_owner = current_user.create_store_owner
+    @user = current_user
+    @store_owner = @user.create_store_owner(store_owner_params)
 
     respond_to do |format|
       if @store_owner.save

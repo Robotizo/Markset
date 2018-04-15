@@ -27,6 +27,11 @@
 }
 
 
+.overviewText{
+    font-size: 30px;
+    font-weight: 300;
+}
+
 
 .fieldUsers{
     color: #333333;
@@ -76,6 +81,7 @@
 
 .btn1{
     padding: 15px 170px;
+    border-radius: 3px;
 }
 
 .btn2{
@@ -185,7 +191,7 @@
 .listFollowing{
     width: 100px;
     height: 100px;
-    padding: 1em;
+    border-radius: 3px;
 }
 
 .followFont{
@@ -238,7 +244,6 @@
     .btn {
         font-size: 20px;
         font-weight: 300;
-        border-radius: 0px;
     }
     .btn1{
         padding: 10px 40px;

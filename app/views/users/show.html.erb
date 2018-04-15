@@ -22,21 +22,12 @@
         <div class="col-md-2">
           <%= button_to "User Settings", edit_user_path(@user), method: :get, class: "btn userSettings btn-primary"  %>
         </div>
-        <% if @user.store_owner.present? %>
-          <div class="col-md-3">
-            <%= button_to "Store Owner", @user.store_owner, method: :get, class: "btn userSettings btn-primary"  %>
-          </div>
-        <% else %>
-          <div class="col-md-3">
-            <%= button_to "New Store Owner", new_store_owner_path, method: :get, class: "btn userSettings btn-primary"  %>
-          </div>
-        <% end %>
       </div>
 
 
 
-            <div class="btn">
-        <%= submit_tag "Overview", method: :get, class: "btn btn1 btn-primary"  %>
+      <div class="overviewArea">
+        <div class="overviewText">Overview</div>
       </div>
 
  
@@ -61,11 +52,25 @@
               <td><%= link_to page.title, page, method: :get %></td>
               <td><%= page.genre %></td>
             </tr>
-            <% end %>
+            <% end %> 
           </tbody>
         <% end %>
         </table>
          </div>
+
+<hr>
+      <div class="overviewArea">
+        <div class="overviewText">Store Owner Options</div>
+      </div>
+        <% if @user.store_owner.present? %>
+          <div class="col-md-12">
+            <%= button_to "To Dashboard", @user.store_owner, method: :get, class: "btn userSettings btn-primary"  %>
+          </div>
+        <% else %>
+          <div class="col-md-12">
+            <%= button_to "Create a Store", new_store_owner_path, method: :get, class: "btn userSettings btn-primary"  %>
+          </div>
+        <% end %>
     </div>
 
 
