@@ -12,9 +12,11 @@
           <%= image_tag @user.image_url(:thumb), class: "userImage" if @user.image?  %>
           
         </div>
+        <div class="row">
         <div class="col-md-4 col-md-push-1 col-xs-12">
           <p class="namesFirst"><%= user_chosen_name %></p>
           <p class= "names"><%= @user.email %></p>
+        </div>
         </div>
         </div>
       </div>
