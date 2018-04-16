@@ -79,3 +79,40 @@
     background-color: #4CAF50;
     color: white;
 }
+
+.followFont{
+    font-weight: 300;
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .listImageUser{
+        width: 80px;
+        height: 80px;
+    }  
+
+    .pageRef{
+        display: none;
+    }
+
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td{
+        padding: 6px !important;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .listImageUser{
+        display: none;
+    }
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td{
+        padding: 8px !important;
+    }
+}
+
+
+
+
+
+
+

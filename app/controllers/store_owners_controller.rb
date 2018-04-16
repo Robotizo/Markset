@@ -1,10 +1,12 @@
 class StoreOwnersController < ApplicationController
   before_action :set_store_owner, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_root, only: [:index, :update, :edit]
 
   # GET /store_owners
   # GET /store_owners.json
   def index
     @store_owners = StoreOwner.all
+
   end
 
   # GET /store_owners/1
@@ -31,6 +33,11 @@ class StoreOwnersController < ApplicationController
 
   # GET /store_owners/1/edit
   def edit
+    unless session[:user_id] == @store_owner.user.id
+      flash[:notice] = "You don't have access to that."
+      redirect_to store_path(session[:user_id])
+      return
+    end
   end
 
   # POST /store_owners
@@ -75,6 +82,12 @@ class StoreOwnersController < ApplicationController
   end
 
   private
+
+    def redirect_to_root
+        redirect_to :back
+      rescue ActionController::RedirectBackError
+        redirect_to store_path
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_store_owner
       @store_owner = StoreOwner.find(params[:id])
