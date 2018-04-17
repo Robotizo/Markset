@@ -25,6 +25,15 @@ a:hover{
     color: red;
 }
 
+span.previous_page, a.previous_page{
+  display: none;
+}
+
+
+span.next_page, a.next_page{
+  display: none;
+}
+
 
 .pagination {
     font-size: 23px;
