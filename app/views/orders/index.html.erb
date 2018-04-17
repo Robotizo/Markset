@@ -36,7 +36,7 @@
 
 
   <div class="text-center paginateOrder">
-    <%= will_paginate @orders, method: :get, inner_window: 2, outer_window: 1, next_label: ">", previous_label: "<" %>
+    <%= will_paginate @orders, method: :get, inner_window: 1, outer_window: 0, next_label: "", previous_label: "" %>
   </div>
   <% else %>
   <div class="text-center">
