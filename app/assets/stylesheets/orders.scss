@@ -25,6 +25,46 @@ a:hover{
     color: red;
 }
 
+
+.pagination {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+    color: black;
+}
+
+.pagination a:hover {
+    background: #202020 none repeat scroll 0 0;
+    text-shadow: 1px 1px 1px #171717;
+    color: white;
+    border-radius: 100px;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: #202020 none repeat scroll 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
+
+
+.pagination .current{
+    border-radius: 100px;
+    font-style: normal;
+}
+
+
 .statusCompleteI{
     color: green;
 }
