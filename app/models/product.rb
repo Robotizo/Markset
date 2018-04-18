@@ -12,6 +12,11 @@ class Product < ActiveRecord::Base
 	validates :price, numericality: {greater_than_or_equal_to: 0.01}
 	validates :title, uniqueness: true
 
+	has_many :orders, -> { distinct }, through: :line_items
+
+
+	delegate :title, to: :order, prefix: true
+
 
 	PRODUCT_AVAILABILITY = ["Available", "Not Available"]
 	validates :status, inclusion: PRODUCT_AVAILABILITY

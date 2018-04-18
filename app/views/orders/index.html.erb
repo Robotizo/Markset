@@ -32,11 +32,45 @@
     </tbody>
     </table>
 
-
-
-
   <div class="text-center paginateOrder">
     <%= will_paginate @orders, method: :get, inner_window: 1, outer_window: 0 %>
+  </div>
+
+  <hr>
+
+
+
+
+<div class="text-center">
+  <div class="mainTitle">Store Orders</div>
+  </div>
+
+      <table class="table table-hover">
+        <thead>
+            <th>Order ID</th>
+            <th>Date Ordered</th>
+            <th>Pay type</th>
+            <th class="statusSection">Status</th>
+        </thead>
+        <tbody>
+      <% @storeOwnerOrders.each do |orderA| %>
+      <tr>
+        <td><%= orderA.id %></td>
+        <td><%= orderA.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+        <td><%= orderA.pay_type %></td>
+        <% if orderA.charge.try(:status) == "complete" %>
+          <td class="statusCompleteI">Complete</td>
+        <% else %>
+          <td class="statusIncompleteI">Incomplete</td>
+        <% end %>
+        <td><%= link_to 'Show', orderA, method: :get %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+
+  <div class="text-center paginateOrder">
+    <%= will_paginate @storeOwnerOrders, method: :get, inner_window: 1, outer_window: 0 %>
   </div>
   <% else %>
   <div class="text-center">

@@ -8,6 +8,9 @@ class OrdersController < ApplicationController
     @cart = current_cart
     @user = current_user
     @orders = @user.orders.paginate(page: params[:page], per_page: 10).order("created_at DESC")
+    @ordersAll = Order.all.order("created_at DESC")
+    userProductIds = @user.products.map(&:id)
+    @storeOwnerOrders = Order.joins(:line_items).where(line_items: {product_id: userProductIds}).distinct.paginate(page: params[:page], per_page: 10).order("created_at DESC")
   end
 
   # GET /orders/1
@@ -15,6 +18,9 @@ class OrdersController < ApplicationController
   def show
     @cart = current_cart
     @user = current_user
+    userProductIds = @user.products.map(&:id)
+    @storeOwnerOrders = Order.joins(:line_items).where(line_items: {product_id: userProductIds}).distinct
+
 
     unless session[:user_id] == @order.user.id
       flash[:notice] = "You don't have access to that users orders!"
