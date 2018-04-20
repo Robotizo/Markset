@@ -18,15 +18,16 @@ class OrdersController < ApplicationController
   def show
     @cart = current_cart
     @user = current_user
-    userProductIds = @user.products.map(&:id)
-    @storeOwnerOrders = Order.joins(:line_items).where(line_items: {product_id: userProductIds}).distinct
+    userProductIds = @user.products.map(&:id).to_set
+    @orderProductIds = @order.products.ids
 
 
-    unless session[:user_id] == @order.user.id
-      flash[:notice] = "You don't have access to that users orders!"
+    unless @orderProductIds.any? { |x| userProductIds.include?(x) } or session[:user_id] == @order.user.id
+      flash[:notice] = "You don't have access to edit that order!"
       redirect_to orders_path(session[:user_id])
       return
     end
+
   end
 
   # GET /orders/new

@@ -10,6 +10,8 @@ class Order < ActiveRecord::Base
 	ACCESS_OPTIONS_ORDERS = ["Delivery", "Pick-Up"]
 	validates :access_options, inclusion: ACCESS_OPTIONS_ORDERS
 
+	has_many :products, through: :line_items
+
 	
 
 	def total_price

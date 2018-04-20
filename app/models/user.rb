@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
 	validates :password, allow_nil: true, format: { with: PASSWORD_FORMAT }, confirmation: true, on: :update
 
 
+
+
 	has_one :store_owner, dependent: :destroy
 
 

@@ -45,6 +45,10 @@
   padding: 10px;
 }
 
+.navbar-nav > li > .dropdown-menu{
+  border-radius: 3px;
+}
+
 
 .title{
   margin-right: 6px; 
@@ -142,6 +146,7 @@ input[type="file"] {
 	display: block;
   text-align: center;
   padding: 17px 18px;
+  border-radius: 3px;
   text-decoration: none !important;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;

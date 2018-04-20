@@ -4,6 +4,7 @@ class LineItem < ActiveRecord::Base
 	belongs_to :cart
 	belongs_to :charge, optional: true
 
+
 	def total_price
 		product.price * quantity
 	end
