@@ -1,76 +1,123 @@
 <%= stylesheet_link_tag "orders", :media => "all" %>
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <div class="text-center">
-  <div class="mainTitle">User Orders</div>
+
+<div class="text-center">
+    <div class="mainTitle">Orders Dashboard</div>
   </div>
+
+
   <hr>
   <% if @orders.present? %>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Date Ordered</th>
-            <th>Pay type</th>
-            <th class="statusSection">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-      <%  @orders.each do |order| %>
-      <tr>
-         <td><%= order.id %></td>
-         <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
-         <td><%= order.pay_type %></td>
-          <% if order.charge.try(:status) == "complete" %>
+
+
+  <% if @user.store_owner.present? %>
+  <div class="text-center">
+    <div class="mainTitle">Store Orders</div>
+    </div>
+
+        <table class="table table-hover">
+          <thead>
+              <th>Order ID</th>
+              <th>Date Ordered</th>
+              <th>Pay type</th>
+              <th class="statusSection">Status</th>
+          </thead>
+          <tbody>
+        <% @storeOwnerOrders.each do |orderA| %>
+        <tr>
+          <td><%= orderA.id %></td>
+          <td><%= orderA.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+          <td><%= orderA.pay_type %></td>
+          <% if orderA.charge.try(:status) == "complete" %>
             <td class="statusCompleteI">Complete</td>
           <% else %>
             <td class="statusIncompleteI">Incomplete</td>
           <% end %>
-         <td><%= link_to 'Show', order, method: :get %></td>
-        </tr>
-      <% end %>
-    </tbody>
-    </table>
-
-  <div class="text-center paginateOrder">
-    <%= will_paginate @orders, method: :get, inner_window: 1, outer_window: 0 %>
-  </div>
-
-  <hr>
-
-
-
-<div class="text-center">
-  <div class="mainTitle">Store Orders</div>
-  </div>
-
-      <table class="table table-hover">
-        <thead>
-            <th>Order ID</th>
-            <th>Date Ordered</th>
-            <th>Pay type</th>
-            <th class="statusSection">Status</th>
-        </thead>
-        <tbody>
-      <% @storeOwnerOrders.each do |orderA| %>
-      <tr>
-        <td><%= orderA.id %></td>
-        <td><%= orderA.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
-        <td><%= orderA.pay_type %></td>
-        <% if orderA.charge.try(:status) == "complete" %>
-          <td class="statusCompleteI">Complete</td>
-        <% else %>
-          <td class="statusIncompleteI">Incomplete</td>
+          <td><%= link_to 'Show', orderA, method: :get %></td>
+          </tr>
         <% end %>
-        <td><%= link_to 'Show', orderA, method: :get %></td>
-        </tr>
-      <% end %>
-    </tbody>
-    </table>
+      </tbody>
+      </table>
 
-  <div class="text-center paginateOrder">
-    <%= will_paginate @storeOwnerOrders, method: :get, inner_window: 1, outer_window: 0 %>
-  </div>
+    <div class="text-center paginateOrder">
+      <%= will_paginate @storeOwnerOrders, method: :get, inner_window: 1, outer_window: 0 %>
+    </div>
+
+    <hr>
+
+
+    <div class="text-center">
+      <div class="mainTitle">User Orders</div>
+    </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date Ordered</th>
+              <th>Pay type</th>
+              <th class="statusSection">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+        <%  @orders.each do |order| %>
+        <tr>
+           <td><%= order.id %></td>
+           <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+           <td><%= order.pay_type %></td>
+            <% if order.charge.try(:status) == "complete" %>
+              <td class="statusCompleteI">Complete</td>
+            <% else %>
+              <td class="statusIncompleteI">Incomplete</td>
+            <% end %>
+           <td><%= link_to 'Show', order, method: :get %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+
+    <div class="text-center paginateOrder">
+      <%= will_paginate @orders, method: :get, inner_window: 1, outer_window: 0 %>
+    </div>
+
+  <% else %>
+
+
+    <div class="text-center">
+      <div class="mainTitle">User Orders</div>
+    </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date Ordered</th>
+              <th>Pay type</th>
+              <th class="statusSection">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+        <%  @orders.each do |order| %>
+        <tr>
+           <td><%= order.id %></td>
+           <td><%= order.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+           <td><%= order.pay_type %></td>
+            <% if order.charge.try(:status) == "complete" %>
+              <td class="statusCompleteI">Complete</td>
+            <% else %>
+              <td class="statusIncompleteI">Incomplete</td>
+            <% end %>
+           <td><%= link_to 'Show', order, method: :get %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+
+    <div class="text-center paginateOrder">
+      <%= will_paginate @orders, method: :get, inner_window: 1, outer_window: 0 %>
+    </div>
+
+  <% end %>
+
   <% else %>
   <div class="text-center">
       <p class="noOrder">There are no orders yet. Start your first order by checking out the stores.</p>

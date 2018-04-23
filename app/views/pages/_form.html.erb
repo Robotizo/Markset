@@ -13,15 +13,14 @@
 <div class="container">
 <% if params[:action] == 'edit' || params[:action] == 'update' %> 
   <div class="formPage">
-  <div class="container">
     <div class="text-center">
-      <div class="row ">
-    <div class="col-md-6 col-md-offset-1">
+      <div class="row">
+    <div class="col-md-4 col-md-push-1">
     <%= image_tag(@page.image_url(:thumb), class: "imageShowPage") if @page.image? %>
   </div>
-  <div class="col-md-5 col-md-pull-2">
+  <div class="col-md-5 col-md-push-1">
     <span class="titleShow"><%= @page.title %></span>
-    <div class="description">
+    <div class="descriptionForm">
       <strong id="fontTitleD">Description</strong>
         <p id="pAttributes">
           <%= @page.description %>
@@ -96,6 +95,12 @@
       <div class="timePageInf">Do you only deliver, only pick-up or both?</div>
       <br>
         <%= f.select(:access_options, Page::ACCESS_OPTIONS, options = {prompt: 'Select your access options'}, {class: "selectDay"}) %>
+    </div>
+    <hr>
+
+     <div class="field">
+      <%= f.label :genre, class: "titlePageForm" %><br>
+      <%= f.text_field(:genre, placeholder: "Eg. Restaurant", class: "fieldStyle") %>
     </div>
 
 </div>

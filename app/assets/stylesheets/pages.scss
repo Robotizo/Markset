@@ -408,11 +408,16 @@ textarea {
     margin-left: 2em;
 }
 
+.descriptionForm{
+    margin-top: 4em;
+}
+
 .listImagePagePost {
     width: 50px;
     height: 50px;
     margin: 5;
-    float: left
+    float: left;
+    border-radius: 3px;
 }
 
 .storeTitle{
@@ -1004,6 +1009,9 @@ textarea {
     }
     .listImagePagePost{
         right: -42%;
+    }
+    .postBox{
+        width: 70%;
     }
 }
 

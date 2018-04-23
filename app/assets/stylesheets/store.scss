@@ -633,7 +633,7 @@ div.price_line{
 
 .image1{
   margin-top: 10px;
-  height: 30%;
+  height: 28%;
   margin-right: 40px; 
   margin-left: 40px;
 }
@@ -1050,7 +1050,7 @@ dt{
   }
   .image1 {
     margin-top: 10px;
-    height: 30%;
+    height: 30% !important;
     margin-right: 0px;
     margin-left: 0px;
   }
@@ -1501,6 +1501,19 @@ dt{
   /* Following Mob End */
 
 }
+@media screen and (min-width: 1000px) and (max-width: 1024px) and (min-height: 750px) and (max-height: 770px){
+  .image1{
+    height: 20% !important;
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1370px){
+  .image1{
+    height: 12%;
+  }
+
+}
 
 @media screen and (min-width: 768px) and (max-width: 991px){
   .section3 {
@@ -1754,6 +1767,14 @@ dt{
     font-weight: 300;
     margin-bottom: 0px;
     margin-left: 106px;
+  }
+
+}
+
+
+@media screen and (min-width: 2000px){
+  .image1{
+    height: 14%;
   }
 
 }
