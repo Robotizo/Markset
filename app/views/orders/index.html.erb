@@ -38,11 +38,34 @@
           </tr>
         <% end %>
       </tbody>
+
+
       </table>
 
     <div class="text-center paginateOrder">
       <%= will_paginate @storeOwnerOrders, method: :get, inner_window: 1, outer_window: 0 %>
     </div>
+
+  <hr>
+
+  <div class="mainTitle">Total Sales</div>
+<table class="table table-hover">
+          <thead>
+              <th>Date</th>
+              <th>Total Price</th>
+          </thead>
+        <tbody>
+
+
+  
+          <tr>
+              <td><%= @allOrd %></td>
+          
+            </tr>
+
+
+      </tbody>
+  </table>
 
     <hr>
 

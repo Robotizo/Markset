@@ -7,6 +7,9 @@ class OrdersController < ApplicationController
   def index
     @cart = current_cart
     @user = current_user
+
+    @allOrd = Order.group("user_id", "DATE(created_at)")
+
     @orders = @user.orders.paginate(page: params[:page], per_page: 10).order("created_at DESC")
     @ordersAll = Order.all.order("created_at DESC")
     userProductIds = @user.products.map(&:id)
