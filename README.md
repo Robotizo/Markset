@@ -1,24 +1,15 @@
-# README
+# My first atempt at entrepreneurship
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+The idea was:
 
-* System dependencies
+* A person can buy from any store
 
-* Configuration
+* A person can follow a store for updates and coupons
 
-* Database creation
+* A store can create coupons
 
-* Database initialization
+* Basically an Alibaba of local stores
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Pitch deck: https://docs.google.com/presentation/d/1rzo8m5HJG-cvcyYCgutMoR5PRmeYQ0OQMf5bcX2EtN8/edit?usp=sharing
