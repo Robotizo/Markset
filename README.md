@@ -12,4 +12,4 @@ The idea was:
 
 * Basically an Alibaba of local stores
 
-* Pitch deck: https://docs.google.com/presentation/d/1rzo8m5HJG-cvcyYCgutMoR5PRmeYQ0OQMf5bcX2EtN8/edit?usp=sharing
+* Pitch deck: https://docs.google.com/presentation/d/1WiPdqy-ZCBYgR0Psf6NyMsh3JcJeQXmaW5_AjaMSpWg/edit?usp=sharing
